@@ -28,6 +28,8 @@ namespace TeamAmcal
             txtAddProdPrice.Text = "";
             txtAddProdQuantity.Text = "";
             txtAddProdSupplier.Text = "";
+            txtAddProdRetPrice.Text = "";
+            txtAddProdDiscount.Text = "";
         } // end btnAddProdClearInput
 
         private void btnEditProdConfirmChanges_Click(object sender, EventArgs e)
@@ -42,7 +44,9 @@ namespace TeamAmcal
             lDisplay += "Product Name: " + txtAddProdName.Text + "\n";
             lDisplay += "Quantity: " + txtAddProdQuantity.Text + "\n";
             lDisplay += "Price: " + txtAddProdPrice.Text + "\n";
+            lDisplay += "Retail Price: " + txtAddProdRetPrice + "\n";
             lDisplay += "Supplier: " + txtAddProdSupplier.Text + "\n";
+            lDisplay += "Discount: " + txtAddProdDiscount.Text + "\n";
 
             MessageBox.Show(lDisplay, "Product to Add:", MessageBoxButtons.OK);
             
@@ -55,11 +59,15 @@ namespace TeamAmcal
             if (txtEditProdName.Text != "")
                 lDisplay += "Product Name: " + txtEditProdName.Text + "\n";
             if (txtEditProdPrice.Text != "")
-                lDisplay += "Product Name: " + txtEditProdPrice.Text + "\n";
+                lDisplay += "Price: " + txtEditProdPrice.Text + "\n";
             if (txtEditProdQuantity.Text != "")
-                lDisplay += "Product Name: " + txtEditProdQuantity.Text + "\n";
+                lDisplay += "Quantity: " + txtEditProdQuantity.Text + "\n";
             if (txtEditProdSupplier.Text != "")
-                lDisplay += "Product Name: " + txtEditProdSupplier.Text + "\n";
+                lDisplay += "Supplier: " + txtEditProdSupplier.Text + "\n";
+            if (txtEditProdRetPrice.Text != "")
+                lDisplay += "Retail Price: " + txtEditProdRetPrice.Text + "\n";
+            if (txtEditProdDiscount.Text != "")
+                lDisplay += "Discount Percentage: " + txtEditProdDiscount.Text + "\n";
 
             MessageBox.Show(lDisplay, "Product to Edit:", MessageBoxButtons.OK);
         } // end btnEditProdConfirmChanges_Click_1
@@ -70,6 +78,8 @@ namespace TeamAmcal
             txtEditProdPrice.Text = "";
             txtEditProdQuantity.Text = "";
             txtEditProdSupplier.Text = "";
+            txtEditProdRetPrice.Text = "";
+            txtEditProdDiscount.Text = "";
         } // end btnEditProdClearInput_Click
 
         private void btnEditSalesConfirmUpdate_Click(object sender, EventArgs e)
