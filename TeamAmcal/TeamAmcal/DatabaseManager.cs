@@ -12,13 +12,19 @@ namespace TeamAmcal
     {
         private List<Product> productList = new List<Product>();
 
+        /// <summary>
+        /// Reads .json files and creates and adds new products to the list.
+        /// </summary>
         public void LoadProducts()
         {
-            using (StreamReader file = File.OpenText(Directory.GetCurrentDirectory() + "\\" + "Database.json"))
+            foreach (string file in Directory.EnumerateFiles(Directory.GetCurrentDirectory(), "*.json"))
             {
-                JsonSerializer serializer = new JsonSerializer();
-                Product p = (Product)serializer.Deserialize(file, typeof(Product));
-                productList.Add(p);
+                using (StreamReader file_2 = File.OpenText(file))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    Product p = (Product)serializer.Deserialize(file_2, typeof(Product));
+                    productList.Add(p);
+                }
             }
         }
     }
