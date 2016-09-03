@@ -75,26 +75,35 @@
             this.cmbAddSalesSelect = new System.Windows.Forms.ComboBox();
             this.lblAddSalesSelect = new System.Windows.Forms.Label();
             this.tabEditSales = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cmbEditSalesSelectSale = new System.Windows.Forms.ComboBox();
+            this.lblEditSalesSelectSale = new System.Windows.Forms.Label();
+            this.lblEditSalesDate = new System.Windows.Forms.Label();
+            this.dtpEditSalesDate = new System.Windows.Forms.DateTimePicker();
+            this.btnEditSalesConfirmUpdate = new System.Windows.Forms.Button();
+            this.btnEditSalesRemoveProduct = new System.Windows.Forms.Button();
+            this.txtEditSalesQuantity = new System.Windows.Forms.TextBox();
+            this.lblEditSalesQuantity = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblEditSalesReport = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblEditSalesSelect = new System.Windows.Forms.Label();
+            this.cmbEditSalesSelectProduct = new System.Windows.Forms.ComboBox();
+            this.lblEditSalesSelectProduct = new System.Windows.Forms.Label();
             this.tabReports = new System.Windows.Forms.TabPage();
             this.tabReportOptions = new System.Windows.Forms.TabControl();
             this.tabMonthlyReport = new System.Windows.Forms.TabPage();
             this.tabYearlyReport = new System.Windows.Forms.TabPage();
-            this.cmbEditSalesSelectSale = new System.Windows.Forms.ComboBox();
-            this.lblEditSalesSelectSale = new System.Windows.Forms.Label();
-            this.btnEditSalesRemoveProduct = new System.Windows.Forms.Button();
+            this.grpEditProdOld = new System.Windows.Forms.GroupBox();
+            this.grpEditProdNew = new System.Windows.Forms.GroupBox();
+            this.lblEditProdOldName = new System.Windows.Forms.Label();
+            this.lblEditProdOldQuantity = new System.Windows.Forms.Label();
+            this.lblEditProdOldPrice = new System.Windows.Forms.Label();
+            this.lblEditProdOldSupplier = new System.Windows.Forms.Label();
+            this.txtAddProdRetPrice = new System.Windows.Forms.TextBox();
+            this.lblAddProdRetPrice = new System.Windows.Forms.Label();
+            this.btnAddSalesClear = new System.Windows.Forms.Button();
             this.tabMenu.SuspendLayout();
             this.tabProducts.SuspendLayout();
             this.tabProductOptions.SuspendLayout();
@@ -108,6 +117,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabReports.SuspendLayout();
             this.tabReportOptions.SuspendLayout();
+            this.grpEditProdOld.SuspendLayout();
+            this.grpEditProdNew.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -145,6 +156,8 @@
             // 
             // tabAddProduct
             // 
+            this.tabAddProduct.Controls.Add(this.txtAddProdRetPrice);
+            this.tabAddProduct.Controls.Add(this.lblAddProdRetPrice);
             this.tabAddProduct.Controls.Add(this.txtAddProdSupplier);
             this.tabAddProduct.Controls.Add(this.txtAddProdPrice);
             this.tabAddProduct.Controls.Add(this.txtAddProdQuantity);
@@ -167,7 +180,7 @@
             // 
             // txtAddProdSupplier
             // 
-            this.txtAddProdSupplier.Location = new System.Drawing.Point(401, 258);
+            this.txtAddProdSupplier.Location = new System.Drawing.Point(401, 312);
             this.txtAddProdSupplier.Name = "txtAddProdSupplier";
             this.txtAddProdSupplier.Size = new System.Drawing.Size(618, 38);
             this.txtAddProdSupplier.TabIndex = 10;
@@ -216,7 +229,7 @@
             // lblAddProdSupplier
             // 
             this.lblAddProdSupplier.AutoSize = true;
-            this.lblAddProdSupplier.Location = new System.Drawing.Point(274, 261);
+            this.lblAddProdSupplier.Location = new System.Drawing.Point(274, 315);
             this.lblAddProdSupplier.Name = "lblAddProdSupplier";
             this.lblAddProdSupplier.Size = new System.Drawing.Size(121, 31);
             this.lblAddProdSupplier.TabIndex = 4;
@@ -261,18 +274,10 @@
             // 
             // tabEditProduct
             // 
-            this.tabEditProduct.Controls.Add(this.cmbEditProdSelect);
-            this.tabEditProduct.Controls.Add(this.lblEditProdFind);
-            this.tabEditProduct.Controls.Add(this.txtEditProdSupplier);
-            this.tabEditProduct.Controls.Add(this.txtEditProdPrice);
-            this.tabEditProduct.Controls.Add(this.txtEditProdQuantity);
-            this.tabEditProduct.Controls.Add(this.txtEditProdName);
+            this.tabEditProduct.Controls.Add(this.grpEditProdNew);
+            this.tabEditProduct.Controls.Add(this.grpEditProdOld);
             this.tabEditProduct.Controls.Add(this.btnEditProdClearInput);
             this.tabEditProduct.Controls.Add(this.btnEditProdConfirmChanges);
-            this.tabEditProduct.Controls.Add(this.lblEditProdSupplier);
-            this.tabEditProduct.Controls.Add(this.lblEditProdPrice);
-            this.tabEditProduct.Controls.Add(this.lblEditProdQuantity);
-            this.tabEditProduct.Controls.Add(this.lblEditProdName);
             this.tabEditProduct.Controls.Add(this.label5);
             this.tabEditProduct.Location = new System.Drawing.Point(4, 40);
             this.tabEditProduct.Name = "tabEditProduct";
@@ -286,15 +291,15 @@
             // 
             this.cmbEditProdSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEditProdSelect.FormattingEnabled = true;
-            this.cmbEditProdSelect.Location = new System.Drawing.Point(405, 97);
+            this.cmbEditProdSelect.Location = new System.Drawing.Point(234, 31);
             this.cmbEditProdSelect.Name = "cmbEditProdSelect";
-            this.cmbEditProdSelect.Size = new System.Drawing.Size(654, 39);
+            this.cmbEditProdSelect.Size = new System.Drawing.Size(365, 39);
             this.cmbEditProdSelect.TabIndex = 36;
             // 
             // lblEditProdFind
             // 
             this.lblEditProdFind.AutoSize = true;
-            this.lblEditProdFind.Location = new System.Drawing.Point(200, 100);
+            this.lblEditProdFind.Location = new System.Drawing.Point(29, 34);
             this.lblEditProdFind.Name = "lblEditProdFind";
             this.lblEditProdFind.Size = new System.Drawing.Size(199, 31);
             this.lblEditProdFind.TabIndex = 35;
@@ -302,35 +307,35 @@
             // 
             // txtEditProdSupplier
             // 
-            this.txtEditProdSupplier.Location = new System.Drawing.Point(405, 318);
+            this.txtEditProdSupplier.Location = new System.Drawing.Point(234, 252);
             this.txtEditProdSupplier.Name = "txtEditProdSupplier";
-            this.txtEditProdSupplier.Size = new System.Drawing.Size(654, 38);
+            this.txtEditProdSupplier.Size = new System.Drawing.Size(365, 38);
             this.txtEditProdSupplier.TabIndex = 34;
             // 
             // txtEditProdPrice
             // 
-            this.txtEditProdPrice.Location = new System.Drawing.Point(405, 264);
+            this.txtEditProdPrice.Location = new System.Drawing.Point(234, 198);
             this.txtEditProdPrice.Name = "txtEditProdPrice";
-            this.txtEditProdPrice.Size = new System.Drawing.Size(654, 38);
+            this.txtEditProdPrice.Size = new System.Drawing.Size(365, 38);
             this.txtEditProdPrice.TabIndex = 33;
             // 
             // txtEditProdQuantity
             // 
-            this.txtEditProdQuantity.Location = new System.Drawing.Point(405, 210);
+            this.txtEditProdQuantity.Location = new System.Drawing.Point(234, 144);
             this.txtEditProdQuantity.Name = "txtEditProdQuantity";
-            this.txtEditProdQuantity.Size = new System.Drawing.Size(654, 38);
+            this.txtEditProdQuantity.Size = new System.Drawing.Size(365, 38);
             this.txtEditProdQuantity.TabIndex = 32;
             // 
             // txtEditProdName
             // 
-            this.txtEditProdName.Location = new System.Drawing.Point(405, 155);
+            this.txtEditProdName.Location = new System.Drawing.Point(234, 89);
             this.txtEditProdName.Name = "txtEditProdName";
-            this.txtEditProdName.Size = new System.Drawing.Size(654, 38);
+            this.txtEditProdName.Size = new System.Drawing.Size(365, 38);
             this.txtEditProdName.TabIndex = 31;
             // 
             // btnEditProdClearInput
             // 
-            this.btnEditProdClearInput.Location = new System.Drawing.Point(816, 410);
+            this.btnEditProdClearInput.Location = new System.Drawing.Point(761, 445);
             this.btnEditProdClearInput.Name = "btnEditProdClearInput";
             this.btnEditProdClearInput.Size = new System.Drawing.Size(191, 74);
             this.btnEditProdClearInput.TabIndex = 30;
@@ -340,7 +345,7 @@
             // 
             // btnEditProdConfirmChanges
             // 
-            this.btnEditProdConfirmChanges.Location = new System.Drawing.Point(443, 410);
+            this.btnEditProdConfirmChanges.Location = new System.Drawing.Point(458, 445);
             this.btnEditProdConfirmChanges.Name = "btnEditProdConfirmChanges";
             this.btnEditProdConfirmChanges.Size = new System.Drawing.Size(191, 74);
             this.btnEditProdConfirmChanges.TabIndex = 29;
@@ -351,7 +356,7 @@
             // lblEditProdSupplier
             // 
             this.lblEditProdSupplier.AutoSize = true;
-            this.lblEditProdSupplier.Location = new System.Drawing.Point(278, 321);
+            this.lblEditProdSupplier.Location = new System.Drawing.Point(107, 255);
             this.lblEditProdSupplier.Name = "lblEditProdSupplier";
             this.lblEditProdSupplier.Size = new System.Drawing.Size(121, 31);
             this.lblEditProdSupplier.TabIndex = 28;
@@ -360,7 +365,7 @@
             // lblEditProdPrice
             // 
             this.lblEditProdPrice.AutoSize = true;
-            this.lblEditProdPrice.Location = new System.Drawing.Point(315, 267);
+            this.lblEditProdPrice.Location = new System.Drawing.Point(144, 201);
             this.lblEditProdPrice.Name = "lblEditProdPrice";
             this.lblEditProdPrice.Size = new System.Drawing.Size(84, 31);
             this.lblEditProdPrice.TabIndex = 27;
@@ -369,7 +374,7 @@
             // lblEditProdQuantity
             // 
             this.lblEditProdQuantity.AutoSize = true;
-            this.lblEditProdQuantity.Location = new System.Drawing.Point(275, 213);
+            this.lblEditProdQuantity.Location = new System.Drawing.Point(104, 147);
             this.lblEditProdQuantity.Name = "lblEditProdQuantity";
             this.lblEditProdQuantity.Size = new System.Drawing.Size(124, 31);
             this.lblEditProdQuantity.TabIndex = 26;
@@ -378,7 +383,7 @@
             // lblEditProdName
             // 
             this.lblEditProdName.AutoSize = true;
-            this.lblEditProdName.Location = new System.Drawing.Point(204, 158);
+            this.lblEditProdName.Location = new System.Drawing.Point(33, 92);
             this.lblEditProdName.Name = "lblEditProdName";
             this.lblEditProdName.Size = new System.Drawing.Size(195, 31);
             this.lblEditProdName.TabIndex = 25;
@@ -417,6 +422,7 @@
             // 
             // tabAddSales
             // 
+            this.tabAddSales.Controls.Add(this.btnAddSalesClear);
             this.tabAddSales.Controls.Add(this.lblAddSalesDate);
             this.tabAddSales.Controls.Add(this.dtmAddSalesDatae);
             this.tabAddSales.Controls.Add(this.btnAddSalesConfirm);
@@ -453,12 +459,13 @@
             // 
             // btnAddSalesConfirm
             // 
-            this.btnAddSalesConfirm.Location = new System.Drawing.Point(996, 451);
+            this.btnAddSalesConfirm.Location = new System.Drawing.Point(996, 436);
             this.btnAddSalesConfirm.Name = "btnAddSalesConfirm";
             this.btnAddSalesConfirm.Size = new System.Drawing.Size(192, 73);
             this.btnAddSalesConfirm.TabIndex = 44;
             this.btnAddSalesConfirm.Text = "Confirm Sale";
             this.btnAddSalesConfirm.UseVisualStyleBackColor = true;
+            this.btnAddSalesConfirm.Click += new System.EventHandler(this.btnAddSalesConfirm_Click);
             // 
             // btnAddSalesAddProduct
             // 
@@ -468,6 +475,7 @@
             this.btnAddSalesAddProduct.TabIndex = 43;
             this.btnAddSalesAddProduct.Text = "Add Product";
             this.btnAddSalesAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddSalesAddProduct.Click += new System.EventHandler(this.btnAddSalesAddProduct_Click);
             // 
             // txtAddSalesQuantity
             // 
@@ -557,16 +565,16 @@
             // 
             this.tabEditSales.Controls.Add(this.cmbEditSalesSelectSale);
             this.tabEditSales.Controls.Add(this.lblEditSalesSelectSale);
-            this.tabEditSales.Controls.Add(this.label1);
-            this.tabEditSales.Controls.Add(this.dateTimePicker1);
-            this.tabEditSales.Controls.Add(this.button1);
+            this.tabEditSales.Controls.Add(this.lblEditSalesDate);
+            this.tabEditSales.Controls.Add(this.dtpEditSalesDate);
+            this.tabEditSales.Controls.Add(this.btnEditSalesConfirmUpdate);
             this.tabEditSales.Controls.Add(this.btnEditSalesRemoveProduct);
-            this.tabEditSales.Controls.Add(this.textBox1);
-            this.tabEditSales.Controls.Add(this.label2);
+            this.tabEditSales.Controls.Add(this.txtEditSalesQuantity);
+            this.tabEditSales.Controls.Add(this.lblEditSalesQuantity);
             this.tabEditSales.Controls.Add(this.dataGridView1);
             this.tabEditSales.Controls.Add(this.lblEditSalesReport);
-            this.tabEditSales.Controls.Add(this.comboBox1);
-            this.tabEditSales.Controls.Add(this.lblEditSalesSelect);
+            this.tabEditSales.Controls.Add(this.cmbEditSalesSelectProduct);
+            this.tabEditSales.Controls.Add(this.lblEditSalesSelectProduct);
             this.tabEditSales.Location = new System.Drawing.Point(4, 40);
             this.tabEditSales.Name = "tabEditSales";
             this.tabEditSales.Padding = new System.Windows.Forms.Padding(3);
@@ -575,46 +583,75 @@
             this.tabEditSales.Text = "Edit Sales";
             this.tabEditSales.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // cmbEditSalesSelectSale
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(312, 228);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 31);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "Date:";
+            this.cmbEditSalesSelectSale.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEditSalesSelectSale.FormattingEnabled = true;
+            this.cmbEditSalesSelectSale.Location = new System.Drawing.Point(397, 88);
+            this.cmbEditSalesSelectSale.Name = "cmbEditSalesSelectSale";
+            this.cmbEditSalesSelectSale.Size = new System.Drawing.Size(654, 39);
+            this.cmbEditSalesSelectSale.TabIndex = 58;
             // 
-            // dateTimePicker1
+            // lblEditSalesSelectSale
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(398, 222);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(653, 38);
-            this.dateTimePicker1.TabIndex = 55;
+            this.lblEditSalesSelectSale.AutoSize = true;
+            this.lblEditSalesSelectSale.Location = new System.Drawing.Point(211, 91);
+            this.lblEditSalesSelectSale.Name = "lblEditSalesSelectSale";
+            this.lblEditSalesSelectSale.Size = new System.Drawing.Size(181, 31);
+            this.lblEditSalesSelectSale.TabIndex = 57;
+            this.lblEditSalesSelectSale.Text = "Select a Sale:";
             // 
-            // button1
+            // lblEditSalesDate
             // 
-            this.button1.Location = new System.Drawing.Point(996, 451);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 73);
-            this.button1.TabIndex = 54;
-            this.button1.Text = "Confirm Update";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblEditSalesDate.AutoSize = true;
+            this.lblEditSalesDate.Location = new System.Drawing.Point(312, 228);
+            this.lblEditSalesDate.Name = "lblEditSalesDate";
+            this.lblEditSalesDate.Size = new System.Drawing.Size(80, 31);
+            this.lblEditSalesDate.TabIndex = 56;
+            this.lblEditSalesDate.Text = "Date:";
             // 
-            // textBox1
+            // dtpEditSalesDate
             // 
-            this.textBox1.Location = new System.Drawing.Point(398, 178);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(653, 38);
-            this.textBox1.TabIndex = 52;
+            this.dtpEditSalesDate.Location = new System.Drawing.Point(398, 222);
+            this.dtpEditSalesDate.Name = "dtpEditSalesDate";
+            this.dtpEditSalesDate.Size = new System.Drawing.Size(653, 38);
+            this.dtpEditSalesDate.TabIndex = 55;
             // 
-            // label2
+            // btnEditSalesConfirmUpdate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(268, 181);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 31);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "Quantity:";
+            this.btnEditSalesConfirmUpdate.Location = new System.Drawing.Point(996, 451);
+            this.btnEditSalesConfirmUpdate.Name = "btnEditSalesConfirmUpdate";
+            this.btnEditSalesConfirmUpdate.Size = new System.Drawing.Size(192, 73);
+            this.btnEditSalesConfirmUpdate.TabIndex = 54;
+            this.btnEditSalesConfirmUpdate.Text = "Confirm Update";
+            this.btnEditSalesConfirmUpdate.UseVisualStyleBackColor = true;
+            this.btnEditSalesConfirmUpdate.Click += new System.EventHandler(this.btnEditSalesConfirmUpdate_Click);
+            // 
+            // btnEditSalesRemoveProduct
+            // 
+            this.btnEditSalesRemoveProduct.Location = new System.Drawing.Point(996, 342);
+            this.btnEditSalesRemoveProduct.Name = "btnEditSalesRemoveProduct";
+            this.btnEditSalesRemoveProduct.Size = new System.Drawing.Size(192, 73);
+            this.btnEditSalesRemoveProduct.TabIndex = 53;
+            this.btnEditSalesRemoveProduct.Text = "Remove Product";
+            this.btnEditSalesRemoveProduct.UseVisualStyleBackColor = true;
+            this.btnEditSalesRemoveProduct.Click += new System.EventHandler(this.btnEditSalesRemoveProduct_Click);
+            // 
+            // txtEditSalesQuantity
+            // 
+            this.txtEditSalesQuantity.Location = new System.Drawing.Point(398, 178);
+            this.txtEditSalesQuantity.Name = "txtEditSalesQuantity";
+            this.txtEditSalesQuantity.Size = new System.Drawing.Size(653, 38);
+            this.txtEditSalesQuantity.TabIndex = 52;
+            // 
+            // lblEditSalesQuantity
+            // 
+            this.lblEditSalesQuantity.AutoSize = true;
+            this.lblEditSalesQuantity.Location = new System.Drawing.Point(268, 181);
+            this.lblEditSalesQuantity.Name = "lblEditSalesQuantity";
+            this.lblEditSalesQuantity.Size = new System.Drawing.Size(124, 31);
+            this.lblEditSalesQuantity.TabIndex = 51;
+            this.lblEditSalesQuantity.Text = "Quantity:";
             // 
             // dataGridView1
             // 
@@ -666,23 +703,23 @@
             this.lblEditSalesReport.TabIndex = 49;
             this.lblEditSalesReport.Text = "Edit a Sales Report";
             // 
-            // comboBox1
+            // cmbEditSalesSelectProduct
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(398, 133);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(654, 39);
-            this.comboBox1.TabIndex = 48;
+            this.cmbEditSalesSelectProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEditSalesSelectProduct.FormattingEnabled = true;
+            this.cmbEditSalesSelectProduct.Location = new System.Drawing.Point(398, 133);
+            this.cmbEditSalesSelectProduct.Name = "cmbEditSalesSelectProduct";
+            this.cmbEditSalesSelectProduct.Size = new System.Drawing.Size(654, 39);
+            this.cmbEditSalesSelectProduct.TabIndex = 48;
             // 
-            // lblEditSalesSelect
+            // lblEditSalesSelectProduct
             // 
-            this.lblEditSalesSelect.AutoSize = true;
-            this.lblEditSalesSelect.Location = new System.Drawing.Point(193, 136);
-            this.lblEditSalesSelect.Name = "lblEditSalesSelect";
-            this.lblEditSalesSelect.Size = new System.Drawing.Size(199, 31);
-            this.lblEditSalesSelect.TabIndex = 47;
-            this.lblEditSalesSelect.Text = "Select Product:";
+            this.lblEditSalesSelectProduct.AutoSize = true;
+            this.lblEditSalesSelectProduct.Location = new System.Drawing.Point(193, 136);
+            this.lblEditSalesSelectProduct.Name = "lblEditSalesSelectProduct";
+            this.lblEditSalesSelectProduct.Size = new System.Drawing.Size(199, 31);
+            this.lblEditSalesSelectProduct.TabIndex = 47;
+            this.lblEditSalesSelectProduct.Text = "Select Product:";
             // 
             // tabReports
             // 
@@ -724,32 +761,99 @@
             this.tabYearlyReport.Text = "Yearly Report";
             this.tabYearlyReport.UseVisualStyleBackColor = true;
             // 
-            // cmbEditSalesSelectSale
+            // grpEditProdOld
             // 
-            this.cmbEditSalesSelectSale.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEditSalesSelectSale.FormattingEnabled = true;
-            this.cmbEditSalesSelectSale.Location = new System.Drawing.Point(397, 88);
-            this.cmbEditSalesSelectSale.Name = "cmbEditSalesSelectSale";
-            this.cmbEditSalesSelectSale.Size = new System.Drawing.Size(654, 39);
-            this.cmbEditSalesSelectSale.TabIndex = 58;
+            this.grpEditProdOld.Controls.Add(this.lblEditProdOldName);
+            this.grpEditProdOld.Controls.Add(this.lblEditProdOldQuantity);
+            this.grpEditProdOld.Controls.Add(this.lblEditProdOldSupplier);
+            this.grpEditProdOld.Controls.Add(this.lblEditProdOldPrice);
+            this.grpEditProdOld.Location = new System.Drawing.Point(745, 84);
+            this.grpEditProdOld.Name = "grpEditProdOld";
+            this.grpEditProdOld.Size = new System.Drawing.Size(456, 331);
+            this.grpEditProdOld.TabIndex = 37;
+            this.grpEditProdOld.TabStop = false;
+            this.grpEditProdOld.Text = "Old Details";
             // 
-            // lblEditSalesSelectSale
+            // grpEditProdNew
             // 
-            this.lblEditSalesSelectSale.AutoSize = true;
-            this.lblEditSalesSelectSale.Location = new System.Drawing.Point(211, 91);
-            this.lblEditSalesSelectSale.Name = "lblEditSalesSelectSale";
-            this.lblEditSalesSelectSale.Size = new System.Drawing.Size(181, 31);
-            this.lblEditSalesSelectSale.TabIndex = 57;
-            this.lblEditSalesSelectSale.Text = "Select a Sale:";
+            this.grpEditProdNew.Controls.Add(this.cmbEditProdSelect);
+            this.grpEditProdNew.Controls.Add(this.lblEditProdName);
+            this.grpEditProdNew.Controls.Add(this.lblEditProdQuantity);
+            this.grpEditProdNew.Controls.Add(this.lblEditProdFind);
+            this.grpEditProdNew.Controls.Add(this.lblEditProdPrice);
+            this.grpEditProdNew.Controls.Add(this.txtEditProdSupplier);
+            this.grpEditProdNew.Controls.Add(this.lblEditProdSupplier);
+            this.grpEditProdNew.Controls.Add(this.txtEditProdPrice);
+            this.grpEditProdNew.Controls.Add(this.txtEditProdName);
+            this.grpEditProdNew.Controls.Add(this.txtEditProdQuantity);
+            this.grpEditProdNew.Location = new System.Drawing.Point(6, 84);
+            this.grpEditProdNew.Name = "grpEditProdNew";
+            this.grpEditProdNew.Size = new System.Drawing.Size(643, 331);
+            this.grpEditProdNew.TabIndex = 38;
+            this.grpEditProdNew.TabStop = false;
+            this.grpEditProdNew.Text = "New Details";
             // 
-            // btnEditSalesRemoveProduct
+            // lblEditProdOldName
             // 
-            this.btnEditSalesRemoveProduct.Location = new System.Drawing.Point(996, 342);
-            this.btnEditSalesRemoveProduct.Name = "btnEditSalesRemoveProduct";
-            this.btnEditSalesRemoveProduct.Size = new System.Drawing.Size(192, 73);
-            this.btnEditSalesRemoveProduct.TabIndex = 53;
-            this.btnEditSalesRemoveProduct.Text = "Remove Product";
-            this.btnEditSalesRemoveProduct.UseVisualStyleBackColor = true;
+            this.lblEditProdOldName.AutoSize = true;
+            this.lblEditProdOldName.Location = new System.Drawing.Point(12, 34);
+            this.lblEditProdOldName.Name = "lblEditProdOldName";
+            this.lblEditProdOldName.Size = new System.Drawing.Size(195, 31);
+            this.lblEditProdOldName.TabIndex = 37;
+            this.lblEditProdOldName.Text = "Product Name:";
+            // 
+            // lblEditProdOldQuantity
+            // 
+            this.lblEditProdOldQuantity.AutoSize = true;
+            this.lblEditProdOldQuantity.Location = new System.Drawing.Point(86, 92);
+            this.lblEditProdOldQuantity.Name = "lblEditProdOldQuantity";
+            this.lblEditProdOldQuantity.Size = new System.Drawing.Size(124, 31);
+            this.lblEditProdOldQuantity.TabIndex = 38;
+            this.lblEditProdOldQuantity.Text = "Quantity:";
+            // 
+            // lblEditProdOldPrice
+            // 
+            this.lblEditProdOldPrice.AutoSize = true;
+            this.lblEditProdOldPrice.Location = new System.Drawing.Point(123, 147);
+            this.lblEditProdOldPrice.Name = "lblEditProdOldPrice";
+            this.lblEditProdOldPrice.Size = new System.Drawing.Size(84, 31);
+            this.lblEditProdOldPrice.TabIndex = 39;
+            this.lblEditProdOldPrice.Text = "Price:";
+            // 
+            // lblEditProdOldSupplier
+            // 
+            this.lblEditProdOldSupplier.AutoSize = true;
+            this.lblEditProdOldSupplier.Location = new System.Drawing.Point(89, 255);
+            this.lblEditProdOldSupplier.Name = "lblEditProdOldSupplier";
+            this.lblEditProdOldSupplier.Size = new System.Drawing.Size(121, 31);
+            this.lblEditProdOldSupplier.TabIndex = 40;
+            this.lblEditProdOldSupplier.Text = "Supplier:";
+            // 
+            // txtAddProdRetPrice
+            // 
+            this.txtAddProdRetPrice.Location = new System.Drawing.Point(401, 258);
+            this.txtAddProdRetPrice.Name = "txtAddProdRetPrice";
+            this.txtAddProdRetPrice.Size = new System.Drawing.Size(618, 38);
+            this.txtAddProdRetPrice.TabIndex = 12;
+            // 
+            // lblAddProdRetPrice
+            // 
+            this.lblAddProdRetPrice.AutoSize = true;
+            this.lblAddProdRetPrice.Location = new System.Drawing.Point(234, 261);
+            this.lblAddProdRetPrice.Name = "lblAddProdRetPrice";
+            this.lblAddProdRetPrice.Size = new System.Drawing.Size(161, 31);
+            this.lblAddProdRetPrice.TabIndex = 11;
+            this.lblAddProdRetPrice.Text = "Retail Price:";
+            // 
+            // btnAddSalesClear
+            // 
+            this.btnAddSalesClear.Location = new System.Drawing.Point(996, 533);
+            this.btnAddSalesClear.Name = "btnAddSalesClear";
+            this.btnAddSalesClear.Size = new System.Drawing.Size(192, 73);
+            this.btnAddSalesClear.TabIndex = 47;
+            this.btnAddSalesClear.Text = "Clear Input";
+            this.btnAddSalesClear.UseVisualStyleBackColor = true;
+            this.btnAddSalesClear.Click += new System.EventHandler(this.btnAddSalesClear_Click);
             // 
             // frmPeopleHealthPharmacy
             // 
@@ -761,6 +865,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmPeopleHealthPharmacy";
             this.Text = "People Health Pharmacy Inc.";
+            this.Load += new System.EventHandler(this.frmPeopleHealthPharmacy_Load);
             this.tabMenu.ResumeLayout(false);
             this.tabProducts.ResumeLayout(false);
             this.tabProductOptions.ResumeLayout(false);
@@ -778,6 +883,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabReports.ResumeLayout(false);
             this.tabReportOptions.ResumeLayout(false);
+            this.grpEditProdOld.ResumeLayout(false);
+            this.grpEditProdOld.PerformLayout();
+            this.grpEditProdNew.ResumeLayout(false);
+            this.grpEditProdNew.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -835,22 +944,31 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAddSalesTotal;
         private System.Windows.Forms.Label lblAddSalesDate;
         private System.Windows.Forms.DateTimePicker dtmAddSalesDatae;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblEditSalesDate;
+        private System.Windows.Forms.DateTimePicker dtpEditSalesDate;
+        private System.Windows.Forms.Button btnEditSalesConfirmUpdate;
+        private System.Windows.Forms.TextBox txtEditSalesQuantity;
+        private System.Windows.Forms.Label lblEditSalesQuantity;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label lblEditSalesReport;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lblEditSalesSelect;
+        private System.Windows.Forms.ComboBox cmbEditSalesSelectProduct;
+        private System.Windows.Forms.Label lblEditSalesSelectProduct;
         private System.Windows.Forms.ComboBox cmbEditSalesSelectSale;
         private System.Windows.Forms.Label lblEditSalesSelectSale;
         private System.Windows.Forms.Button btnEditSalesRemoveProduct;
+        private System.Windows.Forms.TextBox txtAddProdRetPrice;
+        private System.Windows.Forms.Label lblAddProdRetPrice;
+        private System.Windows.Forms.GroupBox grpEditProdNew;
+        private System.Windows.Forms.GroupBox grpEditProdOld;
+        private System.Windows.Forms.Label lblEditProdOldName;
+        private System.Windows.Forms.Label lblEditProdOldQuantity;
+        private System.Windows.Forms.Label lblEditProdOldSupplier;
+        private System.Windows.Forms.Label lblEditProdOldPrice;
+        private System.Windows.Forms.Button btnAddSalesClear;
     }
 }
 
