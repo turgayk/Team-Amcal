@@ -30,6 +30,8 @@ namespace TeamAmcal
             txtAddProdSupplier.Text = "";
             txtAddProdRetPrice.Text = "";
             txtAddProdDiscount.Text = "";
+            txtAddProdKey.Text = "";
+
         } // end btnAddProdClearInput
 
         private void btnEditProdConfirmChanges_Click(object sender, EventArgs e)
@@ -47,6 +49,7 @@ namespace TeamAmcal
             lDisplay += "Retail Price: " + txtAddProdRetPrice + "\n";
             lDisplay += "Supplier: " + txtAddProdSupplier.Text + "\n";
             lDisplay += "Discount: " + txtAddProdDiscount.Text + "\n";
+            lDisplay += "Key: " + txtAddProdKey.Text + "\n";
 
             MessageBox.Show(lDisplay, "Product to Add:", MessageBoxButtons.OK);
             
@@ -68,6 +71,8 @@ namespace TeamAmcal
                 lDisplay += "Retail Price: " + txtEditProdRetPrice.Text + "\n";
             if (txtEditProdDiscount.Text != "")
                 lDisplay += "Discount Percentage: " + txtEditProdDiscount.Text + "\n";
+            if (txtEditProdKey.Text != "")
+                lDisplay += "Key: " + txtEditProdKey.Text + "\n";
 
             MessageBox.Show(lDisplay, "Product to Edit:", MessageBoxButtons.OK);
         } // end btnEditProdConfirmChanges_Click_1
