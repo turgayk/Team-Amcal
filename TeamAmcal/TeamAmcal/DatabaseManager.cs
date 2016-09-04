@@ -27,5 +27,23 @@ namespace TeamAmcal
                 }
             }
         }
+
+        /// <summary>
+        /// If a file with a matching key does not exist, a new product is created.
+        /// </summary>
+        public void CreateProduct(string Key, string Name, string Supplier, int Quantity, float Price, float RRP, float Discounted)
+        {
+            Product p = new Product(Key, Name, Supplier, Quantity, Price, RRP, Discounted);
+            productList.Add(p);
+            if (!File.Exists(Directory.GetCurrentDirectory() + Key + ".json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                using (StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + Key + ".json"))
+                using (JsonWriter writer = new JsonTextWriter(sw))
+                {
+                    serializer.Serialize(writer, p);
+                }
+            }
+        }
     }
 }

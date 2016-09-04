@@ -14,8 +14,6 @@ namespace TeamAmcal
         [STAThread]
         static void Main()
         {
-            DatabaseManager d = new DatabaseManager();
-            d.LoadProducts();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
