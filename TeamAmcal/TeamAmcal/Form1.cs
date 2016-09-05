@@ -71,8 +71,6 @@ namespace TeamAmcal
                 lDisplay += "Retail Price: " + txtEditProdRetPrice.Text + "\n";
             if (txtEditProdDiscount.Text != "")
                 lDisplay += "Discount Percentage: " + txtEditProdDiscount.Text + "\n";
-            if (txtEditProdKey.Text != "")
-                lDisplay += "Key: " + txtEditProdKey.Text + "\n";
 
             MessageBox.Show(lDisplay, "Product to Edit:", MessageBoxButtons.OK);
         } // end btnEditProdConfirmChanges_Click_1

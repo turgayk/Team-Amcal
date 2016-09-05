@@ -86,10 +86,6 @@
             this.txtAddSalesQuantity = new System.Windows.Forms.TextBox();
             this.lblAddSalesQuantity = new System.Windows.Forms.Label();
             this.dgvAddSalesReport = new System.Windows.Forms.DataGridView();
-            this.colAddSalesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddSalesQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddSalesItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddSalesTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAddSalesReport = new System.Windows.Forms.Label();
             this.cmbAddSalesSelect = new System.Windows.Forms.ComboBox();
             this.lblAddSalesSelect = new System.Windows.Forms.Label();
@@ -114,6 +110,13 @@
             this.tabReportOptions = new System.Windows.Forms.TabControl();
             this.tabMonthlyReport = new System.Windows.Forms.TabPage();
             this.tabYearlyReport = new System.Windows.Forms.TabPage();
+            this.colKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddSalesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddSalesQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddSalesItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddSalesTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMonthlyReportTitle = new System.Windows.Forms.Label();
+            this.lblYearlyReportTitle = new System.Windows.Forms.Label();
             this.tabMenu.SuspendLayout();
             this.tabProducts.SuspendLayout();
             this.tabProductOptions.SuspendLayout();
@@ -129,6 +132,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabReports.SuspendLayout();
             this.tabReportOptions.SuspendLayout();
+            this.tabMonthlyReport.SuspendLayout();
+            this.tabYearlyReport.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -630,7 +635,7 @@
             // 
             // btnAddSalesClear
             // 
-            this.btnAddSalesClear.Location = new System.Drawing.Point(996, 533);
+            this.btnAddSalesClear.Location = new System.Drawing.Point(1088, 526);
             this.btnAddSalesClear.Name = "btnAddSalesClear";
             this.btnAddSalesClear.Size = new System.Drawing.Size(192, 73);
             this.btnAddSalesClear.TabIndex = 47;
@@ -656,7 +661,7 @@
             // 
             // btnAddSalesConfirm
             // 
-            this.btnAddSalesConfirm.Location = new System.Drawing.Point(996, 436);
+            this.btnAddSalesConfirm.Location = new System.Drawing.Point(1088, 429);
             this.btnAddSalesConfirm.Name = "btnAddSalesConfirm";
             this.btnAddSalesConfirm.Size = new System.Drawing.Size(192, 73);
             this.btnAddSalesConfirm.TabIndex = 44;
@@ -666,7 +671,7 @@
             // 
             // btnAddSalesAddProduct
             // 
-            this.btnAddSalesAddProduct.Location = new System.Drawing.Point(996, 342);
+            this.btnAddSalesAddProduct.Location = new System.Drawing.Point(1088, 335);
             this.btnAddSalesAddProduct.Name = "btnAddSalesAddProduct";
             this.btnAddSalesAddProduct.Size = new System.Drawing.Size(192, 73);
             this.btnAddSalesAddProduct.TabIndex = 43;
@@ -694,6 +699,7 @@
             // 
             this.dgvAddSalesReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddSalesReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colKey,
             this.colAddSalesName,
             this.colAddSalesQuantity,
             this.colAddSalesItemPrice,
@@ -701,34 +707,8 @@
             this.dgvAddSalesReport.Location = new System.Drawing.Point(6, 272);
             this.dgvAddSalesReport.Name = "dgvAddSalesReport";
             this.dgvAddSalesReport.RowTemplate.Height = 24;
-            this.dgvAddSalesReport.Size = new System.Drawing.Size(968, 334);
+            this.dgvAddSalesReport.Size = new System.Drawing.Size(1076, 334);
             this.dgvAddSalesReport.TabIndex = 40;
-            // 
-            // colAddSalesName
-            // 
-            this.colAddSalesName.HeaderText = "Product";
-            this.colAddSalesName.Name = "colAddSalesName";
-            this.colAddSalesName.ReadOnly = true;
-            this.colAddSalesName.Width = 600;
-            // 
-            // colAddSalesQuantity
-            // 
-            this.colAddSalesQuantity.HeaderText = "Quantity";
-            this.colAddSalesQuantity.Name = "colAddSalesQuantity";
-            this.colAddSalesQuantity.ReadOnly = true;
-            this.colAddSalesQuantity.Width = 125;
-            // 
-            // colAddSalesItemPrice
-            // 
-            this.colAddSalesItemPrice.HeaderText = "Item Price";
-            this.colAddSalesItemPrice.Name = "colAddSalesItemPrice";
-            this.colAddSalesItemPrice.ReadOnly = true;
-            // 
-            // colAddSalesTotal
-            // 
-            this.colAddSalesTotal.HeaderText = "Total";
-            this.colAddSalesTotal.Name = "colAddSalesTotal";
-            this.colAddSalesTotal.ReadOnly = true;
             // 
             // lblAddSalesReport
             // 
@@ -940,6 +920,7 @@
             // 
             // tabMonthlyReport
             // 
+            this.tabMonthlyReport.Controls.Add(this.lblMonthlyReportTitle);
             this.tabMonthlyReport.Location = new System.Drawing.Point(4, 40);
             this.tabMonthlyReport.Name = "tabMonthlyReport";
             this.tabMonthlyReport.Padding = new System.Windows.Forms.Padding(3);
@@ -950,6 +931,7 @@
             // 
             // tabYearlyReport
             // 
+            this.tabYearlyReport.Controls.Add(this.lblYearlyReportTitle);
             this.tabYearlyReport.Location = new System.Drawing.Point(4, 40);
             this.tabYearlyReport.Name = "tabYearlyReport";
             this.tabYearlyReport.Padding = new System.Windows.Forms.Padding(3);
@@ -957,6 +939,57 @@
             this.tabYearlyReport.TabIndex = 1;
             this.tabYearlyReport.Text = "Yearly Report";
             this.tabYearlyReport.UseVisualStyleBackColor = true;
+            // 
+            // colKey
+            // 
+            this.colKey.HeaderText = "Key";
+            this.colKey.Name = "colKey";
+            // 
+            // colAddSalesName
+            // 
+            this.colAddSalesName.HeaderText = "Product";
+            this.colAddSalesName.Name = "colAddSalesName";
+            this.colAddSalesName.ReadOnly = true;
+            this.colAddSalesName.Width = 600;
+            // 
+            // colAddSalesQuantity
+            // 
+            this.colAddSalesQuantity.HeaderText = "Quantity";
+            this.colAddSalesQuantity.Name = "colAddSalesQuantity";
+            this.colAddSalesQuantity.ReadOnly = true;
+            this.colAddSalesQuantity.Width = 125;
+            // 
+            // colAddSalesItemPrice
+            // 
+            this.colAddSalesItemPrice.HeaderText = "Item Price";
+            this.colAddSalesItemPrice.Name = "colAddSalesItemPrice";
+            this.colAddSalesItemPrice.ReadOnly = true;
+            // 
+            // colAddSalesTotal
+            // 
+            this.colAddSalesTotal.HeaderText = "Total";
+            this.colAddSalesTotal.Name = "colAddSalesTotal";
+            this.colAddSalesTotal.ReadOnly = true;
+            // 
+            // lblMonthlyReportTitle
+            // 
+            this.lblMonthlyReportTitle.AutoSize = true;
+            this.lblMonthlyReportTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonthlyReportTitle.Location = new System.Drawing.Point(388, 3);
+            this.lblMonthlyReportTitle.Name = "lblMonthlyReportTitle";
+            this.lblMonthlyReportTitle.Size = new System.Drawing.Size(393, 63);
+            this.lblMonthlyReportTitle.TabIndex = 25;
+            this.lblMonthlyReportTitle.Text = "Monthly Report";
+            // 
+            // lblYearlyReportTitle
+            // 
+            this.lblYearlyReportTitle.AutoSize = true;
+            this.lblYearlyReportTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYearlyReportTitle.Location = new System.Drawing.Point(512, 3);
+            this.lblYearlyReportTitle.Name = "lblYearlyReportTitle";
+            this.lblYearlyReportTitle.Size = new System.Drawing.Size(357, 63);
+            this.lblYearlyReportTitle.TabIndex = 26;
+            this.lblYearlyReportTitle.Text = "Yearly Report";
             // 
             // frmPeopleHealthPharmacy
             // 
@@ -990,6 +1023,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabReports.ResumeLayout(false);
             this.tabReportOptions.ResumeLayout(false);
+            this.tabMonthlyReport.ResumeLayout(false);
+            this.tabMonthlyReport.PerformLayout();
+            this.tabYearlyReport.ResumeLayout(false);
+            this.tabYearlyReport.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1041,10 +1078,6 @@
         private System.Windows.Forms.Button btnAddSalesConfirm;
         private System.Windows.Forms.Button btnAddSalesAddProduct;
         private System.Windows.Forms.TextBox txtAddSalesQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAddSalesName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAddSalesQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAddSalesItemPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAddSalesTotal;
         private System.Windows.Forms.Label lblAddSalesDate;
         private System.Windows.Forms.DateTimePicker dtmAddSalesDatae;
         private System.Windows.Forms.Label lblEditSalesDate;
@@ -1082,6 +1115,13 @@
         private System.Windows.Forms.Label lblAddProdDiscount;
         private System.Windows.Forms.TextBox txtAddProdKey;
         private System.Windows.Forms.Label lblAddProdKey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colKey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAddSalesName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAddSalesQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAddSalesItemPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAddSalesTotal;
+        private System.Windows.Forms.Label lblMonthlyReportTitle;
+        private System.Windows.Forms.Label lblYearlyReportTitle;
     }
 }
 
