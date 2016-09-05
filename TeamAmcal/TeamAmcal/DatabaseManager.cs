@@ -45,5 +45,26 @@ namespace TeamAmcal
                 }
             }
         }
+
+        public void AddSale(DateTime yyyymmdd, float soldFor, Product p)
+        {
+            foreach (Product pr in productList)
+            {
+                if (pr == p)
+                {
+                    pr.SaleDate.Add(yyyymmdd);
+                    pr.SalePrice.Add(soldFor);
+                    if (File.Exists(Directory.GetCurrentDirectory() + pr.Key + ".json"))
+                    {
+                        JsonSerializer serializer = new JsonSerializer();
+                        using (StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + pr.Key + ".json"))
+                        using (JsonWriter writer = new JsonTextWriter(sw))
+                        {
+                            serializer.Serialize(writer, pr);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
