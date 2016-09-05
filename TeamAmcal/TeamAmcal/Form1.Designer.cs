@@ -32,6 +32,8 @@
             this.tabProducts = new System.Windows.Forms.TabPage();
             this.tabProductOptions = new System.Windows.Forms.TabControl();
             this.tabAddProduct = new System.Windows.Forms.TabPage();
+            this.txtAddProdKey = new System.Windows.Forms.TextBox();
+            this.lblAddProdKey = new System.Windows.Forms.Label();
             this.txtAddProdDiscount = new System.Windows.Forms.TextBox();
             this.lblAddProdDiscount = new System.Windows.Forms.Label();
             this.txtAddProdRetPrice = new System.Windows.Forms.TextBox();
@@ -112,11 +114,6 @@
             this.tabReportOptions = new System.Windows.Forms.TabControl();
             this.tabMonthlyReport = new System.Windows.Forms.TabPage();
             this.tabYearlyReport = new System.Windows.Forms.TabPage();
-            this.txtAddProdKey = new System.Windows.Forms.TextBox();
-            this.lblAddProdKey = new System.Windows.Forms.Label();
-            this.txtEditProdKey = new System.Windows.Forms.TextBox();
-            this.lblEditProdKey = new System.Windows.Forms.Label();
-            this.lblEditProdOldKey = new System.Windows.Forms.Label();
             this.tabMenu.SuspendLayout();
             this.tabProducts.SuspendLayout();
             this.tabProductOptions.SuspendLayout();
@@ -190,10 +187,26 @@
             this.tabAddProduct.Location = new System.Drawing.Point(4, 40);
             this.tabAddProduct.Name = "tabAddProduct";
             this.tabAddProduct.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAddProduct.Size = new System.Drawing.Size(1283, 602);
+            this.tabAddProduct.Size = new System.Drawing.Size(1283, 625);
             this.tabAddProduct.TabIndex = 0;
             this.tabAddProduct.Text = "Add Product";
             this.tabAddProduct.UseVisualStyleBackColor = true;
+            // 
+            // txtAddProdKey
+            // 
+            this.txtAddProdKey.Location = new System.Drawing.Point(401, 432);
+            this.txtAddProdKey.Name = "txtAddProdKey";
+            this.txtAddProdKey.Size = new System.Drawing.Size(618, 38);
+            this.txtAddProdKey.TabIndex = 44;
+            // 
+            // lblAddProdKey
+            // 
+            this.lblAddProdKey.AutoSize = true;
+            this.lblAddProdKey.Location = new System.Drawing.Point(326, 435);
+            this.lblAddProdKey.Name = "lblAddProdKey";
+            this.lblAddProdKey.Size = new System.Drawing.Size(69, 31);
+            this.lblAddProdKey.TabIndex = 43;
+            this.lblAddProdKey.Text = "Key:";
             // 
             // txtAddProdDiscount
             // 
@@ -338,8 +351,6 @@
             // 
             // grpEditProdNew
             // 
-            this.grpEditProdNew.Controls.Add(this.txtEditProdKey);
-            this.grpEditProdNew.Controls.Add(this.lblEditProdKey);
             this.grpEditProdNew.Controls.Add(this.txtEditProdDiscount);
             this.grpEditProdNew.Controls.Add(this.lblEditProdDiscount);
             this.grpEditProdNew.Controls.Add(this.txtEditProdRetPrice);
@@ -477,7 +488,6 @@
             // 
             // grpEditProdOld
             // 
-            this.grpEditProdOld.Controls.Add(this.lblEditProdOldKey);
             this.grpEditProdOld.Controls.Add(this.lblEditProdOldRetPrice);
             this.grpEditProdOld.Controls.Add(this.lblEditProdOldDiscount);
             this.grpEditProdOld.Controls.Add(this.lblEditProdOldName);
@@ -582,7 +592,7 @@
             this.tabSales.Location = new System.Drawing.Point(4, 40);
             this.tabSales.Name = "tabSales";
             this.tabSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSales.Size = new System.Drawing.Size(1309, 658);
+            this.tabSales.Size = new System.Drawing.Size(1309, 679);
             this.tabSales.TabIndex = 1;
             this.tabSales.Text = "Sales";
             this.tabSales.UseVisualStyleBackColor = true;
@@ -913,7 +923,7 @@
             this.tabReports.Controls.Add(this.tabReportOptions);
             this.tabReports.Location = new System.Drawing.Point(4, 40);
             this.tabReports.Name = "tabReports";
-            this.tabReports.Size = new System.Drawing.Size(1309, 658);
+            this.tabReports.Size = new System.Drawing.Size(1309, 679);
             this.tabReports.TabIndex = 2;
             this.tabReports.Text = "Reports";
             this.tabReports.UseVisualStyleBackColor = true;
@@ -947,47 +957,6 @@
             this.tabYearlyReport.TabIndex = 1;
             this.tabYearlyReport.Text = "Yearly Report";
             this.tabYearlyReport.UseVisualStyleBackColor = true;
-            // 
-            // txtAddProdKey
-            // 
-            this.txtAddProdKey.Location = new System.Drawing.Point(401, 432);
-            this.txtAddProdKey.Name = "txtAddProdKey";
-            this.txtAddProdKey.Size = new System.Drawing.Size(618, 38);
-            this.txtAddProdKey.TabIndex = 44;
-            // 
-            // lblAddProdKey
-            // 
-            this.lblAddProdKey.AutoSize = true;
-            this.lblAddProdKey.Location = new System.Drawing.Point(326, 435);
-            this.lblAddProdKey.Name = "lblAddProdKey";
-            this.lblAddProdKey.Size = new System.Drawing.Size(69, 31);
-            this.lblAddProdKey.TabIndex = 43;
-            this.lblAddProdKey.Text = "Key:";
-            // 
-            // txtEditProdKey
-            // 
-            this.txtEditProdKey.Location = new System.Drawing.Point(234, 411);
-            this.txtEditProdKey.Name = "txtEditProdKey";
-            this.txtEditProdKey.Size = new System.Drawing.Size(365, 38);
-            this.txtEditProdKey.TabIndex = 42;
-            // 
-            // lblEditProdKey
-            // 
-            this.lblEditProdKey.AutoSize = true;
-            this.lblEditProdKey.Location = new System.Drawing.Point(159, 414);
-            this.lblEditProdKey.Name = "lblEditProdKey";
-            this.lblEditProdKey.Size = new System.Drawing.Size(69, 31);
-            this.lblEditProdKey.TabIndex = 41;
-            this.lblEditProdKey.Text = "Key:";
-            // 
-            // lblEditProdOldKey
-            // 
-            this.lblEditProdOldKey.AutoSize = true;
-            this.lblEditProdOldKey.Location = new System.Drawing.Point(227, 411);
-            this.lblEditProdOldKey.Name = "lblEditProdOldKey";
-            this.lblEditProdOldKey.Size = new System.Drawing.Size(69, 31);
-            this.lblEditProdOldKey.TabIndex = 43;
-            this.lblEditProdOldKey.Text = "Key:";
             // 
             // frmPeopleHealthPharmacy
             // 
@@ -1113,9 +1082,6 @@
         private System.Windows.Forms.Label lblAddProdDiscount;
         private System.Windows.Forms.TextBox txtAddProdKey;
         private System.Windows.Forms.Label lblAddProdKey;
-        private System.Windows.Forms.TextBox txtEditProdKey;
-        private System.Windows.Forms.Label lblEditProdKey;
-        private System.Windows.Forms.Label lblEditProdOldKey;
     }
 }
 
