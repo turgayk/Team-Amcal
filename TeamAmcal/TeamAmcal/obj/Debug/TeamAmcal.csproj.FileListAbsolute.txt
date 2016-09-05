@@ -7,3 +7,6 @@ C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal
 C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csproj.GenerateResource.Cache
 C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.exe
 C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.pdb
+C:\Users\ramanpreet\Documents\Visual Studio 2015\Projects\semester 1\accessatextfile\ConsoleApplication5\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe.config
+C:\Users\ramanpreet\Documents\Visual Studio 2015\Projects\semester 1\accessatextfile\ConsoleApplication5\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.exe
+C:\Users\ramanpreet\Documents\Visual Studio 2015\Projects\semester 1\accessatextfile\ConsoleApplication5\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.pdb
