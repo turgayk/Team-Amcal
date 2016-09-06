@@ -45,15 +45,6 @@
     "Total": 5.0
   },
   {
-    "Key": 5,
-    "Product": "testProduct",
-    "Date": "testDate2",
-    "Quantity": 5,
-    "Price": 5.0,
-    "Discounted": 5.0,
-    "Total": 5.0
-  },
-  {
     "Key": 6,
     "Product": "testProduct",
     "Date": "testDate2",
