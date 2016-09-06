@@ -21,12 +21,7 @@ namespace TeamAmcal
                 s.Key = 0;
                 salesList.Add(s);
 
-                StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + Product + "_Sales" + ".json");
-
-                string stest = (JsonConvert.SerializeObject(salesList, Formatting.Indented));
-
-                sw.Write(stest);
-                sw.Close();
+                WriteSalesData(Product);
             }
             else
             {
@@ -37,11 +32,16 @@ namespace TeamAmcal
 
                 File.WriteAllText(Directory.GetCurrentDirectory() + Product + "_Sales" + ".json", String.Empty);
 
-                StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + Product + "_Sales" + ".json");
-
-                sw.Write(JsonConvert.SerializeObject(salesList, Formatting.Indented));
-                sw.Close();
+                WriteSalesData(Product);
             }
+        }
+
+        public void WriteSalesData(string Product)
+        {
+            StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + Product + "_Sales" + ".json");
+
+            sw.Write(JsonConvert.SerializeObject(salesList, Formatting.Indented));
+            sw.Close();
         }
 
         public void ReadSalesData(string Product)
@@ -53,9 +53,40 @@ namespace TeamAmcal
             sr.Close();
         }
 
-        public void EditSalesData(string Product, string Date, int Quantity, float Price, float Discounted, float Total)
+        public void EditSalesData(int Key, string Product, string Date, int Quantity, float Price, float Discounted, float Total)
         {
-            //...
+            ReadSalesData(Product);
+
+            foreach (SalesData sd in salesList)
+            {
+                if (sd.Key == Key)
+                {
+                    sd.Date = Date;
+                    sd.Quantity = Quantity;
+                    sd.Price = Price;
+                    sd.Discounted = Discounted;
+                    sd.Total = Total;
+                    break;
+                }
+            }
+
+            WriteSalesData(Product);
+        }
+
+        public void DeleteSalesData(int Key, string Product)
+        {
+            ReadSalesData(Product);
+
+            foreach (SalesData sd in salesList)
+            {
+                if (sd.Key == Key)
+                {
+                    salesList.Remove(sd);
+                    break;
+                }
+            }
+
+            WriteSalesData(Product);
         }
 
         public float AddTotals(string Product)
