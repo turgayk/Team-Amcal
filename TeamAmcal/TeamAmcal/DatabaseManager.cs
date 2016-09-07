@@ -46,6 +46,9 @@ namespace TeamAmcal
             }
         }
 
+        /// <summary>
+        /// Adds a new sale data to a product
+        /// </summary>
         public void AddSale(DateTime yyyymmdd, float soldFor, Product p)
         {
             foreach (Product pr in productList)
@@ -65,6 +68,27 @@ namespace TeamAmcal
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns a list of items sold based on input date
+        /// </summary>
+        public List<Sale> SalesByDate(int year, int month)
+        {
+            List<Sale> result = new List<Sale>();
+            foreach(Product p in productList)
+            {
+                int i = 0;
+                foreach (DateTime t in p.SaleDate)
+                {
+                    i++;
+                    if (t.Month == month && t.Year == year)
+                    {
+                        result.Add(new Sale(p.Name, p.SalePrice[i], t));
+                    }
+                }
+            }
+            return result;
         }
     }
 }
