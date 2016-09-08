@@ -12,6 +12,25 @@ namespace TeamAmcal
     {
         private List<Product> productList = new List<Product>();
 
+        public void WriteData()
+        {
+            File.WriteAllText(Directory.GetCurrentDirectory() + "Database" + ".json", String.Empty);
+
+            StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + "Database" + ".json");
+
+            sw.Write(JsonConvert.SerializeObject(productList, Formatting.Indented));
+            sw.Close();
+        }
+
+        public void ReadData()
+        {
+            StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "Database" + ".json");
+            if (!sr.EndOfStream)
+                productList = JsonConvert.DeserializeObject<List<Product>>(sr.ReadToEnd());
+
+            sr.Close();
+        }
+
         //Products
         public void AddProduct(string Name, string Supplier, int Quantity, float Price, float RRP, float Discounted)
         {
@@ -24,37 +43,18 @@ namespace TeamAmcal
             }
             else
             {
-                ReadProductData();
+                ReadData();
 
                 p.Key = (productList.ElementAt(productList.Count - 1).Key + 1);
                 productList.Add(p);
             }
 
-            WriteProductData();
-        }
-
-        public void WriteProductData()
-        {
-            File.WriteAllText(Directory.GetCurrentDirectory() + "Database" + ".json", String.Empty);
-
-            StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + "Database" + ".json");
-
-            sw.Write(JsonConvert.SerializeObject(productList, Formatting.Indented));
-            sw.Close();
-        }
-
-        public void ReadProductData()
-        {
-            StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "Database" + ".json");
-            if (!sr.EndOfStream)
-                productList = JsonConvert.DeserializeObject<List<Product>>(sr.ReadToEnd());
-
-            sr.Close();
+            WriteData();
         }
 
         public void EditProductData(int Key, string Name, string Supplier, int Quantity, float Price, float RRP, float Discounted)
         {
-            ReadProductData();
+            ReadData();
 
             foreach (Product p in productList)
             {
@@ -69,33 +69,33 @@ namespace TeamAmcal
                 }
             }
 
-            WriteSalesData();
+            WriteData();
         }
 
-        public void DeleteProductData(string Product, int salesKey)
+        public void DeleteProductData(int Key)
         {
-            ReadSalesData();
+            ReadData();
 
             foreach (Product p in productList)
             {
-                if (p.Name == Product)
+                if (p.Key == Key)
                 {
                     productList.Remove(p);
                     break;
                 }
             }
 
-            WriteSalesData();
+            WriteData();
         }
 
         //Sales
-        public void AddSalesData(string Product, string Date, int Quantity, float Price, float Discounted, float Total)
+        public void AddSalesData(int productKey, string Date, int Quantity, float Price, float Discounted, float Total)
         {
-            SalesData s = new SalesData(Product, Date, Quantity, Price, Discounted, Total);
+            SalesData s = new SalesData(Date, Quantity, Price, Discounted, Total);
 
             foreach(Product p in productList)
             {
-                if (Product == p.Name)
+                if (p.Key == productKey)
                 {
                     if (p.SaleData.Any())
                         s.Key = p.SaleData.ElementAt(p.SaleData.Count - 1).Key + 1;
@@ -106,33 +106,16 @@ namespace TeamAmcal
                 }
             }
 
-            WriteSalesData();
+            WriteData();
         }
 
-        public void WriteSalesData()
+        public void EditSalesData(int productKey, int salesKey, string Date, int Quantity, float Price, float Discounted, float Total)
         {
-            StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + "Database" + ".json");
-
-            sw.Write(JsonConvert.SerializeObject(productList, Formatting.Indented));
-            sw.Close();
-        }
-
-        public void ReadSalesData()
-        {
-            StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "Database" + ".json");
-            if (!sr.EndOfStream)
-                productList = JsonConvert.DeserializeObject<List<Product>>(sr.ReadToEnd());
-
-            sr.Close();
-        }
-
-        public void EditSalesData(string Product, int salesKey, string Date, int Quantity, float Price, float Discounted, float Total)
-        {
-            ReadSalesData();
+            ReadData();
 
             foreach (Product p in productList)
             {
-                if (p.Name == Product)
+                if (p.Key == productKey)
                 {
                     foreach (SalesData sd in p.SaleData)
                     {
@@ -149,16 +132,16 @@ namespace TeamAmcal
                 }
             }
 
-            WriteSalesData();
+            WriteData();
         }
         
-        public void DeleteSalesData(string Product, int salesKey)
+        public void DeleteSalesData(int productKey, int salesKey)
         {
-            ReadSalesData();
+            ReadData();
 
             foreach (Product p in productList)
             {
-                if (p.Name == Product)
+                if (p.Key == productKey)
                 {
                     foreach (SalesData sd in p.SaleData)
                     {
@@ -171,18 +154,18 @@ namespace TeamAmcal
                 }
             }
 
-            WriteSalesData();
+            WriteData();
         }
         
-        public float AddTotals(string Product)
+        public float AddTotals(int Key)
         {
-            ReadSalesData();
+            ReadData();
 
             float total = 0;
 
             foreach (Product p in productList)
             {
-                if (p.Name == Product)
+                if (p.Key == Key)
                 {
                     foreach (SalesData sd in p.SaleData)
                     {

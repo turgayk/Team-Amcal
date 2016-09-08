@@ -8,9 +8,8 @@ namespace TeamAmcal
 {
     class SalesData
     {
-        public SalesData(string rProduct, string rDate, int rQuantity, float rPrice, float rDiscounted, float rTotal)
+        public SalesData(string rDate, int rQuantity, float rPrice, float rDiscounted, float rTotal)
         {
-            Product = rProduct;
             Date = rDate;
             Quantity = rQuantity;
             Price = rPrice;
@@ -19,7 +18,6 @@ namespace TeamAmcal
         }
 
         public int Key { get; set; }
-        public string Product { get; set; }
         public string Date { get; set; }
         public int Quantity { get; set; }
         public float Price { get; set; }
