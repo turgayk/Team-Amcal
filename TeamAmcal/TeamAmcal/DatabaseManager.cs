@@ -45,5 +45,50 @@ namespace TeamAmcal
                 }
             }
         }
+
+        /// <summary>
+        /// Adds a new sale data to a product
+        /// </summary>
+        public void AddSale(DateTime yyyymmdd, float soldFor, Product p)
+        {
+            foreach (Product pr in productList)
+            {
+                if (pr == p)
+                {
+                    pr.SaleDate.Add(yyyymmdd);
+                    pr.SalePrice.Add(soldFor);
+                    if (File.Exists(Directory.GetCurrentDirectory() + pr.Key + ".json"))
+                    {
+                        JsonSerializer serializer = new JsonSerializer();
+                        using (StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + pr.Key + ".json"))
+                        using (JsonWriter writer = new JsonTextWriter(sw))
+                        {
+                            serializer.Serialize(writer, pr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns a list of items sold based on input date
+        /// </summary>
+        public List<Sale> SalesByDate(int year, int month)
+        {
+            List<Sale> result = new List<Sale>();
+            foreach(Product p in productList)
+            {
+                int i = 0;
+                foreach (DateTime t in p.SaleDate)
+                {
+                    i++;
+                    if (t.Month == month && t.Year == year)
+                    {
+                        result.Add(new Sale(p.Name, p.SalePrice[i], t));
+                    }
+                }
+            }
+            return result;
+        }
     }
 }
