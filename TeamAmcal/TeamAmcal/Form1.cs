@@ -20,6 +20,12 @@ namespace TeamAmcal
             InitializeComponent();
         } // end default constructor
 
+        private void updateList()
+        {
+            fProducts = new BindingList<Product>(fDataManager.ProductList);
+            cmbEditProdSelect.DataSource = fProducts;
+        }
+
         private void frmPeopleHealthPharmacy_Load(object sender, EventArgs e)
         {
             fDataManager = new DatabaseManager();
@@ -54,7 +60,7 @@ namespace TeamAmcal
             // add code here
         } // end btnEditProdConfirmChanges_Click
 
-        private void btnAddProduct_Click(object sender, EventArgs e)
+        private void addProduct()
         {
             string lKey = txtAddProdKey.Text;
             string lName = txtAddProdName.Text;
@@ -66,8 +72,11 @@ namespace TeamAmcal
 
             fDataManager.CreateProduct(lKey, lName, lSupplier, lQuantity, lPrice, lRetPrice, lDiscount);
 
-            cmbEditProdSelect.DataSource = fDataManager.ProductList;
+            updateList();
+        } // end addProduct
 
+        private void displayProduct()
+        {
             string lDisplay = "";
 
             lDisplay += "Product Name: " + txtAddProdName.Text + "\n";
@@ -79,33 +88,34 @@ namespace TeamAmcal
             lDisplay += "Key: " + txtAddProdKey.Text + "\n";
 
             MessageBox.Show(lDisplay, "Product to Add:", MessageBoxButtons.OK);
+        } // end displayProduct
 
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            addProduct();
+            displayProduct();
         } // end btnAddProduct_Click
 
-        private void btnEditProdConfirmChanges_Click_1(object sender, EventArgs e)
+        private void changeProduct(Product aProduct)
         {
-            //ComboBox lCMB = (ComboBox)sender;
-            int lIndex = cmbEditProdSelect.SelectedIndex;//  lCMB.SelectedIndex;
-            Product lTempProd = fDataManager.getProduct(lIndex);
+            if (txtEditProdName.Text != "")
+                aProduct.Name = txtEditProdName.Text;
+            if (txtEditProdPrice.Text != "")
+                aProduct.Price = float.Parse(txtEditProdPrice.Text);
+            if (txtEditProdQuantity.Text != "")
+                aProduct.Quantity = int.Parse(txtEditProdQuantity.Text);
+            if (txtEditProdSupplier.Text != "")
+                aProduct.Supplier = txtEditProdSupplier.Text;
+            if (txtEditProdRetPrice.Text != "")
+                aProduct.RRP = float.Parse(txtEditProdRetPrice.Text);
+            if (txtEditProdDiscount.Text != "")
+                aProduct.Discounted = float.Parse(txtEditProdDiscount.Text);
 
-            if (lTempProd != null)
-            {
-                if (txtEditProdName.Text != "")
-                    lTempProd.Name = txtEditProdName.Text;
-                if (txtEditProdPrice.Text != "")
-                    lTempProd.Price = float.Parse(txtEditProdPrice.Text);
-                if (txtEditProdQuantity.Text != "")
-                    lTempProd.Quantity = int.Parse(txtEditProdQuantity.Text);
-                if (txtEditProdSupplier.Text != "")
-                    lTempProd.Supplier = txtEditProdSupplier.Text;
-                if (txtEditProdRetPrice.Text != "")
-                    lTempProd.RRP = float.Parse(txtEditProdRetPrice.Text);
-                if (txtEditProdDiscount.Text != "")
-                    lTempProd.Discounted = float.Parse(txtEditProdDiscount.Text);
-            }
-            else
-                throw new IndexOutOfRangeException("Error. No Product found");
+            updateList();
+        } // end changeProduct
 
+        private void displayChanges()
+        {
             string lDisplay = "";
 
             if (txtEditProdName.Text != "")
@@ -122,6 +132,21 @@ namespace TeamAmcal
                 lDisplay += "Discount Percentage: " + txtEditProdDiscount.Text + "\n";
 
             MessageBox.Show(lDisplay, "Product to Edit:", MessageBoxButtons.OK);
+        }
+
+        private void btnEditProdConfirmChanges_Click_1(object sender, EventArgs e)
+        {
+            //ComboBox lCMB = (ComboBox)sender;
+            int lIndex = cmbEditProdSelect.SelectedIndex;//  lCMB.SelectedIndex;
+            Product lTempProd = fDataManager.getProduct(lIndex);
+
+            if (lTempProd != null)
+            {
+                changeProduct(lTempProd);
+                displayChanges();
+            }
+            else
+                throw new IndexOutOfRangeException("Error. No Product found");
         } // end btnEditProdConfirmChanges_Click_1
 
         private void btnEditProdClearInput_Click(object sender, EventArgs e)
