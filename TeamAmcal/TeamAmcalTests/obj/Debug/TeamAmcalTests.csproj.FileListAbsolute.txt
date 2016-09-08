@@ -1,0 +1,10 @@
+C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcalTests\bin\Debug\TeamAmcalTests.dll
+C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcalTests\bin\Debug\TeamAmcalTests.pdb
+C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcalTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcalTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcalTests\bin\Debug\TeamAmcal.pdb
+C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcalTests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcalTests\obj\Debug\TeamAmcalTests.csprojResolveAssemblyReference.cache
+C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcalTests\obj\Debug\TeamAmcalTests.dll
+C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcalTests\obj\Debug\TeamAmcalTests.pdb
+C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcalTests\bin\Debug\TeamAmcal.dll

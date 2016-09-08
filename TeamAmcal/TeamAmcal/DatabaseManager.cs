@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
-
+/*
 namespace TeamAmcal
 {
     class DatabaseManager
@@ -92,3 +92,4 @@ namespace TeamAmcal
         }
     }
 }
+*/

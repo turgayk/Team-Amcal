@@ -1,0 +1,149 @@
+[
+  {
+    "Key": 0,
+    "Name": "testProduct",
+    "Supplier": "test",
+    "Quantity": 1,
+    "Price": 1.0,
+    "RRP": 1.0,
+    "Discounted": 1.0,
+    "SaleData": [
+      {
+        "Key": 0,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 0,
+        "Price": 0.0,
+        "Discounted": 0.0,
+        "Total": 0.0
+      },
+      {
+        "Key": 1,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 1,
+        "Price": 1.0,
+        "Discounted": 1.0,
+        "Total": 1.0
+      },
+      {
+        "Key": 2,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 2,
+        "Price": 2.0,
+        "Discounted": 2.0,
+        "Total": 2.0
+      },
+      {
+        "Key": 3,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 3,
+        "Price": 3.0,
+        "Discounted": 3.0,
+        "Total": 3.0
+      },
+      {
+        "Key": 4,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 4,
+        "Price": 4.0,
+        "Discounted": 4.0,
+        "Total": 4.0
+      },
+      {
+        "Key": 6,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 6,
+        "Price": 6.0,
+        "Discounted": 6.0,
+        "Total": 6.0
+      },
+      {
+        "Key": 7,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 7,
+        "Price": 7.0,
+        "Discounted": 7.0,
+        "Total": 7.0
+      },
+      {
+        "Key": 8,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 8,
+        "Price": 8.0,
+        "Discounted": 8.0,
+        "Total": 8.0
+      },
+      {
+        "Key": 9,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 9,
+        "Price": 9.0,
+        "Discounted": 9.0,
+        "Total": 9.0
+      },
+      {
+        "Key": 10,
+        "Product": "testProduct",
+        "Date": "NEWDATE",
+        "Quantity": 55,
+        "Price": 55.0,
+        "Discounted": 55.0,
+        "Total": 55.0
+      },
+      {
+        "Key": 11,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 11,
+        "Price": 11.0,
+        "Discounted": 11.0,
+        "Total": 11.0
+      },
+      {
+        "Key": 12,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 12,
+        "Price": 12.0,
+        "Discounted": 12.0,
+        "Total": 12.0
+      },
+      {
+        "Key": 13,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 13,
+        "Price": 13.0,
+        "Discounted": 13.0,
+        "Total": 13.0
+      },
+      {
+        "Key": 14,
+        "Product": "testProduct",
+        "Date": "testDate",
+        "Quantity": 14,
+        "Price": 14.0,
+        "Discounted": 14.0,
+        "Total": 14.0
+      }
+    ]
+  },
+  {
+    "Key": 1,
+    "Name": "testProduct2",
+    "Supplier": "test",
+    "Quantity": 1,
+    "Price": 1.0,
+    "RRP": 1.0,
+    "Discounted": 1.0,
+    "SaleData": []
+  }
+]

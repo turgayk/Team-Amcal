@@ -18,17 +18,15 @@ namespace TeamAmcal
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
 
+            SuperUltraMegaDatabaseManager sumdm = new SuperUltraMegaDatabaseManager();
 
-            //Testing
-            Sales s = new Sales();
-            //s.AddSalesData("testProduct", "testDate", 10, 10, 10, 10);
+            //sumdm.AddProduct("testProduct2", "test", 1, 1, 1, 1);
+            //for (int i = 10; i < 15; i++)
+            //    sumdm.AddSalesData("testProduct", "testDate", i, i, i, i);
 
-            /*for (int i = 0; i < 10; i++)
-                s.AddSalesData("testProduct", "testDate2", 5, 5, 5, 5);*/
+            //sumdm.EditSalesData("testProduct", 10, "NEWDATE", 55, 55, 55, 55);
 
-            //s.AddTotals("testKey");
-
-            //s.DeleteSalesData(5, "testProduct");
+            //sumdm.DeleteSalesData("testProduct", 5);
         }
     }
 }
