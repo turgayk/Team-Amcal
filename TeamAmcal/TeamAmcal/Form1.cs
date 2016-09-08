@@ -12,6 +12,9 @@ namespace TeamAmcal
 {
     public partial class frmPeopleHealthPharmacy : Form
     {
+        DatabaseManager fDataManager;
+        BindingList<Product> fProducts;
+
         public frmPeopleHealthPharmacy()
         {
             InitializeComponent();
@@ -19,7 +22,19 @@ namespace TeamAmcal
 
         private void frmPeopleHealthPharmacy_Load(object sender, EventArgs e)
         {
+            fDataManager = new DatabaseManager();
 
+            fDataManager.LoadProducts();
+
+            fProducts = new BindingList<Product>(fDataManager.ProductList);
+
+            cmbEditProdSelect.DataSource = fDataManager.ProductList;
+            cmbEditProdSelect.DisplayMember = "Name";
+            cmbEditProdSelect.ValueMember = "Key";
+
+            cmbAddSalesSelect.DataSource = fProducts;
+            cmbAddSalesSelect.DisplayMember = "Name";
+            cmbAddSalesSelect.ValueMember = "Key";
         } // end frmPeopleHealthPharmacy_Load
 
         private void btnAddProdClearInput_Click(object sender, EventArgs e)
@@ -41,22 +56,56 @@ namespace TeamAmcal
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
+            string lKey = txtAddProdKey.Text;
+            string lName = txtAddProdName.Text;
+            float lPrice = float.Parse(txtAddProdPrice.Text);
+            float lRetPrice = float.Parse(txtAddProdRetPrice.Text);
+            string lSupplier = txtAddProdSupplier.Text;
+            float lDiscount = float.Parse(txtAddProdDiscount.Text);
+            int lQuantity = int.Parse(txtAddProdQuantity.Text);
+
+            fDataManager.CreateProduct(lKey, lName, lSupplier, lQuantity, lPrice, lRetPrice, lDiscount);
+
+            cmbEditProdSelect.DataSource = fDataManager.ProductList;
+
             string lDisplay = "";
 
             lDisplay += "Product Name: " + txtAddProdName.Text + "\n";
             lDisplay += "Quantity: " + txtAddProdQuantity.Text + "\n";
             lDisplay += "Price: " + txtAddProdPrice.Text + "\n";
-            lDisplay += "Retail Price: " + txtAddProdRetPrice + "\n";
+            lDisplay += "Retail Price: " + txtAddProdRetPrice.Text + "\n";
             lDisplay += "Supplier: " + txtAddProdSupplier.Text + "\n";
             lDisplay += "Discount: " + txtAddProdDiscount.Text + "\n";
             lDisplay += "Key: " + txtAddProdKey.Text + "\n";
 
             MessageBox.Show(lDisplay, "Product to Add:", MessageBoxButtons.OK);
-            
+
         } // end btnAddProduct_Click
 
         private void btnEditProdConfirmChanges_Click_1(object sender, EventArgs e)
         {
+            //ComboBox lCMB = (ComboBox)sender;
+            int lIndex = cmbEditProdSelect.SelectedIndex;//  lCMB.SelectedIndex;
+            Product lTempProd = fDataManager.getProduct(lIndex);
+
+            if (lTempProd != null)
+            {
+                if (txtEditProdName.Text != "")
+                    lTempProd.Name = txtEditProdName.Text;
+                if (txtEditProdPrice.Text != "")
+                    lTempProd.Price = float.Parse(txtEditProdPrice.Text);
+                if (txtEditProdQuantity.Text != "")
+                    lTempProd.Quantity = int.Parse(txtEditProdQuantity.Text);
+                if (txtEditProdSupplier.Text != "")
+                    lTempProd.Supplier = txtEditProdSupplier.Text;
+                if (txtEditProdRetPrice.Text != "")
+                    lTempProd.RRP = float.Parse(txtEditProdRetPrice.Text);
+                if (txtEditProdDiscount.Text != "")
+                    lTempProd.Discounted = float.Parse(txtEditProdDiscount.Text);
+            }
+            else
+                throw new IndexOutOfRangeException("Error. No Product found");
+
             string lDisplay = "";
 
             if (txtEditProdName.Text != "")
@@ -87,7 +136,7 @@ namespace TeamAmcal
 
         private void btnEditSalesConfirmUpdate_Click(object sender, EventArgs e)
         {
-
+            
         } // end btnEditSalesConfirmUpdate_Click
 
         private void btnEditSalesRemoveProduct_Click(object sender, EventArgs e)
@@ -109,5 +158,25 @@ namespace TeamAmcal
         {
             dgvAddSalesReport.Columns.Clear();
         } // end btnAddSalesClear_Click
+
+        // gets the current product in the Combo box and displays its data in the appropriate text boxes
+        private void cmbEditProdSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //ComboBox lCMB = (ComboBox)sender;
+            int lIndex = cmbEditProdSelect.SelectedIndex; //lCMB.SelectedIndex;
+            Product lTempProd = fDataManager.getProduct(lIndex);
+
+            if (lTempProd != null)
+            {
+                txtEditProdOldName.Text = lTempProd.Name;
+                txtEditProdOldQuantity.Text = lTempProd.Quantity.ToString();
+                txtEditProdOldPrice.Text = lTempProd.Price.ToString();
+                txtEditProdOldRetPrice.Text = lTempProd.RRP.ToString();
+                txtEditProdOldSupplier.Text = lTempProd.Supplier;
+                txtEditProdOldDiscount.Text = lTempProd.Discounted.ToString();
+            }
+            else
+                throw new IndexOutOfRangeException("Error. No Product found");
+        }
     } // end frmPeopleHealthPharmacy
 } // end namespace

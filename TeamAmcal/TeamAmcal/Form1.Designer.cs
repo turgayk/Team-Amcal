@@ -86,6 +86,11 @@
             this.txtAddSalesQuantity = new System.Windows.Forms.TextBox();
             this.lblAddSalesQuantity = new System.Windows.Forms.Label();
             this.dgvAddSalesReport = new System.Windows.Forms.DataGridView();
+            this.colKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddSalesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddSalesQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddSalesItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddSalesTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAddSalesReport = new System.Windows.Forms.Label();
             this.cmbAddSalesSelect = new System.Windows.Forms.ComboBox();
             this.lblAddSalesSelect = new System.Windows.Forms.Label();
@@ -109,14 +114,15 @@
             this.tabReports = new System.Windows.Forms.TabPage();
             this.tabReportOptions = new System.Windows.Forms.TabControl();
             this.tabMonthlyReport = new System.Windows.Forms.TabPage();
-            this.tabYearlyReport = new System.Windows.Forms.TabPage();
-            this.colKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddSalesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddSalesQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddSalesItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddSalesTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMonthlyReportTitle = new System.Windows.Forms.Label();
+            this.tabYearlyReport = new System.Windows.Forms.TabPage();
             this.lblYearlyReportTitle = new System.Windows.Forms.Label();
+            this.txtEditProdOldName = new System.Windows.Forms.TextBox();
+            this.txtEditProdOldQuantity = new System.Windows.Forms.TextBox();
+            this.txtEditProdOldPrice = new System.Windows.Forms.TextBox();
+            this.txtEditProdOldRetPrice = new System.Windows.Forms.TextBox();
+            this.txtEditProdOldSupplier = new System.Windows.Forms.TextBox();
+            this.txtEditProdOldDiscount = new System.Windows.Forms.TextBox();
             this.tabMenu.SuspendLayout();
             this.tabProducts.SuspendLayout();
             this.tabProductOptions.SuspendLayout();
@@ -417,6 +423,8 @@
             this.cmbEditProdSelect.Name = "cmbEditProdSelect";
             this.cmbEditProdSelect.Size = new System.Drawing.Size(365, 39);
             this.cmbEditProdSelect.TabIndex = 36;
+            this.cmbEditProdSelect.ValueMember = "Key";
+            this.cmbEditProdSelect.SelectedIndexChanged += new System.EventHandler(this.cmbEditProdSelect_SelectedIndexChanged);
             // 
             // lblEditProdName
             // 
@@ -493,6 +501,12 @@
             // 
             // grpEditProdOld
             // 
+            this.grpEditProdOld.Controls.Add(this.txtEditProdOldDiscount);
+            this.grpEditProdOld.Controls.Add(this.txtEditProdOldSupplier);
+            this.grpEditProdOld.Controls.Add(this.txtEditProdOldRetPrice);
+            this.grpEditProdOld.Controls.Add(this.txtEditProdOldPrice);
+            this.grpEditProdOld.Controls.Add(this.txtEditProdOldQuantity);
+            this.grpEditProdOld.Controls.Add(this.txtEditProdOldName);
             this.grpEditProdOld.Controls.Add(this.lblEditProdOldRetPrice);
             this.grpEditProdOld.Controls.Add(this.lblEditProdOldDiscount);
             this.grpEditProdOld.Controls.Add(this.lblEditProdOldName);
@@ -709,6 +723,37 @@
             this.dgvAddSalesReport.RowTemplate.Height = 24;
             this.dgvAddSalesReport.Size = new System.Drawing.Size(1076, 334);
             this.dgvAddSalesReport.TabIndex = 40;
+            // 
+            // colKey
+            // 
+            this.colKey.HeaderText = "Key";
+            this.colKey.Name = "colKey";
+            // 
+            // colAddSalesName
+            // 
+            this.colAddSalesName.HeaderText = "Product";
+            this.colAddSalesName.Name = "colAddSalesName";
+            this.colAddSalesName.ReadOnly = true;
+            this.colAddSalesName.Width = 600;
+            // 
+            // colAddSalesQuantity
+            // 
+            this.colAddSalesQuantity.HeaderText = "Quantity";
+            this.colAddSalesQuantity.Name = "colAddSalesQuantity";
+            this.colAddSalesQuantity.ReadOnly = true;
+            this.colAddSalesQuantity.Width = 125;
+            // 
+            // colAddSalesItemPrice
+            // 
+            this.colAddSalesItemPrice.HeaderText = "Item Price";
+            this.colAddSalesItemPrice.Name = "colAddSalesItemPrice";
+            this.colAddSalesItemPrice.ReadOnly = true;
+            // 
+            // colAddSalesTotal
+            // 
+            this.colAddSalesTotal.HeaderText = "Total";
+            this.colAddSalesTotal.Name = "colAddSalesTotal";
+            this.colAddSalesTotal.ReadOnly = true;
             // 
             // lblAddSalesReport
             // 
@@ -929,6 +974,16 @@
             this.tabMonthlyReport.Text = "Monthly Report";
             this.tabMonthlyReport.UseVisualStyleBackColor = true;
             // 
+            // lblMonthlyReportTitle
+            // 
+            this.lblMonthlyReportTitle.AutoSize = true;
+            this.lblMonthlyReportTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonthlyReportTitle.Location = new System.Drawing.Point(388, 3);
+            this.lblMonthlyReportTitle.Name = "lblMonthlyReportTitle";
+            this.lblMonthlyReportTitle.Size = new System.Drawing.Size(393, 63);
+            this.lblMonthlyReportTitle.TabIndex = 25;
+            this.lblMonthlyReportTitle.Text = "Monthly Report";
+            // 
             // tabYearlyReport
             // 
             this.tabYearlyReport.Controls.Add(this.lblYearlyReportTitle);
@@ -940,47 +995,6 @@
             this.tabYearlyReport.Text = "Yearly Report";
             this.tabYearlyReport.UseVisualStyleBackColor = true;
             // 
-            // colKey
-            // 
-            this.colKey.HeaderText = "Key";
-            this.colKey.Name = "colKey";
-            // 
-            // colAddSalesName
-            // 
-            this.colAddSalesName.HeaderText = "Product";
-            this.colAddSalesName.Name = "colAddSalesName";
-            this.colAddSalesName.ReadOnly = true;
-            this.colAddSalesName.Width = 600;
-            // 
-            // colAddSalesQuantity
-            // 
-            this.colAddSalesQuantity.HeaderText = "Quantity";
-            this.colAddSalesQuantity.Name = "colAddSalesQuantity";
-            this.colAddSalesQuantity.ReadOnly = true;
-            this.colAddSalesQuantity.Width = 125;
-            // 
-            // colAddSalesItemPrice
-            // 
-            this.colAddSalesItemPrice.HeaderText = "Item Price";
-            this.colAddSalesItemPrice.Name = "colAddSalesItemPrice";
-            this.colAddSalesItemPrice.ReadOnly = true;
-            // 
-            // colAddSalesTotal
-            // 
-            this.colAddSalesTotal.HeaderText = "Total";
-            this.colAddSalesTotal.Name = "colAddSalesTotal";
-            this.colAddSalesTotal.ReadOnly = true;
-            // 
-            // lblMonthlyReportTitle
-            // 
-            this.lblMonthlyReportTitle.AutoSize = true;
-            this.lblMonthlyReportTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonthlyReportTitle.Location = new System.Drawing.Point(388, 3);
-            this.lblMonthlyReportTitle.Name = "lblMonthlyReportTitle";
-            this.lblMonthlyReportTitle.Size = new System.Drawing.Size(393, 63);
-            this.lblMonthlyReportTitle.TabIndex = 25;
-            this.lblMonthlyReportTitle.Text = "Monthly Report";
-            // 
             // lblYearlyReportTitle
             // 
             this.lblYearlyReportTitle.AutoSize = true;
@@ -990,6 +1004,54 @@
             this.lblYearlyReportTitle.Size = new System.Drawing.Size(357, 63);
             this.lblYearlyReportTitle.TabIndex = 26;
             this.lblYearlyReportTitle.Text = "Yearly Report";
+            // 
+            // txtEditProdOldName
+            // 
+            this.txtEditProdOldName.Location = new System.Drawing.Point(318, 63);
+            this.txtEditProdOldName.Name = "txtEditProdOldName";
+            this.txtEditProdOldName.ReadOnly = true;
+            this.txtEditProdOldName.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldName.TabIndex = 42;
+            // 
+            // txtEditProdOldQuantity
+            // 
+            this.txtEditProdOldQuantity.Location = new System.Drawing.Point(318, 118);
+            this.txtEditProdOldQuantity.Name = "txtEditProdOldQuantity";
+            this.txtEditProdOldQuantity.ReadOnly = true;
+            this.txtEditProdOldQuantity.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldQuantity.TabIndex = 42;
+            // 
+            // txtEditProdOldPrice
+            // 
+            this.txtEditProdOldPrice.Location = new System.Drawing.Point(318, 170);
+            this.txtEditProdOldPrice.Name = "txtEditProdOldPrice";
+            this.txtEditProdOldPrice.ReadOnly = true;
+            this.txtEditProdOldPrice.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldPrice.TabIndex = 42;
+            // 
+            // txtEditProdOldRetPrice
+            // 
+            this.txtEditProdOldRetPrice.Location = new System.Drawing.Point(318, 232);
+            this.txtEditProdOldRetPrice.Name = "txtEditProdOldRetPrice";
+            this.txtEditProdOldRetPrice.ReadOnly = true;
+            this.txtEditProdOldRetPrice.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldRetPrice.TabIndex = 42;
+            // 
+            // txtEditProdOldSupplier
+            // 
+            this.txtEditProdOldSupplier.Location = new System.Drawing.Point(318, 293);
+            this.txtEditProdOldSupplier.Name = "txtEditProdOldSupplier";
+            this.txtEditProdOldSupplier.ReadOnly = true;
+            this.txtEditProdOldSupplier.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldSupplier.TabIndex = 42;
+            // 
+            // txtEditProdOldDiscount
+            // 
+            this.txtEditProdOldDiscount.Location = new System.Drawing.Point(318, 349);
+            this.txtEditProdOldDiscount.Name = "txtEditProdOldDiscount";
+            this.txtEditProdOldDiscount.ReadOnly = true;
+            this.txtEditProdOldDiscount.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldDiscount.TabIndex = 42;
             // 
             // frmPeopleHealthPharmacy
             // 
@@ -1122,6 +1184,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAddSalesTotal;
         private System.Windows.Forms.Label lblMonthlyReportTitle;
         private System.Windows.Forms.Label lblYearlyReportTitle;
+        private System.Windows.Forms.TextBox txtEditProdOldDiscount;
+        private System.Windows.Forms.TextBox txtEditProdOldSupplier;
+        private System.Windows.Forms.TextBox txtEditProdOldRetPrice;
+        private System.Windows.Forms.TextBox txtEditProdOldPrice;
+        private System.Windows.Forms.TextBox txtEditProdOldQuantity;
+        private System.Windows.Forms.TextBox txtEditProdOldName;
     }
 }
 
