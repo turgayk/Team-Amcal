@@ -12,6 +12,14 @@ namespace TeamAmcal
     {
         private List<Product> productList = new List<Product>();
 
+        public List<Product> ProductList
+        {
+            get
+            {
+                return productList;
+            } // end get
+        } // end ProductList
+
         public void WriteData()
         {
             File.WriteAllText(Directory.GetCurrentDirectory() + "Database" + ".json", String.Empty);
@@ -60,12 +68,18 @@ namespace TeamAmcal
             {
                 if (p.Key == Key)
                 {
-                    p.Name = Name;
-                    p.Supplier = Supplier;
-                    p.Quantity = Quantity;
-                    p.Price = Price;
-                    p.RRP = RRP;
-                    p.Discounted = Discounted;
+                    if (Name != "")
+                        p.Name = Name;
+                    if (Supplier != "")
+                        p.Supplier = Supplier;
+                    if (Quantity != -1)
+                        p.Quantity = Quantity;
+                    if (Price != -1.0)
+                        p.Price = Price;
+                    if (RRP != -1.0)
+                        p.RRP = RRP;
+                    if (Discounted != -1)
+                        p.Discounted = Discounted;
                 }
             }
 
