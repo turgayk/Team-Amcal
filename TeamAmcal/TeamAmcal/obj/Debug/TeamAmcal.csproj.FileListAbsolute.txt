@@ -19,3 +19,5 @@ C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmca
 C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe.config
 C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe
 C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.exe
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.exe
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.pdb
