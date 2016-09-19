@@ -26,7 +26,7 @@ namespace TeamAmcal
                 return null;
             else
                 return productList[aIndex];
-        }
+        } // end getProduct
 
         /// <summary>
         /// Reads .json files and creates and adds new products to the list.

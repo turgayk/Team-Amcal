@@ -20,6 +20,14 @@ namespace TeamAmcal
             } // end get
         } // end ProductList
 
+        public Product getProduct(int aIndex)
+        {
+            if (aIndex < 0 || aIndex >= productList.Count)
+                return null;
+            else
+                return productList[aIndex];
+        } // end getProduct
+
         public void WriteData()
         {
             File.WriteAllText(Directory.GetCurrentDirectory() + "Database" + ".json", String.Empty);
@@ -32,7 +40,9 @@ namespace TeamAmcal
 
         public void ReadData()
         {
-            StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "Database" + ".json");
+            string current = Directory.GetCurrentDirectory();
+            StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "\\Database" + ".json");
+
             if (!sr.EndOfStream)
                 productList = JsonConvert.DeserializeObject<List<Product>>(sr.ReadToEnd());
 
@@ -40,13 +50,13 @@ namespace TeamAmcal
         }
 
         //Products
-        public void AddProduct(string Name, string Supplier, int Quantity, float Price, float RRP, float Discounted)
+        public void AddProduct(string aKey, string Name, string Supplier, int Quantity, float Price, float RRP, float Discounted)
         {
-            Product p = new Product(Name, Supplier, Quantity, Price, RRP, Discounted);
+            Product p = new Product(aKey, Name, Supplier, Quantity, Price, RRP, Discounted);
 
             if (!File.Exists(Directory.GetCurrentDirectory() + "Database" + ".json"))
             {
-                p.Key = 0;
+                p.Key = "";
                 productList.Add(p);
             }
             else
@@ -60,7 +70,7 @@ namespace TeamAmcal
             WriteData();
         }
 
-        public void EditProductData(int Key, string Name, string Supplier, int Quantity, float Price, float RRP, float Discounted)
+        public void EditProductData(string Key, string Name, string Supplier, int Quantity, float Price, float RRP, float Discounted)
         {
             ReadData();
 
@@ -86,7 +96,7 @@ namespace TeamAmcal
             WriteData();
         }
 
-        public void DeleteProductData(int Key)
+        public void DeleteProductData(string Key)
         {
             ReadData();
 
@@ -103,7 +113,7 @@ namespace TeamAmcal
         }
 
         //Sales
-        public void AddSalesData(int productKey, string Date, int Quantity, float Price, float Discounted, float Total)
+        /*public void AddSalesData(int productKey, string Date, int Quantity, float Price, float Discounted, float Total)
         {
             SalesData s = new SalesData(Date, Quantity, Price, Discounted, Total);
 
@@ -121,9 +131,9 @@ namespace TeamAmcal
             }
 
             WriteData();
-        }
+        }*/
 
-        public void EditSalesData(int productKey, int salesKey, string Date, int Quantity, float Price, float Discounted, float Total)
+        /*public void EditSalesData(string productKey, int salesKey, string Date, int Quantity, float Price, float Discounted, float Total)
         {
             ReadData();
 
@@ -147,9 +157,9 @@ namespace TeamAmcal
             }
 
             WriteData();
-        }
+        }*/
         
-        public void DeleteSalesData(int productKey, int salesKey)
+        /*public void DeleteSalesData(string productKey, int salesKey)
         {
             ReadData();
 
@@ -169,9 +179,9 @@ namespace TeamAmcal
             }
 
             WriteData();
-        }
+        }*/
         
-        public float AddTotals(int Key)
+        /*public float AddTotals(string Key)
         {
             ReadData();
 
@@ -189,6 +199,6 @@ namespace TeamAmcal
             }
 
             return total;
-        }
+        }*/
     }
 }

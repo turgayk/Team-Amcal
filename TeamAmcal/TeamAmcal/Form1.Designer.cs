@@ -66,6 +66,12 @@
             this.txtEditProdName = new System.Windows.Forms.TextBox();
             this.txtEditProdQuantity = new System.Windows.Forms.TextBox();
             this.grpEditProdOld = new System.Windows.Forms.GroupBox();
+            this.txtEditProdOldDiscount = new System.Windows.Forms.TextBox();
+            this.txtEditProdOldSupplier = new System.Windows.Forms.TextBox();
+            this.txtEditProdOldRetPrice = new System.Windows.Forms.TextBox();
+            this.txtEditProdOldPrice = new System.Windows.Forms.TextBox();
+            this.txtEditProdOldQuantity = new System.Windows.Forms.TextBox();
+            this.txtEditProdOldName = new System.Windows.Forms.TextBox();
             this.lblEditProdOldRetPrice = new System.Windows.Forms.Label();
             this.lblEditProdOldDiscount = new System.Windows.Forms.Label();
             this.lblEditProdOldName = new System.Windows.Forms.Label();
@@ -117,12 +123,6 @@
             this.lblMonthlyReportTitle = new System.Windows.Forms.Label();
             this.tabYearlyReport = new System.Windows.Forms.TabPage();
             this.lblYearlyReportTitle = new System.Windows.Forms.Label();
-            this.txtEditProdOldName = new System.Windows.Forms.TextBox();
-            this.txtEditProdOldQuantity = new System.Windows.Forms.TextBox();
-            this.txtEditProdOldPrice = new System.Windows.Forms.TextBox();
-            this.txtEditProdOldRetPrice = new System.Windows.Forms.TextBox();
-            this.txtEditProdOldSupplier = new System.Windows.Forms.TextBox();
-            this.txtEditProdOldDiscount = new System.Windows.Forms.TextBox();
             this.tabMenu.SuspendLayout();
             this.tabProducts.SuspendLayout();
             this.tabProductOptions.SuspendLayout();
@@ -417,6 +417,7 @@
             // 
             // cmbEditProdSelect
             // 
+            this.cmbEditProdSelect.DisplayMember = "Key";
             this.cmbEditProdSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEditProdSelect.FormattingEnabled = true;
             this.cmbEditProdSelect.Location = new System.Drawing.Point(234, 31);
@@ -519,6 +520,54 @@
             this.grpEditProdOld.TabIndex = 37;
             this.grpEditProdOld.TabStop = false;
             this.grpEditProdOld.Text = "Old Details";
+            // 
+            // txtEditProdOldDiscount
+            // 
+            this.txtEditProdOldDiscount.Location = new System.Drawing.Point(318, 349);
+            this.txtEditProdOldDiscount.Name = "txtEditProdOldDiscount";
+            this.txtEditProdOldDiscount.ReadOnly = true;
+            this.txtEditProdOldDiscount.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldDiscount.TabIndex = 42;
+            // 
+            // txtEditProdOldSupplier
+            // 
+            this.txtEditProdOldSupplier.Location = new System.Drawing.Point(318, 293);
+            this.txtEditProdOldSupplier.Name = "txtEditProdOldSupplier";
+            this.txtEditProdOldSupplier.ReadOnly = true;
+            this.txtEditProdOldSupplier.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldSupplier.TabIndex = 42;
+            // 
+            // txtEditProdOldRetPrice
+            // 
+            this.txtEditProdOldRetPrice.Location = new System.Drawing.Point(318, 232);
+            this.txtEditProdOldRetPrice.Name = "txtEditProdOldRetPrice";
+            this.txtEditProdOldRetPrice.ReadOnly = true;
+            this.txtEditProdOldRetPrice.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldRetPrice.TabIndex = 42;
+            // 
+            // txtEditProdOldPrice
+            // 
+            this.txtEditProdOldPrice.Location = new System.Drawing.Point(318, 170);
+            this.txtEditProdOldPrice.Name = "txtEditProdOldPrice";
+            this.txtEditProdOldPrice.ReadOnly = true;
+            this.txtEditProdOldPrice.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldPrice.TabIndex = 42;
+            // 
+            // txtEditProdOldQuantity
+            // 
+            this.txtEditProdOldQuantity.Location = new System.Drawing.Point(318, 118);
+            this.txtEditProdOldQuantity.Name = "txtEditProdOldQuantity";
+            this.txtEditProdOldQuantity.ReadOnly = true;
+            this.txtEditProdOldQuantity.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldQuantity.TabIndex = 42;
+            // 
+            // txtEditProdOldName
+            // 
+            this.txtEditProdOldName.Location = new System.Drawing.Point(318, 63);
+            this.txtEditProdOldName.Name = "txtEditProdOldName";
+            this.txtEditProdOldName.ReadOnly = true;
+            this.txtEditProdOldName.Size = new System.Drawing.Size(189, 38);
+            this.txtEditProdOldName.TabIndex = 42;
             // 
             // lblEditProdOldRetPrice
             // 
@@ -1005,54 +1054,6 @@
             this.lblYearlyReportTitle.TabIndex = 26;
             this.lblYearlyReportTitle.Text = "Yearly Report";
             // 
-            // txtEditProdOldName
-            // 
-            this.txtEditProdOldName.Location = new System.Drawing.Point(318, 63);
-            this.txtEditProdOldName.Name = "txtEditProdOldName";
-            this.txtEditProdOldName.ReadOnly = true;
-            this.txtEditProdOldName.Size = new System.Drawing.Size(189, 38);
-            this.txtEditProdOldName.TabIndex = 42;
-            // 
-            // txtEditProdOldQuantity
-            // 
-            this.txtEditProdOldQuantity.Location = new System.Drawing.Point(318, 118);
-            this.txtEditProdOldQuantity.Name = "txtEditProdOldQuantity";
-            this.txtEditProdOldQuantity.ReadOnly = true;
-            this.txtEditProdOldQuantity.Size = new System.Drawing.Size(189, 38);
-            this.txtEditProdOldQuantity.TabIndex = 42;
-            // 
-            // txtEditProdOldPrice
-            // 
-            this.txtEditProdOldPrice.Location = new System.Drawing.Point(318, 170);
-            this.txtEditProdOldPrice.Name = "txtEditProdOldPrice";
-            this.txtEditProdOldPrice.ReadOnly = true;
-            this.txtEditProdOldPrice.Size = new System.Drawing.Size(189, 38);
-            this.txtEditProdOldPrice.TabIndex = 42;
-            // 
-            // txtEditProdOldRetPrice
-            // 
-            this.txtEditProdOldRetPrice.Location = new System.Drawing.Point(318, 232);
-            this.txtEditProdOldRetPrice.Name = "txtEditProdOldRetPrice";
-            this.txtEditProdOldRetPrice.ReadOnly = true;
-            this.txtEditProdOldRetPrice.Size = new System.Drawing.Size(189, 38);
-            this.txtEditProdOldRetPrice.TabIndex = 42;
-            // 
-            // txtEditProdOldSupplier
-            // 
-            this.txtEditProdOldSupplier.Location = new System.Drawing.Point(318, 293);
-            this.txtEditProdOldSupplier.Name = "txtEditProdOldSupplier";
-            this.txtEditProdOldSupplier.ReadOnly = true;
-            this.txtEditProdOldSupplier.Size = new System.Drawing.Size(189, 38);
-            this.txtEditProdOldSupplier.TabIndex = 42;
-            // 
-            // txtEditProdOldDiscount
-            // 
-            this.txtEditProdOldDiscount.Location = new System.Drawing.Point(318, 349);
-            this.txtEditProdOldDiscount.Name = "txtEditProdOldDiscount";
-            this.txtEditProdOldDiscount.ReadOnly = true;
-            this.txtEditProdOldDiscount.Size = new System.Drawing.Size(189, 38);
-            this.txtEditProdOldDiscount.TabIndex = 42;
-            // 
             // frmPeopleHealthPharmacy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -1063,6 +1064,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmPeopleHealthPharmacy";
             this.Text = "People Health Pharmacy Inc.";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPeopleHealthPharmacy_FormClosing);
             this.Load += new System.EventHandler(this.frmPeopleHealthPharmacy_Load);
             this.tabMenu.ResumeLayout(false);
             this.tabProducts.ResumeLayout(false);

@@ -12,7 +12,8 @@ namespace TeamAmcal
 {
     public partial class frmPeopleHealthPharmacy : Form
     {
-        DatabaseManager fDataManager;
+        SuperUltraMegaDatabaseManager fDataManager;
+        //DatabaseManager dbmManager;
         BindingList<Product> fProducts;
 
         public frmPeopleHealthPharmacy()
@@ -23,25 +24,32 @@ namespace TeamAmcal
         private void updateList()
         {
             fProducts = new BindingList<Product>(fDataManager.ProductList);
+            //fProducts = new BindingList<Product>(fData.ProductList);
             cmbEditProdSelect.DataSource = fProducts;
+            cmbAddSalesSelect.DataSource = fProducts;
         }
 
         private void frmPeopleHealthPharmacy_Load(object sender, EventArgs e)
         {
-            fDataManager = new DatabaseManager();
+            fDataManager = new SuperUltraMegaDatabaseManager();
 
-            fDataManager.LoadProducts();
+            //dbmManager = new DatabaseManager();
+            //dbmManager.LoadProducts();
+            fDataManager.ReadData();
 
-            fProducts = new BindingList<Product>(fDataManager.ProductList);
+            updateList();
 
-            cmbEditProdSelect.DataSource = fDataManager.ProductList;
             cmbEditProdSelect.DisplayMember = "Name";
             cmbEditProdSelect.ValueMember = "Key";
 
-            cmbAddSalesSelect.DataSource = fProducts;
             cmbAddSalesSelect.DisplayMember = "Name";
             cmbAddSalesSelect.ValueMember = "Key";
         } // end frmPeopleHealthPharmacy_Load
+
+        private void frmPeopleHealthPharmacy_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            fDataManager.WriteData();
+        } // end frmPeopleHealthPharmacy_FormClosing
 
         private void btnAddProdClearInput_Click(object sender, EventArgs e)
         {
@@ -70,7 +78,8 @@ namespace TeamAmcal
             float lDiscount = float.Parse(txtAddProdDiscount.Text);
             int lQuantity = int.Parse(txtAddProdQuantity.Text);
 
-            fDataManager.CreateProduct(lKey, lName, lSupplier, lQuantity, lPrice, lRetPrice, lDiscount);
+            fDataManager.AddProduct(lKey, lName, lSupplier, lQuantity, lPrice, lRetPrice, lDiscount);
+            //dbmManager.CreateProduct(lKey, lName, lSupplier, lQuantity, lPrice, lRetPrice, lDiscount);
 
             updateList();
         } // end addProduct
@@ -171,7 +180,17 @@ namespace TeamAmcal
 
         private void btnAddSalesAddProduct_Click(object sender, EventArgs e)
         {
+            int intIndex = cmbAddSalesSelect.SelectedIndex;//  lCMB.SelectedIndex;
+            Product prdProduct = fDataManager.getProduct(intIndex);
 
+            string strKey = prdProduct.Key;
+            string strName = prdProduct.Name;
+            int intQuantity = int.Parse(txtAddSalesQuantity.Text);
+            float fltPrice = prdProduct.RRP;
+            float fltTotal = intQuantity * fltPrice;
+
+            dgvAddSalesReport.Rows.Add(strKey, strName, intQuantity, fltPrice, fltTotal);
+            //dgvAddSalesReport.
         } // end btnAddSalesAddProduct_Click
 
         private void btnAddSalesConfirm_Click(object sender, EventArgs e)
@@ -181,13 +200,12 @@ namespace TeamAmcal
 
         private void btnAddSalesClear_Click(object sender, EventArgs e)
         {
-            dgvAddSalesReport.Columns.Clear();
+            dgvAddSalesReport.Rows.Clear();
         } // end btnAddSalesClear_Click
 
         // gets the current product in the Combo box and displays its data in the appropriate text boxes
         private void cmbEditProdSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //ComboBox lCMB = (ComboBox)sender;
             int lIndex = cmbEditProdSelect.SelectedIndex; //lCMB.SelectedIndex;
             Product lTempProd = fDataManager.getProduct(lIndex);
 
@@ -202,6 +220,6 @@ namespace TeamAmcal
             }
             else
                 throw new IndexOutOfRangeException("Error. No Product found");
-        }
+        } // end cmbEditProdSelect_SelectedIndexChanged
     } // end frmPeopleHealthPharmacy
 } // end namespace
