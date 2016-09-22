@@ -227,5 +227,25 @@ namespace TeamAmcal
         {
 
         }
+
+        private void cmbSalesSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHomeProducts_Click(object sender, EventArgs e)
+        {
+            tabMenu.SelectedIndex = 1;
+        } // end btnHomeProducts_Click
+
+        private void btnHomeSales_Click(object sender, EventArgs e)
+        {
+            tabMenu.SelectedIndex = 2;
+        } // end btnHomeSales_Click
+
+        private void btnHomeReports_Click(object sender, EventArgs e)
+        {
+            tabMenu.SelectedIndex = 3;
+        } // end btnHomeReports_Click
     } // end frmPeopleHealthPharmacy
 } // end namespace

@@ -116,6 +116,17 @@
             this.colProdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabHome = new System.Windows.Forms.TabPage();
+            this.lblHomeTitle = new System.Windows.Forms.Label();
+            this.gpbHomeGoTo = new System.Windows.Forms.GroupBox();
+            this.btnHomeProducts = new System.Windows.Forms.Button();
+            this.btnHomeSales = new System.Windows.Forms.Button();
+            this.btnHomeReports = new System.Windows.Forms.Button();
             this.tabMenu.SuspendLayout();
             this.tabProducts.SuspendLayout();
             this.tabProductOptions.SuspendLayout();
@@ -130,10 +141,14 @@
             this.tabMonthlyReport.SuspendLayout();
             this.tabYearlyReport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgcRepMonthlySales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabHome.SuspendLayout();
+            this.gpbHomeGoTo.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenu
             // 
+            this.tabMenu.Controls.Add(this.tabHome);
             this.tabMenu.Controls.Add(this.tabProducts);
             this.tabMenu.Controls.Add(this.tabSales);
             this.tabMenu.Controls.Add(this.tabReports);
@@ -764,7 +779,7 @@
             // 
             this.lblSalesReport.AutoSize = true;
             this.lblSalesReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalesReport.Location = new System.Drawing.Point(402, 3);
+            this.lblSalesReport.Location = new System.Drawing.Point(468, 3);
             this.lblSalesReport.Name = "lblSalesReport";
             this.lblSalesReport.Size = new System.Drawing.Size(493, 63);
             this.lblSalesReport.TabIndex = 50;
@@ -778,6 +793,7 @@
             this.cmbSalesSelect.Name = "cmbSalesSelect";
             this.cmbSalesSelect.Size = new System.Drawing.Size(654, 39);
             this.cmbSalesSelect.TabIndex = 49;
+            this.cmbSalesSelect.SelectedIndexChanged += new System.EventHandler(this.cmbSalesSelect_SelectedIndexChanged);
             // 
             // lblSalesSelect
             // 
@@ -844,7 +860,7 @@
             // 
             this.lblRepMonthlyTitle.AutoSize = true;
             this.lblRepMonthlyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRepMonthlyTitle.Location = new System.Drawing.Point(388, 3);
+            this.lblRepMonthlyTitle.Location = new System.Drawing.Point(512, 3);
             this.lblRepMonthlyTitle.Name = "lblRepMonthlyTitle";
             this.lblRepMonthlyTitle.Size = new System.Drawing.Size(393, 63);
             this.lblRepMonthlyTitle.TabIndex = 25;
@@ -852,6 +868,7 @@
             // 
             // tabYearlyReport
             // 
+            this.tabYearlyReport.Controls.Add(this.dataGridView1);
             this.tabYearlyReport.Controls.Add(this.comboBox2);
             this.tabYearlyReport.Controls.Add(this.label2);
             this.tabYearlyReport.Controls.Add(this.lblYearlyReportTitle);
@@ -867,7 +884,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(436, 100);
+            this.comboBox2.Location = new System.Drawing.Point(372, 98);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(654, 39);
             this.comboBox2.TabIndex = 40;
@@ -875,7 +892,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(231, 103);
+            this.label2.Location = new System.Drawing.Point(167, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(199, 31);
             this.label2.TabIndex = 39;
@@ -969,6 +986,111 @@
             this.colSalePrice.ReadOnly = true;
             this.colSalePrice.Width = 125;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView1.Location = new System.Drawing.Point(329, 165);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(711, 461);
+            this.dataGridView1.TabIndex = 44;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Sale Price $";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // tabHome
+            // 
+            this.tabHome.Controls.Add(this.gpbHomeGoTo);
+            this.tabHome.Controls.Add(this.lblHomeTitle);
+            this.tabHome.Location = new System.Drawing.Point(4, 40);
+            this.tabHome.Name = "tabHome";
+            this.tabHome.Size = new System.Drawing.Size(1309, 679);
+            this.tabHome.TabIndex = 3;
+            this.tabHome.Text = "Home";
+            this.tabHome.UseVisualStyleBackColor = true;
+            // 
+            // lblHomeTitle
+            // 
+            this.lblHomeTitle.AutoSize = true;
+            this.lblHomeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
+            this.lblHomeTitle.Location = new System.Drawing.Point(66, 0);
+            this.lblHomeTitle.Name = "lblHomeTitle";
+            this.lblHomeTitle.Size = new System.Drawing.Size(1211, 54);
+            this.lblHomeTitle.TabIndex = 1;
+            this.lblHomeTitle.Text = "Welcome to People Health Pharmacy Inc. Sales Manager";
+            // 
+            // gpbHomeGoTo
+            // 
+            this.gpbHomeGoTo.Controls.Add(this.btnHomeReports);
+            this.gpbHomeGoTo.Controls.Add(this.btnHomeSales);
+            this.gpbHomeGoTo.Controls.Add(this.btnHomeProducts);
+            this.gpbHomeGoTo.Location = new System.Drawing.Point(447, 155);
+            this.gpbHomeGoTo.Name = "gpbHomeGoTo";
+            this.gpbHomeGoTo.Size = new System.Drawing.Size(523, 193);
+            this.gpbHomeGoTo.TabIndex = 2;
+            this.gpbHomeGoTo.TabStop = false;
+            this.gpbHomeGoTo.Text = "Go To:";
+            // 
+            // btnHomeProducts
+            // 
+            this.btnHomeProducts.Location = new System.Drawing.Point(34, 82);
+            this.btnHomeProducts.Name = "btnHomeProducts";
+            this.btnHomeProducts.Size = new System.Drawing.Size(143, 59);
+            this.btnHomeProducts.TabIndex = 0;
+            this.btnHomeProducts.Text = "Products";
+            this.btnHomeProducts.UseVisualStyleBackColor = true;
+            this.btnHomeProducts.Click += new System.EventHandler(this.btnHomeProducts_Click);
+            // 
+            // btnHomeSales
+            // 
+            this.btnHomeSales.Location = new System.Drawing.Point(199, 82);
+            this.btnHomeSales.Name = "btnHomeSales";
+            this.btnHomeSales.Size = new System.Drawing.Size(143, 59);
+            this.btnHomeSales.TabIndex = 1;
+            this.btnHomeSales.Text = "Sales";
+            this.btnHomeSales.UseVisualStyleBackColor = true;
+            this.btnHomeSales.Click += new System.EventHandler(this.btnHomeSales_Click);
+            // 
+            // btnHomeReports
+            // 
+            this.btnHomeReports.Location = new System.Drawing.Point(364, 82);
+            this.btnHomeReports.Name = "btnHomeReports";
+            this.btnHomeReports.Size = new System.Drawing.Size(143, 59);
+            this.btnHomeReports.TabIndex = 2;
+            this.btnHomeReports.Text = "Reports";
+            this.btnHomeReports.UseVisualStyleBackColor = true;
+            this.btnHomeReports.Click += new System.EventHandler(this.btnHomeReports_Click);
+            // 
             // frmPeopleHealthPharmacy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -1002,6 +1124,10 @@
             this.tabYearlyReport.ResumeLayout(false);
             this.tabYearlyReport.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgcRepMonthlySales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabHome.ResumeLayout(false);
+            this.tabHome.PerformLayout();
+            this.gpbHomeGoTo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1096,6 +1222,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colProdName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSalePrice;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.TabPage tabHome;
+        private System.Windows.Forms.GroupBox gpbHomeGoTo;
+        private System.Windows.Forms.Button btnHomeReports;
+        private System.Windows.Forms.Button btnHomeSales;
+        private System.Windows.Forms.Button btnHomeProducts;
+        private System.Windows.Forms.Label lblHomeTitle;
     }
 }
 
