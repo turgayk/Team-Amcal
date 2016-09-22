@@ -26,7 +26,7 @@ namespace TeamAmcal
             fProducts = new BindingList<Product>(fDataManager.ProductList);
             //fProducts = new BindingList<Product>(fData.ProductList);
             cmbEditProdSelect.DataSource = fProducts;
-            cmbAddSalesSelect.DataSource = fProducts;
+            cmbSalesSelect.DataSource = fProducts;
         }
 
         private void frmPeopleHealthPharmacy_Load(object sender, EventArgs e)
@@ -42,8 +42,8 @@ namespace TeamAmcal
             cmbEditProdSelect.DisplayMember = "Name";
             cmbEditProdSelect.ValueMember = "Key";
 
-            cmbAddSalesSelect.DisplayMember = "Name";
-            cmbAddSalesSelect.ValueMember = "Key";
+            cmbSalesSelect.DisplayMember = "Name";
+            cmbSalesSelect.ValueMember = "Key";
         } // end frmPeopleHealthPharmacy_Load
 
         private void frmPeopleHealthPharmacy_FormClosing(object sender, FormClosingEventArgs e)
@@ -178,18 +178,19 @@ namespace TeamAmcal
 
         } // end btnEditSalesRemoveProduct_Click
 
-        private void btnAddSalesAddProduct_Click(object sender, EventArgs e)
+        private void btnSalesAddProduct_Click(object sender, EventArgs e)
         {
-            int intIndex = cmbAddSalesSelect.SelectedIndex;//  lCMB.SelectedIndex;
+            int intIndex = cmbSalesSelect.SelectedIndex;//  lCMB.SelectedIndex;
             Product prdProduct = fDataManager.getProduct(intIndex);
 
             string strKey = prdProduct.Key;
             string strName = prdProduct.Name;
-            int intQuantity = int.Parse(txtAddSalesQuantity.Text);
+            int intQuantity = int.Parse(txtSalesQuantity.Text);
             float fltPrice = prdProduct.RRP;
             float fltTotal = intQuantity * fltPrice;
+            string strNotes = txtSalesNotes.Text;
 
-            dgvAddSalesReport.Rows.Add(strKey, strName, intQuantity, fltPrice, fltTotal);
+            dgvSalesReport.Rows.Add(strKey, strName, intQuantity, fltPrice, fltTotal);
             //dgvAddSalesReport.
         } // end btnAddSalesAddProduct_Click
 
@@ -200,7 +201,7 @@ namespace TeamAmcal
 
         private void btnAddSalesClear_Click(object sender, EventArgs e)
         {
-            dgvAddSalesReport.Rows.Clear();
+            dgvSalesReport.Rows.Clear();
         } // end btnAddSalesClear_Click
 
         // gets the current product in the Combo box and displays its data in the appropriate text boxes
@@ -221,5 +222,10 @@ namespace TeamAmcal
             else
                 throw new IndexOutOfRangeException("Error. No Product found");
         } // end cmbEditProdSelect_SelectedIndexChanged
+
+        private void btnAddSalesClear_Click_1(object sender, EventArgs e)
+        {
+
+        }
     } // end frmPeopleHealthPharmacy
 } // end namespace
