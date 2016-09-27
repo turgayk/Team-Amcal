@@ -41,7 +41,7 @@ namespace TeamAmcal
         public void ReadData()
         {
             string current = Directory.GetCurrentDirectory();
-            StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "\\Database" + ".json");
+            StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "Database" + ".json");
 
             if (!sr.EndOfStream)
                 productList = JsonConvert.DeserializeObject<List<Product>>(sr.ReadToEnd());
@@ -56,14 +56,16 @@ namespace TeamAmcal
 
             if (!File.Exists(Directory.GetCurrentDirectory() + "Database" + ".json"))
             {
-                p.Key = "";
+                p.ProductNumber = 0;
                 productList.Add(p);
             }
             else
             {
                 ReadData();
-
-                p.Key = (productList.ElementAt(productList.Count - 1).Key + 1);
+                if (ProductList.Count != 0)
+                    p.ProductNumber = (productList.ElementAt(productList.Count - 1).ProductNumber + 1);
+                else
+                    p.ProductNumber = 0;
                 productList.Add(p);
             }
 
@@ -96,13 +98,13 @@ namespace TeamAmcal
             WriteData();
         }
 
-        public void DeleteProductData(string Key)
+        public void DeleteProductData(int ProductNumber)
         {
             ReadData();
 
             foreach (Product p in productList)
             {
-                if (p.Key == Key)
+                if (p.ProductNumber == ProductNumber)
                 {
                     productList.Remove(p);
                     break;

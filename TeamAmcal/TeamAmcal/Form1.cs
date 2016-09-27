@@ -53,6 +53,11 @@ namespace TeamAmcal
 
         private void btnAddProdClearInput_Click(object sender, EventArgs e)
         {
+            resetAddProducts();
+        } // end btnAddProdClearInput
+
+        private void resetAddProducts()
+        {
             txtAddProdName.Text = "";
             txtAddProdPrice.Text = "";
             txtAddProdQuantity.Text = "";
@@ -60,8 +65,17 @@ namespace TeamAmcal
             txtAddProdRetPrice.Text = "";
             txtAddProdDiscount.Text = "";
             txtAddProdKey.Text = "";
+        } // end resetAddProducts
 
-        } // end btnAddProdClearInput
+        private void clearEditInput()
+        {
+            txtEditProdName.Text = "";
+            txtEditProdPrice.Text = "";
+            txtEditProdQuantity.Text = "";
+            txtEditProdSupplier.Text = "";
+            txtEditProdRetPrice.Text = "";
+            txtEditProdDiscount.Text = "";
+        } // end clearEditInput
 
         private void btnEditProdConfirmChanges_Click(object sender, EventArgs e)
         {
@@ -79,7 +93,6 @@ namespace TeamAmcal
             int lQuantity = int.Parse(txtAddProdQuantity.Text);
 
             fDataManager.AddProduct(lKey, lName, lSupplier, lQuantity, lPrice, lRetPrice, lDiscount);
-            //dbmManager.CreateProduct(lKey, lName, lSupplier, lQuantity, lPrice, lRetPrice, lDiscount);
 
             updateList();
         } // end addProduct
@@ -102,7 +115,8 @@ namespace TeamAmcal
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             addProduct();
-            displayProduct();
+            //displayProduct();
+            resetAddProducts();
         } // end btnAddProduct_Click
 
         private void changeProduct(Product aProduct)
@@ -152,7 +166,7 @@ namespace TeamAmcal
             if (lTempProd != null)
             {
                 changeProduct(lTempProd);
-                displayChanges();
+                updateList();
             }
             else
                 throw new IndexOutOfRangeException("Error. No Product found");
@@ -160,12 +174,7 @@ namespace TeamAmcal
 
         private void btnEditProdClearInput_Click(object sender, EventArgs e)
         {
-            txtEditProdName.Text = "";
-            txtEditProdPrice.Text = "";
-            txtEditProdQuantity.Text = "";
-            txtEditProdSupplier.Text = "";
-            txtEditProdRetPrice.Text = "";
-            txtEditProdDiscount.Text = "";
+            clearEditInput();
         } // end btnEditProdClearInput_Click
 
         private void btnEditSalesConfirmUpdate_Click(object sender, EventArgs e)
@@ -183,14 +192,25 @@ namespace TeamAmcal
             int intIndex = cmbSalesSelect.SelectedIndex;//  lCMB.SelectedIndex;
             Product prdProduct = fDataManager.getProduct(intIndex);
 
-            string strKey = prdProduct.Key;
-            string strName = prdProduct.Name;
-            int intQuantity = int.Parse(txtSalesQuantity.Text);
-            float fltPrice = prdProduct.RRP;
-            float fltTotal = intQuantity * fltPrice;
-            string strNotes = txtSalesNotes.Text;
+            if (int.Parse(txtSalesQuantity.Text) <= prdProduct.Quantity)
+            {
+                string strKey = prdProduct.Key;
+                string strName = prdProduct.Name;
+                int intQuantity = int.Parse(txtSalesQuantity.Text);
+                float fltPrice = prdProduct.RRP;
+                float fltTotal = intQuantity * fltPrice;
+                string strNotes = txtSalesNotes.Text;
 
-            dgvSalesReport.Rows.Add(strKey, strName, intQuantity, fltPrice, fltTotal);
+                txtSalesQuantity.Text = "";
+                dgvAddSales.Rows.Add(strKey, strName, intQuantity, fltPrice, fltTotal);
+                prdProduct.Quantity = prdProduct.Quantity - intQuantity;
+
+                txtSalesNotes.Text = "";
+                txtSalesQuantity.Text = "";
+            }
+            else
+                txtSalesNotes.Text = "That product has " + prdProduct.Quantity + " instock. Please enter lesser quantity.";
+            
             //dgvAddSalesReport.
         } // end btnAddSalesAddProduct_Click
 
@@ -201,7 +221,7 @@ namespace TeamAmcal
 
         private void btnAddSalesClear_Click(object sender, EventArgs e)
         {
-            dgvSalesReport.Rows.Clear();
+            dgvAddSales.Rows.Clear();
         } // end btnAddSalesClear_Click
 
         // gets the current product in the Combo box and displays its data in the appropriate text boxes
@@ -225,7 +245,9 @@ namespace TeamAmcal
 
         private void btnAddSalesClear_Click_1(object sender, EventArgs e)
         {
-
+            dgvAddSales.Rows.Clear();
+            txtSalesQuantity.Text = "";
+            txtSalesNotes.Text = "";
         }
 
         private void cmbSalesSelect_SelectedIndexChanged(object sender, EventArgs e)
