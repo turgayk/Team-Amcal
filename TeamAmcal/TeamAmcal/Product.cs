@@ -28,9 +28,5 @@ namespace TeamAmcal
         public float Discounted { get; set; }
         public IList<DateTime> SaleDate { get; set; }
         public IList<float> SalePrice { get; set; }
-<<<<<<< HEAD
-        public int ProductNumber { get; set; }
-=======
->>>>>>> refs/remotes/origin/master
     }
 }

@@ -14,11 +14,6 @@ namespace TeamAmcal
         [STAThread]
         static void Main()
         {
-<<<<<<< HEAD
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPeopleHealthPharmacy());
-=======
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
@@ -34,7 +29,6 @@ namespace TeamAmcal
             //s.AddTotals("testKey");
 
             //s.DeleteSalesData(5, "testProduct");
->>>>>>> refs/remotes/origin/master
         }
     }
 }

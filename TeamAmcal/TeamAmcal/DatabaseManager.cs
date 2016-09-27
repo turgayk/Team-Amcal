@@ -12,22 +12,6 @@ namespace TeamAmcal
     {
         private List<Product> productList = new List<Product>();
 
-        public List<Product> ProductList
-        {
-            get
-            {
-                return productList;
-            } // end get
-        } // end ProductList+
-
-        public Product getProduct(int aIndex)
-        {
-            if (aIndex < 0 || aIndex >= productList.Count)
-                return null;
-            else
-                return productList[aIndex];
-        } // end getProduct
-
         /// <summary>
         /// Reads .json files and creates and adds new products to the list.
         /// </summary>
@@ -51,10 +35,10 @@ namespace TeamAmcal
         {
             Product p = new Product(Key, Name, Supplier, Quantity, Price, RRP, Discounted);
             productList.Add(p);
-            if (!File.Exists(Directory.GetCurrentDirectory() + "\\" + Key + ".json"))
+            if (!File.Exists(Directory.GetCurrentDirectory() + Key + ".json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                using (StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + "\\ "+ Key + ".json"))
+                using (StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + Key + ".json"))
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
                     serializer.Serialize(writer, p);
