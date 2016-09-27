@@ -60,11 +60,20 @@
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="Sale.cs" />
     <Compile Include="SuperUltraMegaDatabaseManager.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+=======
+<<<<<<< HEAD
+    <Compile Include="Sale.cs" />
+=======
+    <Compile Include="Sales.cs" />
+    <Compile Include="SalesData.cs" />
+>>>>>>> master
+>>>>>>> refs/remotes/origin/master
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,9 +84,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+<<<<<<< HEAD
     <None Include="Properties\DataSources\DatabaseManager.datasource" />
     <None Include="Properties\DataSources\frmPeopleHealthPharmacy.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
+=======
+>>>>>>> refs/remotes/origin/master
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
