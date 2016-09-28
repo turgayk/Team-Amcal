@@ -8,15 +8,15 @@ namespace TeamAmcal
 {
     class Sale
     {
-        public Sale (string name, float price, DateTime date)
+        public Sale (string name, float price, int quantity)
         {
             Name = name;
             Price = price;
-            Date = date;
+            Quantity = quantity;
         }
 
         string Name { get; set; }
         float Price { get; set; }
-        DateTime Date { get; set; }
+        int Quantity { get; set; }
     }
 }

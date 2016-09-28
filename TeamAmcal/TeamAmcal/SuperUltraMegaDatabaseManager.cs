@@ -103,7 +103,7 @@ namespace TeamAmcal
         }
 
         //Sales
-        public void AddSalesData(int productKey, string Date, int Quantity, float Price, float Discounted, float Total)
+        public void AddSalesData(int productKey, DateTime Date, int Quantity, float Price, float Discounted, float Total)
         {
             SalesData s = new SalesData(Date, Quantity, Price, Discounted, Total);
 
@@ -123,7 +123,7 @@ namespace TeamAmcal
             WriteData();
         }
 
-        public void EditSalesData(int productKey, int salesKey, string Date, int Quantity, float Price, float Discounted, float Total)
+        public void EditSalesData(int productKey, int salesKey, DateTime Date, int Quantity, float Price, float Discounted, float Total)
         {
             ReadData();
 
@@ -189,6 +189,60 @@ namespace TeamAmcal
             }
 
             return total;
+        }
+
+        public List<Sale> YearlyReport(DateTime date)
+        {
+            List<Sale> result = new List<Sale>();       // A list of each product with the totals (Price, Quantity)
+
+            float tSale = 0;
+            int tQuantity = 0;
+
+            foreach (Product p in productList)
+            {
+                foreach (SalesData sd in p.SaleData)
+                {
+                    if (sd.Date.Year == date.Year)
+                    {
+                        tSale += sd.Total;
+                        tQuantity += sd.Quantity;
+                    }
+                }
+                // Creates new sale
+                result.Add(new Sale(p.Name, tSale, tQuantity));
+                // Resets variables
+                tSale = 0;
+                tQuantity = 0;
+            }
+
+            return result;
+        }
+
+        public List<Sale> MonthlyReport(DateTime date)
+        {
+            List<Sale> result = new List<Sale>();       // A list of each product with the totals (Price, Quantity)
+
+            float tSale = 0;
+            int tQuantity = 0;
+
+            foreach (Product p in productList)
+            {
+                foreach (SalesData sd in p.SaleData)
+                {
+                    if (sd.Date.Year == date.Year && sd.Date.Month == date.Month)
+                    {
+                        tSale += sd.Total;
+                        tQuantity += sd.Quantity;
+                    }
+                }
+                // Creates new sale
+                result.Add(new Sale(p.Name, tSale, tQuantity));
+                // Resets variables
+                tSale = 0;
+                tQuantity = 0;
+            }
+
+            return result;
         }
     }
 }
