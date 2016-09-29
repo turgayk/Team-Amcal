@@ -98,26 +98,26 @@
             this.txtSalesQuantity = new System.Windows.Forms.TextBox();
             this.lblSalesQuantity = new System.Windows.Forms.Label();
             this.dgvSalesReport = new System.Windows.Forms.DataGridView();
-            this.cmbSaleSelect = new System.Windows.Forms.ComboBox();
-            this.lblSaleSelect = new System.Windows.Forms.Label();
-            this.lblSaleTitle = new System.Windows.Forms.Label();
-            this.tabReports = new System.Windows.Forms.TabPage();
             this.colSalesKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSalesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSalesQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSalesSell = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSalesTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbSaleSelect = new System.Windows.Forms.ComboBox();
+            this.lblSaleSelect = new System.Windows.Forms.Label();
+            this.lblSaleTitle = new System.Windows.Forms.Label();
+            this.tabReports = new System.Windows.Forms.TabPage();
             this.tabSalesOptions = new System.Windows.Forms.TabControl();
             this.tabSalesMontly = new System.Windows.Forms.TabPage();
-            this.tabSalesYearly = new System.Windows.Forms.TabPage();
-            this.lblReportMonthly = new System.Windows.Forms.Label();
-            this.cmbReportMonthlySelect = new System.Windows.Forms.ComboBox();
-            this.lblReportMonthlySelect = new System.Windows.Forms.Label();
             this.dgvReportMonthlySales = new System.Windows.Forms.DataGridView();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblReportMonthlySelect = new System.Windows.Forms.Label();
+            this.cmbReportMonthlySelect = new System.Windows.Forms.ComboBox();
+            this.lblReportMonthly = new System.Windows.Forms.Label();
+            this.tabSalesYearly = new System.Windows.Forms.TabPage();
             this.dgvReportYearlySales = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -140,8 +140,8 @@
             this.tabReports.SuspendLayout();
             this.tabSalesOptions.SuspendLayout();
             this.tabSalesMontly.SuspendLayout();
-            this.tabSalesYearly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportMonthlySales)).BeginInit();
+            this.tabSalesYearly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportYearlySales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -833,6 +833,41 @@
             this.dgvSalesReport.Size = new System.Drawing.Size(993, 334);
             this.dgvSalesReport.TabIndex = 8;
             // 
+            // colSalesKey
+            // 
+            this.colSalesKey.HeaderText = "Key";
+            this.colSalesKey.Name = "colSalesKey";
+            this.colSalesKey.ReadOnly = true;
+            this.colSalesKey.Width = 150;
+            // 
+            // colSalesName
+            // 
+            this.colSalesName.HeaderText = "Product Name";
+            this.colSalesName.Name = "colSalesName";
+            this.colSalesName.ReadOnly = true;
+            this.colSalesName.Width = 350;
+            // 
+            // colSalesQuantity
+            // 
+            this.colSalesQuantity.HeaderText = "Quantity";
+            this.colSalesQuantity.Name = "colSalesQuantity";
+            this.colSalesQuantity.ReadOnly = true;
+            this.colSalesQuantity.Width = 150;
+            // 
+            // colSalesSell
+            // 
+            this.colSalesSell.HeaderText = "Sale Price";
+            this.colSalesSell.Name = "colSalesSell";
+            this.colSalesSell.ReadOnly = true;
+            this.colSalesSell.Width = 150;
+            // 
+            // colSalesTotal
+            // 
+            this.colSalesTotal.HeaderText = "Total";
+            this.colSalesTotal.Name = "colSalesTotal";
+            this.colSalesTotal.ReadOnly = true;
+            this.colSalesTotal.Width = 150;
+            // 
             // cmbSaleSelect
             // 
             this.cmbSaleSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -871,41 +906,6 @@
             this.tabReports.Text = "Reports";
             this.tabReports.UseVisualStyleBackColor = true;
             // 
-            // colSalesKey
-            // 
-            this.colSalesKey.HeaderText = "Key";
-            this.colSalesKey.Name = "colSalesKey";
-            this.colSalesKey.ReadOnly = true;
-            this.colSalesKey.Width = 150;
-            // 
-            // colSalesName
-            // 
-            this.colSalesName.HeaderText = "Product Name";
-            this.colSalesName.Name = "colSalesName";
-            this.colSalesName.ReadOnly = true;
-            this.colSalesName.Width = 350;
-            // 
-            // colSalesQuantity
-            // 
-            this.colSalesQuantity.HeaderText = "Quantity";
-            this.colSalesQuantity.Name = "colSalesQuantity";
-            this.colSalesQuantity.ReadOnly = true;
-            this.colSalesQuantity.Width = 150;
-            // 
-            // colSalesSell
-            // 
-            this.colSalesSell.HeaderText = "Sale Price";
-            this.colSalesSell.Name = "colSalesSell";
-            this.colSalesSell.ReadOnly = true;
-            this.colSalesSell.Width = 150;
-            // 
-            // colSalesTotal
-            // 
-            this.colSalesTotal.HeaderText = "Total";
-            this.colSalesTotal.Name = "colSalesTotal";
-            this.colSalesTotal.ReadOnly = true;
-            this.colSalesTotal.Width = 150;
-            // 
             // tabSalesOptions
             // 
             this.tabSalesOptions.Controls.Add(this.tabSalesMontly);
@@ -929,48 +929,6 @@
             this.tabSalesMontly.TabIndex = 0;
             this.tabSalesMontly.Text = "Monthly";
             this.tabSalesMontly.UseVisualStyleBackColor = true;
-            // 
-            // tabSalesYearly
-            // 
-            this.tabSalesYearly.Controls.Add(this.dgvReportYearlySales);
-            this.tabSalesYearly.Controls.Add(this.lblReportYearlySelect);
-            this.tabSalesYearly.Controls.Add(this.cmbReportYearlySelect);
-            this.tabSalesYearly.Controls.Add(this.lblReportYearlyTitle);
-            this.tabSalesYearly.Location = new System.Drawing.Point(4, 40);
-            this.tabSalesYearly.Name = "tabSalesYearly";
-            this.tabSalesYearly.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSalesYearly.Size = new System.Drawing.Size(1277, 574);
-            this.tabSalesYearly.TabIndex = 1;
-            this.tabSalesYearly.Text = "Yearly";
-            this.tabSalesYearly.UseVisualStyleBackColor = true;
-            // 
-            // lblReportMonthly
-            // 
-            this.lblReportMonthly.AutoSize = true;
-            this.lblReportMonthly.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
-            this.lblReportMonthly.Location = new System.Drawing.Point(495, 3);
-            this.lblReportMonthly.Name = "lblReportMonthly";
-            this.lblReportMonthly.Size = new System.Drawing.Size(393, 63);
-            this.lblReportMonthly.TabIndex = 3;
-            this.lblReportMonthly.Text = "Monthly Report";
-            // 
-            // cmbReportMonthlySelect
-            // 
-            this.cmbReportMonthlySelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbReportMonthlySelect.FormattingEnabled = true;
-            this.cmbReportMonthlySelect.Location = new System.Drawing.Point(436, 99);
-            this.cmbReportMonthlySelect.Name = "cmbReportMonthlySelect";
-            this.cmbReportMonthlySelect.Size = new System.Drawing.Size(506, 39);
-            this.cmbReportMonthlySelect.TabIndex = 8;
-            // 
-            // lblReportMonthlySelect
-            // 
-            this.lblReportMonthlySelect.AutoSize = true;
-            this.lblReportMonthlySelect.Location = new System.Drawing.Point(267, 102);
-            this.lblReportMonthlySelect.Name = "lblReportMonthlySelect";
-            this.lblReportMonthlySelect.Size = new System.Drawing.Size(163, 31);
-            this.lblReportMonthlySelect.TabIndex = 9;
-            this.lblReportMonthlySelect.Text = "Select Date:";
             // 
             // dgvReportMonthlySales
             // 
@@ -1013,6 +971,48 @@
             this.colTotal.Name = "colTotal";
             this.colTotal.ReadOnly = true;
             this.colTotal.Width = 150;
+            // 
+            // lblReportMonthlySelect
+            // 
+            this.lblReportMonthlySelect.AutoSize = true;
+            this.lblReportMonthlySelect.Location = new System.Drawing.Point(267, 102);
+            this.lblReportMonthlySelect.Name = "lblReportMonthlySelect";
+            this.lblReportMonthlySelect.Size = new System.Drawing.Size(163, 31);
+            this.lblReportMonthlySelect.TabIndex = 9;
+            this.lblReportMonthlySelect.Text = "Select Date:";
+            // 
+            // cmbReportMonthlySelect
+            // 
+            this.cmbReportMonthlySelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbReportMonthlySelect.FormattingEnabled = true;
+            this.cmbReportMonthlySelect.Location = new System.Drawing.Point(436, 99);
+            this.cmbReportMonthlySelect.Name = "cmbReportMonthlySelect";
+            this.cmbReportMonthlySelect.Size = new System.Drawing.Size(506, 39);
+            this.cmbReportMonthlySelect.TabIndex = 8;
+            // 
+            // lblReportMonthly
+            // 
+            this.lblReportMonthly.AutoSize = true;
+            this.lblReportMonthly.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
+            this.lblReportMonthly.Location = new System.Drawing.Point(495, 3);
+            this.lblReportMonthly.Name = "lblReportMonthly";
+            this.lblReportMonthly.Size = new System.Drawing.Size(393, 63);
+            this.lblReportMonthly.TabIndex = 3;
+            this.lblReportMonthly.Text = "Monthly Report";
+            // 
+            // tabSalesYearly
+            // 
+            this.tabSalesYearly.Controls.Add(this.dgvReportYearlySales);
+            this.tabSalesYearly.Controls.Add(this.lblReportYearlySelect);
+            this.tabSalesYearly.Controls.Add(this.cmbReportYearlySelect);
+            this.tabSalesYearly.Controls.Add(this.lblReportYearlyTitle);
+            this.tabSalesYearly.Location = new System.Drawing.Point(4, 40);
+            this.tabSalesYearly.Name = "tabSalesYearly";
+            this.tabSalesYearly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSalesYearly.Size = new System.Drawing.Size(1277, 574);
+            this.tabSalesYearly.TabIndex = 1;
+            this.tabSalesYearly.Text = "Yearly";
+            this.tabSalesYearly.UseVisualStyleBackColor = true;
             // 
             // dgvReportYearlySales
             // 
@@ -1116,9 +1116,9 @@
             this.tabSalesOptions.ResumeLayout(false);
             this.tabSalesMontly.ResumeLayout(false);
             this.tabSalesMontly.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportMonthlySales)).EndInit();
             this.tabSalesYearly.ResumeLayout(false);
             this.tabSalesYearly.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReportMonthlySales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportYearlySales)).EndInit();
             this.ResumeLayout(false);
 

@@ -9,3 +9,14 @@ C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamA
 C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csproj.GenerateResource.Cache
 C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.exe
 C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.pdb
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe.config
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.exe
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.pdb
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.pdb
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\Newtonsoft.Json.dll
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\Newtonsoft.Json.xml
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csprojResolveAssemblyReference.cache
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.frmPeopleHealthPharmacy.resources
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.Properties.Resources.resources
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csproj.GenerateResource.Cache
