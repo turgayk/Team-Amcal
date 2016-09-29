@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6990882C-DE5E-4ECE-A2B7-8DDD55968DC7}</ProjectGuid>
+    <ProjectGuid>{1988A7B9-DA20-4CF7-952D-E3EA69FCE747}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TeamAmcal</RootNamespace>
@@ -50,22 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseManager.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="PeopleHealthPharmacy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="PeopleHealthPharmacy.Designer.cs">
+      <DependentUpon>PeopleHealthPharmacy.cs</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <Compile Include="Sale.cs" />
-=======
-    <Compile Include="Sales.cs" />
-    <Compile Include="SalesData.cs" />
->>>>>>> master
+    <Compile Include="SuperUltraMegaDatabaseManager.cs" />
+    <EmbeddedResource Include="PeopleHealthPharmacy.resx">
+      <DependentUpon>PeopleHealthPharmacy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

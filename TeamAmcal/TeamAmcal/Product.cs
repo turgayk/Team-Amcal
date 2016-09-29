@@ -28,5 +28,6 @@ namespace TeamAmcal
         public float Discounted { get; set; }
         public IList<DateTime> SaleDate { get; set; }
         public IList<float> SalePrice { get; set; }
+        public int ProductNumber { get; set; }
     }
 }

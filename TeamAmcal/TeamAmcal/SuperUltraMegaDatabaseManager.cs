@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 using Newtonsoft.Json;
 
 namespace TeamAmcal
@@ -41,7 +41,7 @@ namespace TeamAmcal
         public void ReadData()
         {
             string current = Directory.GetCurrentDirectory();
-            StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "\\Database" + ".json");
+            StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "Database" + ".json");
 
             if (!sr.EndOfStream)
                 productList = JsonConvert.DeserializeObject<List<Product>>(sr.ReadToEnd());
@@ -56,14 +56,16 @@ namespace TeamAmcal
 
             if (!File.Exists(Directory.GetCurrentDirectory() + "Database" + ".json"))
             {
-                p.Key = "";
+                p.ProductNumber = 0;
                 productList.Add(p);
             }
             else
             {
                 ReadData();
-
-                p.Key = (productList.ElementAt(productList.Count - 1).Key + 1);
+                if (ProductList.Count != 0)
+                    p.ProductNumber = (productList.ElementAt(productList.Count - 1).ProductNumber + 1);
+                else
+                    p.ProductNumber = 0;
                 productList.Add(p);
             }
 
@@ -96,13 +98,13 @@ namespace TeamAmcal
             WriteData();
         }
 
-        public void DeleteProductData(string Key)
+        public void DeleteProductData(int ProductNumber)
         {
             ReadData();
 
             foreach (Product p in productList)
             {
-                if (p.Key == Key)
+                if (p.ProductNumber == ProductNumber)
                 {
                     productList.Remove(p);
                     break;
@@ -116,7 +118,6 @@ namespace TeamAmcal
         /*public void AddSalesData(int productKey, string Date, int Quantity, float Price, float Discounted, float Total)
         {
             SalesData s = new SalesData(Date, Quantity, Price, Discounted, Total);
-
             foreach(Product p in productList)
             {
                 if (p.Key == productKey)
@@ -125,18 +126,15 @@ namespace TeamAmcal
                         s.Key = p.SaleData.ElementAt(p.SaleData.Count - 1).Key + 1;
                     else
                         s.Key = 0;
-
                     p.SaleData.Add(s);
                 }
             }
-
             WriteData();
         }*/
 
         /*public void EditSalesData(string productKey, int salesKey, string Date, int Quantity, float Price, float Discounted, float Total)
         {
             ReadData();
-
             foreach (Product p in productList)
             {
                 if (p.Key == productKey)
@@ -155,14 +153,12 @@ namespace TeamAmcal
                     }
                 }
             }
-
             WriteData();
         }*/
-        
+
         /*public void DeleteSalesData(string productKey, int salesKey)
         {
             ReadData();
-
             foreach (Product p in productList)
             {
                 if (p.Key == productKey)
@@ -177,16 +173,13 @@ namespace TeamAmcal
                     }
                 }
             }
-
             WriteData();
         }*/
-        
+
         /*public float AddTotals(string Key)
         {
             ReadData();
-
             float total = 0;
-
             foreach (Product p in productList)
             {
                 if (p.Key == Key)
@@ -197,7 +190,6 @@ namespace TeamAmcal
                     }
                 }
             }
-
             return total;
         }*/
     }
