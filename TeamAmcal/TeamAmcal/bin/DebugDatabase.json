@@ -1,0 +1,14 @@
+[
+  {
+    "Key": "asdf123",
+    "Name": "asdf",
+    "Supplier": "asdfasdf",
+    "Quantity": 1,
+    "Price": 2.0,
+    "RRP": 2.5,
+    "Discounted": 0.0,
+    "SaleDate": null,
+    "SalePrice": null,
+    "ProductNumber": 0
+  }
+]

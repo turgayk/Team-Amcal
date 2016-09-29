@@ -1,21 +1,11 @@
-C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe.config
-F:\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe.config
-F:\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe
-F:\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.pdb
-F:\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\Newtonsoft.Json.dll
-F:\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\Newtonsoft.Json.xml
-F:\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csprojResolveAssemblyReference.cache
-F:\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.Properties.Resources.resources
-F:\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csproj.GenerateResource.Cache
-F:\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.exe
-F:\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.pdb
-C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe.config
-C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csprojResolveAssemblyReference.cache
-C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.Properties.Resources.resources
-C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csproj.GenerateResource.Cache
-C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe
-C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.pdb
-C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.exe
-C:\Users\Jake\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.pdb
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe.config
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.pdb
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\bin\Debug\Newtonsoft.Json.dll
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\bin\Debug\Newtonsoft.Json.xml
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csprojResolveAssemblyReference.cache
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.frmPeopleHealthPharmacy.resources
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.Properties.Resources.resources
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csproj.GenerateResource.Cache
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.exe
+C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Labs\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.pdb
