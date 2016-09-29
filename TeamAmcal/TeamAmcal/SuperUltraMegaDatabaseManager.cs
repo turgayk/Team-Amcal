@@ -114,13 +114,18 @@ namespace TeamAmcal
             WriteData();
         }
 
-        //Sales
-        /*public void AddSalesData(int productKey, string Date, int Quantity, float Price, float Discounted, float Total)
+        //Sales              
+        /*public void AddSalesData(string Date, int Quantity, float Price, float Discounted, float SoldFor, int ProductNumber)
         {
+<<<<<<< HEAD
+            SalesData s = new SalesData(Date, Quantity, Price, Discounted, SoldFor);
+
+=======
             SalesData s = new SalesData(Date, Quantity, Price, Discounted, Total);
+>>>>>>> origin/Develop-Interface-for-Project
             foreach(Product p in productList)
             {
-                if (p.Key == productKey)
+                if (p.ProductNumber == ProductNumber)
                 {
                     if (p.SaleData.Any())
                         s.Key = p.SaleData.ElementAt(p.SaleData.Count - 1).Key + 1;
@@ -132,22 +137,22 @@ namespace TeamAmcal
             WriteData();
         }*/
 
-        /*public void EditSalesData(string productKey, int salesKey, string Date, int Quantity, float Price, float Discounted, float Total)
+        /*public void EditSalesData(string Date, int Quantity, float Price, float Discounted, float SoldFor, int ProductNumber, int SalesNumber)
         {
             ReadData();
             foreach (Product p in productList)
             {
-                if (p.Key == productKey)
+                if (p.ProductNumber == ProductNumber)
                 {
                     foreach (SalesData sd in p.SaleData)
                     {
-                        if (sd.Key == salesKey)
+                        if (sd.SalesNumber == SalesNumber)
                         {
                             sd.Date = Date;
                             sd.Quantity = Quantity;
                             sd.Price = Price;
                             sd.Discounted = Discounted;
-                            sd.Total = Total;
+                            sd.SoldFor = SoldFor;
                             break;
                         }
                     }
@@ -156,16 +161,20 @@ namespace TeamAmcal
             WriteData();
         }*/
 
+<<<<<<< HEAD
+        /*public void DeleteSalesData(int ProductNumber, int SalesNumber)
+=======
         /*public void DeleteSalesData(string productKey, int salesKey)
+>>>>>>> origin/Develop-Interface-for-Project
         {
             ReadData();
             foreach (Product p in productList)
             {
-                if (p.Key == productKey)
+                if (p.ProductNumber == ProductNumber)
                 {
                     foreach (SalesData sd in p.SaleData)
                     {
-                        if (sd.Key == salesKey)
+                        if (sd.SalesNumber == SalesNumber)
                         {
                             p.SaleData.Remove(sd);
                             break;
@@ -176,13 +185,17 @@ namespace TeamAmcal
             WriteData();
         }*/
 
+<<<<<<< HEAD
+        /*public float AddTotals(int ProductNumber)
+=======
         /*public float AddTotals(string Key)
+>>>>>>> origin/Develop-Interface-for-Project
         {
             ReadData();
             float total = 0;
             foreach (Product p in productList)
             {
-                if (p.Key == Key)
+                if (p.ProductNumber == ProductNumber)
                 {
                     foreach (SalesData sd in p.SaleData)
                     {
