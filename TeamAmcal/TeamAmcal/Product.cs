@@ -26,8 +26,7 @@ namespace TeamAmcal
         public float Price { get; set; }
         public float RRP { get; set; }
         public float Discounted { get; set; }
-        public IList<DateTime> SaleDate { get; set; }
-        public IList<float> SalePrice { get; set; }
+        public IList<SalesData> SaleData { get; set; }
         public int ProductNumber { get; set; }
     }
 }
