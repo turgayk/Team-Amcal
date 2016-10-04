@@ -8,14 +8,14 @@ namespace TeamAmcal
 {
     class SalesData
     {
-        public SalesData(string rDate, int rQuantity)
+        public SalesData(DateTime rDate, int rQuantity)
         {
             Date = rDate;
             Quantity = rQuantity;
         }
 
         public int SalesNumber { get; set; }
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
         public int Quantity { get; set; }
     }
 }
