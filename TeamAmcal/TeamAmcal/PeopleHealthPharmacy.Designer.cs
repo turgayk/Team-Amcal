@@ -757,6 +757,7 @@
             this.btnSalesConfirm.TabIndex = 16;
             this.btnSalesConfirm.Text = "Confirm Sale";
             this.btnSalesConfirm.UseVisualStyleBackColor = true;
+            this.btnSalesConfirm.Click += new System.EventHandler(this.btnSalesConfirm_Click);
             // 
             // btnSalesAdd
             // 

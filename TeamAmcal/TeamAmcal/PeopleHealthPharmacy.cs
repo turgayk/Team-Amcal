@@ -190,5 +190,10 @@ namespace TeamAmcal
                     MessageBox.Show("Sale quantity must be less than the products quantity!!!", "Quantity Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             } // end if
         } // end btnSalesAdd_Click
+
+        private void btnSalesConfirm_Click(object sender, EventArgs e)
+        {
+
+        } // end btnSalesConfirm_Click
     } // end frmPeopleHealthPharmacy
 } // end namespace
