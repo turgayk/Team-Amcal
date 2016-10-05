@@ -122,10 +122,14 @@ namespace TeamAmcal
             {
                 if (p.ProductNumber == ProductNumber)
                 {
-                    if (p.SaleData.Any())
+                    if (p.SaleData != null)
                         s.SalesNumber = p.SaleData.ElementAt(p.SaleData.Count - 1).SalesNumber + 1;
                     else
+                    {
+                        p.SaleData = new List<SalesData>();
                         s.SalesNumber = 0;
+                    }
+
                     p.SaleData.Add(s);
                 }
             }
@@ -300,6 +304,36 @@ namespace TeamAmcal
             DateTime result = p.SaleData[0].Date.AddDays(xIsZero);
 
             return result;
+        }
+
+        public void CreateCSV()
+        {
+            ReadData();
+
+            File.WriteAllText(Directory.GetCurrentDirectory() + "ProductCSV.csv", String.Empty);
+            File.WriteAllText(Directory.GetCurrentDirectory() + "SalesCSV.csv", String.Empty);
+
+            StreamWriter ProductSW = new StreamWriter(Directory.GetCurrentDirectory() + "ProductCSV.csv");
+            StreamWriter SalesSW = new StreamWriter(Directory.GetCurrentDirectory() + "SalesCSV.csv");
+
+            ProductSW.WriteLine("ProductNumber,Key,Name,Supplier,Quantity,Price,RRP,Discounted");
+            SalesSW.WriteLine("ProductNumber,SalesNumber,Date,Quantity");
+
+            foreach (Product p in ProductList)
+            {
+                ProductSW.WriteLine(p.ProductNumber.ToString() + "," + p.Key.ToString() + "," + p.Name + "," + p.Supplier + "," + p.Quantity.ToString() + "," + p.Price.ToString() + "," + p.RRP.ToString() + ',' + p.Discounted.ToString());
+                
+                if (p.SaleData != null)
+                {
+                    foreach (SalesData s in p.SaleData)
+                    {
+                        SalesSW.WriteLine(p.ProductNumber.ToString() + "," + s.SalesNumber.ToString() + "," + s.Date.ToString() + "," + s.Quantity.ToString());
+                    }
+                }
+            }
+
+            SalesSW.Close();
+            ProductSW.Close();
         }
     }
 }
