@@ -23,3 +23,11 @@ C:\Users\kieran\Documents\Kieran\Uni\Semester 4\Development Project 2\Team-Amcal
 C:\Users\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe.config
 C:\Users\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.exe
 C:\Users\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.pdb
+C:\Users\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.exe
+C:\Users\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\TeamAmcal.pdb
+C:\Users\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.frmPeopleHealthPharmacy.resources
+C:\Users\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.Properties.Resources.resources
+C:\Users\Daniel\Documents\GitHub\Team-Amcal\TeamAmcal\TeamAmcal\obj\Debug\TeamAmcal.csproj.GenerateResource.Cache
