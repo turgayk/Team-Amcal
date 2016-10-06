@@ -266,9 +266,9 @@ namespace TeamAmcal
         public DateTime LinearRegression(Product p)
         {
             ReadData();
-            // Variables
             if (p.SaleData != null && p.SaleData.Count > 1)
             {
+                // Variables
                 double N = p.SaleData.Count;
                 double sigmaX = 0;
                 double sigmaY = 0;
