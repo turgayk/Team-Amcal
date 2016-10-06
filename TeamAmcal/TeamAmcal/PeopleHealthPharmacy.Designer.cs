@@ -94,15 +94,10 @@
             this.txtSalesNotes = new System.Windows.Forms.TextBox();
             this.lblSalesNote = new System.Windows.Forms.Label();
             this.lblSalesDate = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpSaleDate = new System.Windows.Forms.DateTimePicker();
             this.txtSalesQuantity = new System.Windows.Forms.TextBox();
             this.lblSalesQuantity = new System.Windows.Forms.Label();
             this.dgvSalesReport = new System.Windows.Forms.DataGridView();
-            this.colSalesKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesSell = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbSaleSelect = new System.Windows.Forms.ComboBox();
             this.lblSaleSelect = new System.Windows.Forms.Label();
             this.lblSaleTitle = new System.Windows.Forms.Label();
@@ -110,21 +105,11 @@
             this.tabSalesOptions = new System.Windows.Forms.TabControl();
             this.tabSalesMontly = new System.Windows.Forms.TabPage();
             this.dgvReportMonthlySales = new System.Windows.Forms.DataGridView();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblReportMonthlySelect = new System.Windows.Forms.Label();
-            this.cmbReportMonthlySelect = new System.Windows.Forms.ComboBox();
             this.lblReportMonthly = new System.Windows.Forms.Label();
             this.tabSalesYearly = new System.Windows.Forms.TabPage();
             this.dgvReportYearlySales = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblReportYearlySelect = new System.Windows.Forms.Label();
-            this.cmbReportYearlySelect = new System.Windows.Forms.ComboBox();
             this.lblReportYearlyTitle = new System.Windows.Forms.Label();
             this.tabPrediction = new System.Windows.Forms.TabPage();
             this.lblPredTitle = new System.Windows.Forms.Label();
@@ -133,6 +118,19 @@
             this.lblPredOutStock = new System.Windows.Forms.Label();
             this.txtPredOutStock = new System.Windows.Forms.TextBox();
             this.btnHomePredict = new System.Windows.Forms.Button();
+            this.dtpReportsMonthlySelect = new System.Windows.Forms.DateTimePicker();
+            this.dtmReportsYearlyDate = new System.Windows.Forms.DateTimePicker();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesSell = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMenu.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.grpHomeGoTo.SuspendLayout();
@@ -735,7 +733,7 @@
             this.dtpSalesDate.Controls.Add(this.txtSalesNotes);
             this.dtpSalesDate.Controls.Add(this.lblSalesNote);
             this.dtpSalesDate.Controls.Add(this.lblSalesDate);
-            this.dtpSalesDate.Controls.Add(this.dateTimePicker1);
+            this.dtpSalesDate.Controls.Add(this.dtpSaleDate);
             this.dtpSalesDate.Controls.Add(this.txtSalesQuantity);
             this.dtpSalesDate.Controls.Add(this.lblSalesQuantity);
             this.dtpSalesDate.Controls.Add(this.dgvSalesReport);
@@ -804,12 +802,12 @@
             this.lblSalesDate.TabIndex = 12;
             this.lblSalesDate.Text = "Date:";
             // 
-            // dateTimePicker1
+            // dtpSaleDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(436, 169);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(506, 38);
-            this.dateTimePicker1.TabIndex = 11;
+            this.dtpSaleDate.Location = new System.Drawing.Point(436, 169);
+            this.dtpSaleDate.Name = "dtpSaleDate";
+            this.dtpSaleDate.Size = new System.Drawing.Size(506, 38);
+            this.dtpSaleDate.TabIndex = 11;
             // 
             // txtSalesQuantity
             // 
@@ -843,41 +841,6 @@
             this.dgvSalesReport.RowTemplate.Height = 24;
             this.dgvSalesReport.Size = new System.Drawing.Size(993, 334);
             this.dgvSalesReport.TabIndex = 8;
-            // 
-            // colSalesKey
-            // 
-            this.colSalesKey.HeaderText = "Key";
-            this.colSalesKey.Name = "colSalesKey";
-            this.colSalesKey.ReadOnly = true;
-            this.colSalesKey.Width = 150;
-            // 
-            // colSalesName
-            // 
-            this.colSalesName.HeaderText = "Product Name";
-            this.colSalesName.Name = "colSalesName";
-            this.colSalesName.ReadOnly = true;
-            this.colSalesName.Width = 350;
-            // 
-            // colSalesQuantity
-            // 
-            this.colSalesQuantity.HeaderText = "Quantity";
-            this.colSalesQuantity.Name = "colSalesQuantity";
-            this.colSalesQuantity.ReadOnly = true;
-            this.colSalesQuantity.Width = 150;
-            // 
-            // colSalesSell
-            // 
-            this.colSalesSell.HeaderText = "Sale Price";
-            this.colSalesSell.Name = "colSalesSell";
-            this.colSalesSell.ReadOnly = true;
-            this.colSalesSell.Width = 150;
-            // 
-            // colSalesTotal
-            // 
-            this.colSalesTotal.HeaderText = "Total";
-            this.colSalesTotal.Name = "colSalesTotal";
-            this.colSalesTotal.ReadOnly = true;
-            this.colSalesTotal.Width = 150;
             // 
             // cmbSaleSelect
             // 
@@ -930,9 +893,9 @@
             // 
             // tabSalesMontly
             // 
+            this.tabSalesMontly.Controls.Add(this.dtpReportsMonthlySelect);
             this.tabSalesMontly.Controls.Add(this.dgvReportMonthlySales);
             this.tabSalesMontly.Controls.Add(this.lblReportMonthlySelect);
-            this.tabSalesMontly.Controls.Add(this.cmbReportMonthlySelect);
             this.tabSalesMontly.Controls.Add(this.lblReportMonthly);
             this.tabSalesMontly.Location = new System.Drawing.Point(4, 40);
             this.tabSalesMontly.Name = "tabSalesMontly";
@@ -948,41 +911,12 @@
             this.dgvReportMonthlySales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
             this.colQuantity,
-            this.colSellPrice,
-            this.colTotal});
+            this.colSellPrice});
             this.dgvReportMonthlySales.Location = new System.Drawing.Point(294, 181);
             this.dgvReportMonthlySales.Name = "dgvReportMonthlySales";
             this.dgvReportMonthlySales.RowTemplate.Height = 24;
-            this.dgvReportMonthlySales.Size = new System.Drawing.Size(793, 387);
+            this.dgvReportMonthlySales.Size = new System.Drawing.Size(644, 387);
             this.dgvReportMonthlySales.TabIndex = 10;
-            // 
-            // colName
-            // 
-            this.colName.HeaderText = "Product Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Width = 300;
-            // 
-            // colQuantity
-            // 
-            this.colQuantity.HeaderText = "Quantity";
-            this.colQuantity.Name = "colQuantity";
-            this.colQuantity.ReadOnly = true;
-            this.colQuantity.Width = 150;
-            // 
-            // colSellPrice
-            // 
-            this.colSellPrice.HeaderText = "Sale Price";
-            this.colSellPrice.Name = "colSellPrice";
-            this.colSellPrice.ReadOnly = true;
-            this.colSellPrice.Width = 150;
-            // 
-            // colTotal
-            // 
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.ReadOnly = true;
-            this.colTotal.Width = 150;
             // 
             // lblReportMonthlySelect
             // 
@@ -992,15 +926,6 @@
             this.lblReportMonthlySelect.Size = new System.Drawing.Size(163, 31);
             this.lblReportMonthlySelect.TabIndex = 9;
             this.lblReportMonthlySelect.Text = "Select Date:";
-            // 
-            // cmbReportMonthlySelect
-            // 
-            this.cmbReportMonthlySelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbReportMonthlySelect.FormattingEnabled = true;
-            this.cmbReportMonthlySelect.Location = new System.Drawing.Point(436, 99);
-            this.cmbReportMonthlySelect.Name = "cmbReportMonthlySelect";
-            this.cmbReportMonthlySelect.Size = new System.Drawing.Size(506, 39);
-            this.cmbReportMonthlySelect.TabIndex = 8;
             // 
             // lblReportMonthly
             // 
@@ -1014,9 +939,9 @@
             // 
             // tabSalesYearly
             // 
+            this.tabSalesYearly.Controls.Add(this.dtmReportsYearlyDate);
             this.tabSalesYearly.Controls.Add(this.dgvReportYearlySales);
             this.tabSalesYearly.Controls.Add(this.lblReportYearlySelect);
-            this.tabSalesYearly.Controls.Add(this.cmbReportYearlySelect);
             this.tabSalesYearly.Controls.Add(this.lblReportYearlyTitle);
             this.tabSalesYearly.Location = new System.Drawing.Point(4, 40);
             this.tabSalesYearly.Name = "tabSalesYearly";
@@ -1032,41 +957,12 @@
             this.dgvReportYearlySales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewTextBoxColumn3});
             this.dgvReportYearlySales.Location = new System.Drawing.Point(294, 181);
             this.dgvReportYearlySales.Name = "dgvReportYearlySales";
             this.dgvReportYearlySales.RowTemplate.Height = 24;
-            this.dgvReportYearlySales.Size = new System.Drawing.Size(793, 387);
+            this.dgvReportYearlySales.Size = new System.Drawing.Size(643, 387);
             this.dgvReportYearlySales.TabIndex = 14;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Product Name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Quantity";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Sale Price";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 150;
             // 
             // lblReportYearlySelect
             // 
@@ -1076,15 +972,6 @@
             this.lblReportYearlySelect.Size = new System.Drawing.Size(163, 31);
             this.lblReportYearlySelect.TabIndex = 13;
             this.lblReportYearlySelect.Text = "Select Date:";
-            // 
-            // cmbReportYearlySelect
-            // 
-            this.cmbReportYearlySelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbReportYearlySelect.FormattingEnabled = true;
-            this.cmbReportYearlySelect.Location = new System.Drawing.Point(436, 99);
-            this.cmbReportYearlySelect.Name = "cmbReportYearlySelect";
-            this.cmbReportYearlySelect.Size = new System.Drawing.Size(506, 39);
-            this.cmbReportYearlySelect.TabIndex = 12;
             // 
             // lblReportYearlyTitle
             // 
@@ -1165,6 +1052,99 @@
             this.btnHomePredict.Text = "Prediction";
             this.btnHomePredict.UseVisualStyleBackColor = true;
             this.btnHomePredict.Click += new System.EventHandler(this.btnHomePredict_Click);
+            // 
+            // dtpReportsMonthlySelect
+            // 
+            this.dtpReportsMonthlySelect.Location = new System.Drawing.Point(436, 96);
+            this.dtpReportsMonthlySelect.Name = "dtpReportsMonthlySelect";
+            this.dtpReportsMonthlySelect.Size = new System.Drawing.Size(452, 38);
+            this.dtpReportsMonthlySelect.TabIndex = 11;
+            this.dtpReportsMonthlySelect.ValueChanged += new System.EventHandler(this.dtpReportsMonthlySelect_ValueChanged);
+            // 
+            // dtmReportsYearlyDate
+            // 
+            this.dtmReportsYearlyDate.Location = new System.Drawing.Point(436, 96);
+            this.dtmReportsYearlyDate.Name = "dtmReportsYearlyDate";
+            this.dtmReportsYearlyDate.Size = new System.Drawing.Size(452, 38);
+            this.dtmReportsYearlyDate.TabIndex = 15;
+            this.dtmReportsYearlyDate.ValueChanged += new System.EventHandler(this.dtmReportsYearlyDate_ValueChanged);
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Product Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 300;
+            // 
+            // colQuantity
+            // 
+            this.colQuantity.HeaderText = "Quantity";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.ReadOnly = true;
+            this.colQuantity.Width = 150;
+            // 
+            // colSellPrice
+            // 
+            this.colSellPrice.HeaderText = "Sales Total";
+            this.colSellPrice.Name = "colSellPrice";
+            this.colSellPrice.ReadOnly = true;
+            this.colSellPrice.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Sales Total";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // colSalesKey
+            // 
+            this.colSalesKey.HeaderText = "Key";
+            this.colSalesKey.Name = "colSalesKey";
+            this.colSalesKey.ReadOnly = true;
+            this.colSalesKey.Width = 150;
+            // 
+            // colSalesName
+            // 
+            this.colSalesName.HeaderText = "Product Name";
+            this.colSalesName.Name = "colSalesName";
+            this.colSalesName.ReadOnly = true;
+            this.colSalesName.Width = 350;
+            // 
+            // colSalesQuantity
+            // 
+            this.colSalesQuantity.HeaderText = "Quantity";
+            this.colSalesQuantity.Name = "colSalesQuantity";
+            this.colSalesQuantity.ReadOnly = true;
+            this.colSalesQuantity.Width = 150;
+            // 
+            // colSalesSell
+            // 
+            this.colSalesSell.HeaderText = "Sale Price";
+            this.colSalesSell.Name = "colSalesSell";
+            this.colSalesSell.ReadOnly = true;
+            this.colSalesSell.Width = 150;
+            // 
+            // colSalesTotal
+            // 
+            this.colSalesTotal.HeaderText = "Total";
+            this.colSalesTotal.Name = "colSalesTotal";
+            this.colSalesTotal.ReadOnly = true;
+            this.colSalesTotal.Width = 150;
             // 
             // frmPeopleHealthPharmacy
             // 
@@ -1274,7 +1254,7 @@
         private System.Windows.Forms.Label lblSaleSelect;
         private System.Windows.Forms.Label lblSaleTitle;
         private System.Windows.Forms.Button btnEditProdClear;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpSaleDate;
         private System.Windows.Forms.TextBox txtSalesQuantity;
         private System.Windows.Forms.Label lblSalesQuantity;
         private System.Windows.Forms.DataGridView dgvSalesReport;
@@ -1284,29 +1264,14 @@
         private System.Windows.Forms.Label lblSalesNote;
         private System.Windows.Forms.Label lblSalesDate;
         private System.Windows.Forms.Button btnSalesClear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesKey;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesSell;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesTotal;
         private System.Windows.Forms.TabControl tabSalesOptions;
         private System.Windows.Forms.TabPage tabSalesMontly;
         private System.Windows.Forms.DataGridView dgvReportMonthlySales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSellPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
         private System.Windows.Forms.Label lblReportMonthlySelect;
-        private System.Windows.Forms.ComboBox cmbReportMonthlySelect;
         private System.Windows.Forms.Label lblReportMonthly;
         private System.Windows.Forms.TabPage tabSalesYearly;
         private System.Windows.Forms.DataGridView dgvReportYearlySales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label lblReportYearlySelect;
-        private System.Windows.Forms.ComboBox cmbReportYearlySelect;
         private System.Windows.Forms.Label lblReportYearlyTitle;
         private System.Windows.Forms.TabPage tabPrediction;
         private System.Windows.Forms.TextBox txtPredOutStock;
@@ -1315,6 +1280,19 @@
         private System.Windows.Forms.Label lblPredSelect;
         private System.Windows.Forms.Label lblPredTitle;
         private System.Windows.Forms.Button btnHomePredict;
+        private System.Windows.Forms.DateTimePicker dtpReportsMonthlySelect;
+        private System.Windows.Forms.DateTimePicker dtmReportsYearlyDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesKey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesSell;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSellPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
 

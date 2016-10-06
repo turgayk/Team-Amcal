@@ -1,0 +1,4 @@
+ProductNumber,Key,Name,Supplier,Quantity,Price,RRP,Discounted
+0,asdf123,asdf,asdfasdf,0,2,2.5,0
+1,111,Raman,Swinburne,0,1,2,1
+2,daniel123,Daniel,Swinburne,1,0.5,1.5,0

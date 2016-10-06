@@ -28,6 +28,17 @@ namespace TeamAmcal
                 return productList[aIndex];
         } // end getProduct
 
+        public Product getProduct(string strKey)
+        {
+            foreach (Product prdProduct in productList)
+            {
+                if (prdProduct.Key == strKey)
+                    return prdProduct;
+            }
+
+            return null;
+        }
+
         public void WriteData()
         {
             File.WriteAllText(Directory.GetCurrentDirectory() + "Database" + ".json", String.Empty);
@@ -223,6 +234,7 @@ namespace TeamAmcal
 
         public List<Sale> MonthlyReport(DateTime date)
         {
+            ReadData();
             List<Sale> result = new List<Sale>();       // A list of each product with the totals (Price, Quantity)
 
             float tSale = 0;
@@ -253,57 +265,63 @@ namespace TeamAmcal
         // Y = Quantity
         public DateTime LinearRegression(Product p)
         {
+            ReadData();
+            DateTime dteReturn = DateTime.Now;
             // Variables
-            int N = p.SaleData.Count;
-            int sigmaX = 0;
-            int sigmaY = 0;
-            int sigmaXY = 0;
-            int sigmaX2 = 0;
-            List<int> dateX = new List<int>();
-
-            // Results
-            float gradient = 0;
-            int intercept = p.Quantity;
-            int xIsZero = 0;
-
-            // Sets first data point to zero
-            dateX.Add(0);
-
-            // Calculation of sigmaY
-            foreach (SalesData sd in p.SaleData)
+            if (p.SaleData != null && p.SaleData.Count > 1)
             {
-                sigmaY += sd.Quantity;
-            }    
+                int N = p.SaleData.Count;
+                int sigmaX = 0;
+                int sigmaY = 0;
+                int sigmaXY = 0;
+                int sigmaX2 = 0;
+                List<int> dateX = new List<int>();
 
-            // Calculation of sigmaX and sigmaX2
-            for (int i = 0; i < N; i++)
-            {
-                DateTime d2 = p.SaleData[0].Date;
-                DateTime d1 = p.SaleData[i].Date;
+                // Results
+                float gradient = 0;
+                int intercept = p.Quantity;
+                int xIsZero = 0;
 
-                int t = Convert.ToInt32((d1 - d2).TotalDays);
-                dateX.Add(t);
+                // Sets first data point to zero
+                dateX.Add(1);
 
-                sigmaX += t;
-                sigmaX2 += t * t;
+                // Calculation of sigmaY
+                foreach (SalesData sd in p.SaleData)
+                {
+                    sigmaY += sd.Quantity;
+                }
+
+                // Calculation of sigmaX and sigmaX2
+                for (int i = 0; i < N; i++)
+                {
+                    DateTime d2 = p.SaleData[0].Date;
+                    DateTime d1 = p.SaleData[i].Date;
+
+                    int t = Convert.ToInt32((d1 - d2).TotalDays);
+                    dateX.Add(t);
+
+                    sigmaX += t;
+                    sigmaX2 += t * t;
+                }
+
+                // Calculation of sigma XY
+                for (int i = 0; i < N; i++)
+                {
+                    sigmaXY += p.SaleData[i].Quantity * dateX[i];
+                }
+
+                // Calculation of b (Gradient)
+                gradient = (N * sigmaXY - (sigmaX * sigmaY)) / (N * sigmaX2 - (sigmaX * sigmaX));
+
+                // When y = 0, x = -a/b
+                xIsZero = (int)(-intercept / gradient);
+
+                // Adds amount of days until stock is gone on current date
+                DateTime result = p.SaleData[0].Date.AddDays(-1* xIsZero);
+
+                return result;
             }
-
-            // Calculation of sigma XY
-            for (int i = 0; i < N; i++)
-            {
-                sigmaXY += p.SaleData[i].Quantity * dateX[i];
-            }
-
-            // Calculation of b (Gradient)
-            gradient = (N * sigmaXY - (sigmaX * sigmaY)) / (N * sigmaX2 - (sigmaX * sigmaX));
-
-            // When y = 0, x = -a/b
-            xIsZero = Convert.ToInt32(-intercept / gradient);
-
-            // Adds amount of days until stock is gone on current date
-            DateTime result = p.SaleData[0].Date.AddDays(xIsZero);
-
-            return result;
+            return dteReturn;
         }
 
         public void CreateCSV()

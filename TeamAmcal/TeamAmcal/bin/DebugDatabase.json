@@ -3,12 +3,66 @@
     "Key": "asdf123",
     "Name": "asdf",
     "Supplier": "asdfasdf",
-    "Quantity": 1,
+    "Quantity": 0,
     "Price": 2.0,
     "RRP": 2.5,
     "Discounted": 0.0,
-    "SaleDate": null,
-    "SalePrice": null,
+    "SaleData": [
+      {
+        "SalesNumber": 0,
+        "Date": "2016-10-06T15:58:35.4439493+11:00",
+        "Quantity": 1
+      }
+    ],
     "ProductNumber": 0
+  },
+  {
+    "Key": "111",
+    "Name": "Raman",
+    "Supplier": "Swinburne",
+    "Quantity": 0,
+    "Price": 1.0,
+    "RRP": 2.0,
+    "Discounted": 1.0,
+    "SaleData": [
+      {
+        "SalesNumber": 0,
+        "Date": "2016-10-06T16:10:29.91631+11:00",
+        "Quantity": 1
+      },
+      {
+        "SalesNumber": 1,
+        "Date": "2016-10-06T16:11:38.1506727+11:00",
+        "Quantity": 2
+      },
+      {
+        "SalesNumber": 2,
+        "Date": "2016-10-08T16:12:06",
+        "Quantity": 1
+      },
+      {
+        "SalesNumber": 3,
+        "Date": "2016-10-06T16:36:29.4341495+11:00",
+        "Quantity": 1
+      }
+    ],
+    "ProductNumber": 1
+  },
+  {
+    "Key": "daniel123",
+    "Name": "Daniel",
+    "Supplier": "Swinburne",
+    "Quantity": 1,
+    "Price": 0.5,
+    "RRP": 1.5,
+    "Discounted": 0.0,
+    "SaleData": [
+      {
+        "SalesNumber": 0,
+        "Date": "2016-10-06T16:59:11.3239121+11:00",
+        "Quantity": 1
+      }
+    ],
+    "ProductNumber": 2
   }
 ]

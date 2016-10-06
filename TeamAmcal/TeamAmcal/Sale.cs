@@ -15,8 +15,8 @@ namespace TeamAmcal
             Quantity = quantity;
         }
 
-        string Name { get; set; }
-        float Price { get; set; }
-        int Quantity { get; set; }
+        public string Name { get; set; }
+        public float Price { get; set; }
+        public int Quantity { get; set; }
     }
 }

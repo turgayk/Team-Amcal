@@ -24,6 +24,8 @@ namespace TeamAmcal
         {
             dbmDataManager = new SuperUltraMegaDatabaseManager();
 
+            dbmDataManager.CreateCSV();
+
             dbmDataManager.ReadData();
             updateList();
 
@@ -32,6 +34,9 @@ namespace TeamAmcal
 
             cmbSaleSelect.DisplayMember = "Name";
             cmbSaleSelect.ValueMember = "Key";
+
+            dtpReportsMonthlySelect.Format = DateTimePickerFormat.Custom;
+            dtpReportsMonthlySelect.CustomFormat = "MM/yyyy";
 
             cmbPredSelect.DisplayMember = "Name";
             cmbPredSelect.ValueMember = "Key";
@@ -197,7 +202,26 @@ namespace TeamAmcal
 
         private void btnSalesConfirm_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < dgvSalesReport.RowCount - 1; i++)
+            {
+                string strKey = dgvSalesReport.Rows[i].Cells[0].Value.ToString();
+                Product prdSale = dbmDataManager.getProduct(strKey);
 
+                if (prdSale != null)
+                {
+                    DateTime dtmSale = dtpSaleDate.Value;
+                    int intQuantity = int.Parse(dgvSalesReport.Rows[i].Cells[2].Value.ToString());
+                    int prdNum = prdSale.ProductNumber;
+
+                    dbmDataManager.AddSalesData(dtmSale, intQuantity, prdNum);
+
+                    MessageBox.Show("Sale added");
+                } // end if
+                else
+                    throw new NullReferenceException("Error. Product not found");
+            } // end for
+
+            dgvSalesReport.Rows.Clear();
         } // end btnSalesConfirm_Click
 
         private void btnHomePredict_Click(object sender, EventArgs e)
@@ -212,7 +236,7 @@ namespace TeamAmcal
 
             if (prdSelected != null)
             {
-                txtPredOutStock.Text = dbmDataManager.LinearRegression(prdSelected).ToString();
+                //txtPredOutStock.Text = dbmDataManager.LinearRegression(prdSelected).ToString();
             } // end if
             else
                 throw new IndexOutOfRangeException("Error. No Product Found");
@@ -221,6 +245,38 @@ namespace TeamAmcal
         private void cmbSaleSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtpReportsMonthlySelect_ValueChanged(object sender, EventArgs e)
+        {
+            dgvReportMonthlySales.Rows.Clear();
+
+            List<Sale> sleMonthly = dbmDataManager.MonthlyReport(dtpReportsMonthlySelect.Value);
+
+            foreach (Sale sleSale in sleMonthly)
+            {
+                string strName = sleSale.Name;
+                int intQuantity = sleSale.Quantity;
+                float fltPrice = sleSale.Price;
+
+                dgvReportMonthlySales.Rows.Add(strName, intQuantity, fltPrice);
+            } // end foreach
+        } // end dtpReportsMonthlySelect_ValueChanged
+
+        private void dtmReportsYearlyDate_ValueChanged(object sender, EventArgs e)
+        {
+            dgvReportYearlySales.Rows.Clear();
+
+            List<Sale> sleYearly = dbmDataManager.YearlyReport(dtpReportsMonthlySelect.Value);
+
+            foreach (Sale sleSale in sleYearly)
+            {
+                string strName = sleSale.Name;
+                int intQuantity = sleSale.Quantity;
+                float fltPrice = sleSale.Price;
+
+                dgvReportYearlySales.Rows.Add(strName, intQuantity, fltPrice);
+            } // end foreach
         }
     } // end frmPeopleHealthPharmacy
 } // end namespace
