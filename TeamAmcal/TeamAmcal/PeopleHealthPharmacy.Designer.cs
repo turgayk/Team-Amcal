@@ -126,6 +126,13 @@
             this.lblReportYearlySelect = new System.Windows.Forms.Label();
             this.cmbReportYearlySelect = new System.Windows.Forms.ComboBox();
             this.lblReportYearlyTitle = new System.Windows.Forms.Label();
+            this.tabPrediction = new System.Windows.Forms.TabPage();
+            this.lblPredTitle = new System.Windows.Forms.Label();
+            this.cmbPredSelect = new System.Windows.Forms.ComboBox();
+            this.lblPredSelect = new System.Windows.Forms.Label();
+            this.lblPredOutStock = new System.Windows.Forms.Label();
+            this.txtPredOutStock = new System.Windows.Forms.TextBox();
+            this.btnHomePredict = new System.Windows.Forms.Button();
             this.tabMenu.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.grpHomeGoTo.SuspendLayout();
@@ -143,6 +150,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportMonthlySales)).BeginInit();
             this.tabSalesYearly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportYearlySales)).BeginInit();
+            this.tabPrediction.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -151,6 +159,7 @@
             this.tabMenu.Controls.Add(this.tabProducts);
             this.tabMenu.Controls.Add(this.dtpSalesDate);
             this.tabMenu.Controls.Add(this.tabReports);
+            this.tabMenu.Controls.Add(this.tabPrediction);
             this.tabMenu.Location = new System.Drawing.Point(12, 12);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.SelectedIndex = 0;
@@ -181,12 +190,13 @@
             // 
             // grpHomeGoTo
             // 
+            this.grpHomeGoTo.Controls.Add(this.btnHomePredict);
             this.grpHomeGoTo.Controls.Add(this.btnHomeReports);
             this.grpHomeGoTo.Controls.Add(this.btnHomeSales);
             this.grpHomeGoTo.Controls.Add(this.btnHomeProducts);
-            this.grpHomeGoTo.Location = new System.Drawing.Point(380, 141);
+            this.grpHomeGoTo.Location = new System.Drawing.Point(338, 138);
             this.grpHomeGoTo.Name = "grpHomeGoTo";
-            this.grpHomeGoTo.Size = new System.Drawing.Size(523, 193);
+            this.grpHomeGoTo.Size = new System.Drawing.Size(703, 193);
             this.grpHomeGoTo.TabIndex = 0;
             this.grpHomeGoTo.TabStop = false;
             this.grpHomeGoTo.Text = "Go To:";
@@ -877,6 +887,7 @@
             this.cmbSaleSelect.Name = "cmbSaleSelect";
             this.cmbSaleSelect.Size = new System.Drawing.Size(506, 39);
             this.cmbSaleSelect.TabIndex = 7;
+            this.cmbSaleSelect.SelectedIndexChanged += new System.EventHandler(this.cmbSaleSelect_SelectedIndexChanged);
             // 
             // lblSaleSelect
             // 
@@ -1085,6 +1096,76 @@
             this.lblReportYearlyTitle.TabIndex = 11;
             this.lblReportYearlyTitle.Text = "Yearly Report";
             // 
+            // tabPrediction
+            // 
+            this.tabPrediction.Controls.Add(this.txtPredOutStock);
+            this.tabPrediction.Controls.Add(this.lblPredOutStock);
+            this.tabPrediction.Controls.Add(this.cmbPredSelect);
+            this.tabPrediction.Controls.Add(this.lblPredSelect);
+            this.tabPrediction.Controls.Add(this.lblPredTitle);
+            this.tabPrediction.Location = new System.Drawing.Point(4, 40);
+            this.tabPrediction.Name = "tabPrediction";
+            this.tabPrediction.Size = new System.Drawing.Size(1291, 624);
+            this.tabPrediction.TabIndex = 4;
+            this.tabPrediction.Text = "Prediction";
+            this.tabPrediction.UseVisualStyleBackColor = true;
+            // 
+            // lblPredTitle
+            // 
+            this.lblPredTitle.AutoSize = true;
+            this.lblPredTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
+            this.lblPredTitle.Location = new System.Drawing.Point(437, 0);
+            this.lblPredTitle.Name = "lblPredTitle";
+            this.lblPredTitle.Size = new System.Drawing.Size(388, 63);
+            this.lblPredTitle.TabIndex = 4;
+            this.lblPredTitle.Text = "Item Prediction";
+            // 
+            // cmbPredSelect
+            // 
+            this.cmbPredSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPredSelect.FormattingEnabled = true;
+            this.cmbPredSelect.Location = new System.Drawing.Point(448, 91);
+            this.cmbPredSelect.Name = "cmbPredSelect";
+            this.cmbPredSelect.Size = new System.Drawing.Size(506, 39);
+            this.cmbPredSelect.TabIndex = 9;
+            this.cmbPredSelect.SelectedIndexChanged += new System.EventHandler(this.cmbPredSelect_SelectedIndexChanged);
+            // 
+            // lblPredSelect
+            // 
+            this.lblPredSelect.AutoSize = true;
+            this.lblPredSelect.Location = new System.Drawing.Point(243, 94);
+            this.lblPredSelect.Name = "lblPredSelect";
+            this.lblPredSelect.Size = new System.Drawing.Size(199, 31);
+            this.lblPredSelect.TabIndex = 8;
+            this.lblPredSelect.Text = "Select Product:";
+            // 
+            // lblPredOutStock
+            // 
+            this.lblPredOutStock.AutoSize = true;
+            this.lblPredOutStock.Location = new System.Drawing.Point(227, 166);
+            this.lblPredOutStock.Name = "lblPredOutStock";
+            this.lblPredOutStock.Size = new System.Drawing.Size(215, 31);
+            this.lblPredOutStock.TabIndex = 10;
+            this.lblPredOutStock.Text = "Out of Stock On:";
+            // 
+            // txtPredOutStock
+            // 
+            this.txtPredOutStock.Location = new System.Drawing.Point(448, 163);
+            this.txtPredOutStock.Name = "txtPredOutStock";
+            this.txtPredOutStock.ReadOnly = true;
+            this.txtPredOutStock.Size = new System.Drawing.Size(506, 38);
+            this.txtPredOutStock.TabIndex = 11;
+            // 
+            // btnHomePredict
+            // 
+            this.btnHomePredict.Location = new System.Drawing.Point(491, 70);
+            this.btnHomePredict.Name = "btnHomePredict";
+            this.btnHomePredict.Size = new System.Drawing.Size(143, 58);
+            this.btnHomePredict.TabIndex = 3;
+            this.btnHomePredict.Text = "Prediction";
+            this.btnHomePredict.UseVisualStyleBackColor = true;
+            this.btnHomePredict.Click += new System.EventHandler(this.btnHomePredict_Click);
+            // 
             // frmPeopleHealthPharmacy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -1121,6 +1202,8 @@
             this.tabSalesYearly.ResumeLayout(false);
             this.tabSalesYearly.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportYearlySales)).EndInit();
+            this.tabPrediction.ResumeLayout(false);
+            this.tabPrediction.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1225,6 +1308,13 @@
         private System.Windows.Forms.Label lblReportYearlySelect;
         private System.Windows.Forms.ComboBox cmbReportYearlySelect;
         private System.Windows.Forms.Label lblReportYearlyTitle;
+        private System.Windows.Forms.TabPage tabPrediction;
+        private System.Windows.Forms.TextBox txtPredOutStock;
+        private System.Windows.Forms.Label lblPredOutStock;
+        private System.Windows.Forms.ComboBox cmbPredSelect;
+        private System.Windows.Forms.Label lblPredSelect;
+        private System.Windows.Forms.Label lblPredTitle;
+        private System.Windows.Forms.Button btnHomePredict;
     }
 }
 

@@ -32,6 +32,9 @@ namespace TeamAmcal
 
             cmbSaleSelect.DisplayMember = "Name";
             cmbSaleSelect.ValueMember = "Key";
+
+            cmbPredSelect.DisplayMember = "Name";
+            cmbPredSelect.ValueMember = "Key";
         } // end frmPeopleHealthPharmacy_Load
 
         private void updateList()
@@ -40,6 +43,7 @@ namespace TeamAmcal
 
             cmbEditProdSelect.DataSource = bdlProducts;
             cmbSaleSelect.DataSource = bdlProducts;
+            cmbPredSelect.DataSource = bdlProducts;
         } // end updateList
 
         private void clearAddProdInput()
@@ -195,5 +199,28 @@ namespace TeamAmcal
         {
 
         } // end btnSalesConfirm_Click
+
+        private void btnHomePredict_Click(object sender, EventArgs e)
+        {
+            tabMenu.SelectedIndex = 4;
+        } // end btnHomePredict_Click
+
+        private void cmbPredSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int intIndex = cmbEditProdSelect.SelectedIndex;
+            Product prdSelected = dbmDataManager.getProduct(intIndex);
+
+            if (prdSelected != null)
+            {
+                txtPredOutStock.Text = dbmDataManager.LinearRegression(prdSelected).ToString();
+            } // end if
+            else
+                throw new IndexOutOfRangeException("Error. No Product Found");
+        }
+
+        private void cmbSaleSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     } // end frmPeopleHealthPharmacy
 } // end namespace
