@@ -236,7 +236,7 @@ namespace TeamAmcal
 
             if (prdSelected != null)
             {
-                //txtPredOutStock.Text = dbmDataManager.LinearRegression(prdSelected).ToString();
+                txtPredOutStock.Text = dbmDataManager.LinearRegression(prdSelected).ToString();
             } // end if
             else
                 throw new IndexOutOfRangeException("Error. No Product Found");

@@ -266,21 +266,18 @@ namespace TeamAmcal
         public DateTime LinearRegression(Product p)
         {
             ReadData();
-            DateTime dteReturn = DateTime.Now;
             // Variables
             if (p.SaleData != null && p.SaleData.Count > 1)
             {
-                int N = p.SaleData.Count;
-                int sigmaX = 0;
-                int sigmaY = 0;
-                int sigmaXY = 0;
-                int sigmaX2 = 0;
-                List<int> dateX = new List<int>();
+                double N = p.SaleData.Count;
+                double sigmaX = 0;
+                double sigmaY = 0;
+                double sigmaXY = 0;
+                double sigmaX2 = 0;
+                List<double> dateX = new List<double>();
 
                 // Results
-                float gradient = 0;
-                int intercept = p.Quantity;
-                int xIsZero = 0;
+                double intercept = (double)p.Quantity;
 
                 // Sets first data point to zero
                 dateX.Add(1);
@@ -297,7 +294,7 @@ namespace TeamAmcal
                     DateTime d2 = p.SaleData[0].Date;
                     DateTime d1 = p.SaleData[i].Date;
 
-                    int t = Convert.ToInt32((d1 - d2).TotalDays);
+                    double t = (d1 - d2).TotalDays;
                     dateX.Add(t);
 
                     sigmaX += t;
@@ -311,17 +308,15 @@ namespace TeamAmcal
                 }
 
                 // Calculation of b (Gradient)
-                gradient = (N * sigmaXY - (sigmaX * sigmaY)) / (N * sigmaX2 - (sigmaX * sigmaX));
+                double gradient = (N * sigmaXY - (sigmaX * sigmaY)) / (N * sigmaX2 - (sigmaX * sigmaX));
 
                 // When y = 0, x = -a/b
-                xIsZero = (int)(-intercept / gradient);
+                double xIsZero = -intercept / gradient;
 
                 // Adds amount of days until stock is gone on current date
-                DateTime result = p.SaleData[0].Date.AddDays(-1* xIsZero);
-
-                return result;
+                return DateTime.Now.AddDays(xIsZero);
             }
-            return dteReturn;
+            return DateTime.Now;
         }
 
         public void CreateCSV()
