@@ -32,6 +32,7 @@
             this.tabHome = new System.Windows.Forms.TabPage();
             this.lblHomeTitle = new System.Windows.Forms.Label();
             this.grpHomeGoTo = new System.Windows.Forms.GroupBox();
+            this.btnHomePredict = new System.Windows.Forms.Button();
             this.btnHomeReports = new System.Windows.Forms.Button();
             this.btnHomeSales = new System.Windows.Forms.Button();
             this.btnHomeProducts = new System.Windows.Forms.Button();
@@ -98,39 +99,38 @@
             this.txtSalesQuantity = new System.Windows.Forms.TextBox();
             this.lblSalesQuantity = new System.Windows.Forms.Label();
             this.dgvSalesReport = new System.Windows.Forms.DataGridView();
+            this.colSalesKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesSell = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbSaleSelect = new System.Windows.Forms.ComboBox();
             this.lblSaleSelect = new System.Windows.Forms.Label();
             this.lblSaleTitle = new System.Windows.Forms.Label();
             this.tabReports = new System.Windows.Forms.TabPage();
             this.tabSalesOptions = new System.Windows.Forms.TabControl();
             this.tabSalesMontly = new System.Windows.Forms.TabPage();
-            this.dgvReportMonthlySales = new System.Windows.Forms.DataGridView();
-            this.lblReportMonthlySelect = new System.Windows.Forms.Label();
-            this.lblReportMonthly = new System.Windows.Forms.Label();
-            this.tabSalesYearly = new System.Windows.Forms.TabPage();
-            this.dgvReportYearlySales = new System.Windows.Forms.DataGridView();
-            this.lblReportYearlySelect = new System.Windows.Forms.Label();
-            this.lblReportYearlyTitle = new System.Windows.Forms.Label();
-            this.tabPrediction = new System.Windows.Forms.TabPage();
-            this.lblPredTitle = new System.Windows.Forms.Label();
-            this.cmbPredSelect = new System.Windows.Forms.ComboBox();
-            this.lblPredSelect = new System.Windows.Forms.Label();
-            this.lblPredOutStock = new System.Windows.Forms.Label();
-            this.txtPredOutStock = new System.Windows.Forms.TextBox();
-            this.btnHomePredict = new System.Windows.Forms.Button();
             this.dtpReportsMonthlySelect = new System.Windows.Forms.DateTimePicker();
-            this.dtmReportsYearlyDate = new System.Windows.Forms.DateTimePicker();
+            this.dgvReportMonthlySales = new System.Windows.Forms.DataGridView();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblReportMonthlySelect = new System.Windows.Forms.Label();
+            this.lblReportMonthly = new System.Windows.Forms.Label();
+            this.tabSalesYearly = new System.Windows.Forms.TabPage();
+            this.dtmReportsYearlyDate = new System.Windows.Forms.DateTimePicker();
+            this.dgvReportYearlySales = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesSell = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblReportYearlySelect = new System.Windows.Forms.Label();
+            this.lblReportYearlyTitle = new System.Windows.Forms.Label();
+            this.tabPrediction = new System.Windows.Forms.TabPage();
+            this.txtPredOutStock = new System.Windows.Forms.TextBox();
+            this.lblPredOutStock = new System.Windows.Forms.Label();
+            this.cmbPredSelect = new System.Windows.Forms.ComboBox();
+            this.lblPredSelect = new System.Windows.Forms.Label();
+            this.lblPredTitle = new System.Windows.Forms.Label();
             this.tabMenu.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.grpHomeGoTo.SuspendLayout();
@@ -198,6 +198,16 @@
             this.grpHomeGoTo.TabIndex = 0;
             this.grpHomeGoTo.TabStop = false;
             this.grpHomeGoTo.Text = "Go To:";
+            // 
+            // btnHomePredict
+            // 
+            this.btnHomePredict.Location = new System.Drawing.Point(491, 70);
+            this.btnHomePredict.Name = "btnHomePredict";
+            this.btnHomePredict.Size = new System.Drawing.Size(143, 58);
+            this.btnHomePredict.TabIndex = 3;
+            this.btnHomePredict.Text = "Prediction";
+            this.btnHomePredict.UseVisualStyleBackColor = true;
+            this.btnHomePredict.Click += new System.EventHandler(this.btnHomePredict_Click);
             // 
             // btnHomeReports
             // 
@@ -842,6 +852,41 @@
             this.dgvSalesReport.Size = new System.Drawing.Size(993, 334);
             this.dgvSalesReport.TabIndex = 8;
             // 
+            // colSalesKey
+            // 
+            this.colSalesKey.HeaderText = "Key";
+            this.colSalesKey.Name = "colSalesKey";
+            this.colSalesKey.ReadOnly = true;
+            this.colSalesKey.Width = 150;
+            // 
+            // colSalesName
+            // 
+            this.colSalesName.HeaderText = "Product Name";
+            this.colSalesName.Name = "colSalesName";
+            this.colSalesName.ReadOnly = true;
+            this.colSalesName.Width = 350;
+            // 
+            // colSalesQuantity
+            // 
+            this.colSalesQuantity.HeaderText = "Quantity";
+            this.colSalesQuantity.Name = "colSalesQuantity";
+            this.colSalesQuantity.ReadOnly = true;
+            this.colSalesQuantity.Width = 150;
+            // 
+            // colSalesSell
+            // 
+            this.colSalesSell.HeaderText = "Sale Price";
+            this.colSalesSell.Name = "colSalesSell";
+            this.colSalesSell.ReadOnly = true;
+            this.colSalesSell.Width = 150;
+            // 
+            // colSalesTotal
+            // 
+            this.colSalesTotal.HeaderText = "Total";
+            this.colSalesTotal.Name = "colSalesTotal";
+            this.colSalesTotal.ReadOnly = true;
+            this.colSalesTotal.Width = 150;
+            // 
             // cmbSaleSelect
             // 
             this.cmbSaleSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -905,6 +950,14 @@
             this.tabSalesMontly.Text = "Monthly";
             this.tabSalesMontly.UseVisualStyleBackColor = true;
             // 
+            // dtpReportsMonthlySelect
+            // 
+            this.dtpReportsMonthlySelect.Location = new System.Drawing.Point(436, 96);
+            this.dtpReportsMonthlySelect.Name = "dtpReportsMonthlySelect";
+            this.dtpReportsMonthlySelect.Size = new System.Drawing.Size(452, 38);
+            this.dtpReportsMonthlySelect.TabIndex = 11;
+            this.dtpReportsMonthlySelect.ValueChanged += new System.EventHandler(this.dtpReportsMonthlySelect_ValueChanged);
+            // 
             // dgvReportMonthlySales
             // 
             this.dgvReportMonthlySales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -917,6 +970,27 @@
             this.dgvReportMonthlySales.RowTemplate.Height = 24;
             this.dgvReportMonthlySales.Size = new System.Drawing.Size(644, 387);
             this.dgvReportMonthlySales.TabIndex = 10;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Product Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 300;
+            // 
+            // colQuantity
+            // 
+            this.colQuantity.HeaderText = "Quantity";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.ReadOnly = true;
+            this.colQuantity.Width = 150;
+            // 
+            // colSellPrice
+            // 
+            this.colSellPrice.HeaderText = "Sales Total";
+            this.colSellPrice.Name = "colSellPrice";
+            this.colSellPrice.ReadOnly = true;
+            this.colSellPrice.Width = 150;
             // 
             // lblReportMonthlySelect
             // 
@@ -951,6 +1025,14 @@
             this.tabSalesYearly.Text = "Yearly";
             this.tabSalesYearly.UseVisualStyleBackColor = true;
             // 
+            // dtmReportsYearlyDate
+            // 
+            this.dtmReportsYearlyDate.Location = new System.Drawing.Point(436, 96);
+            this.dtmReportsYearlyDate.Name = "dtmReportsYearlyDate";
+            this.dtmReportsYearlyDate.Size = new System.Drawing.Size(452, 38);
+            this.dtmReportsYearlyDate.TabIndex = 15;
+            this.dtmReportsYearlyDate.ValueChanged += new System.EventHandler(this.dtmReportsYearlyDate_ValueChanged);
+            // 
             // dgvReportYearlySales
             // 
             this.dgvReportYearlySales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -963,6 +1045,27 @@
             this.dgvReportYearlySales.RowTemplate.Height = 24;
             this.dgvReportYearlySales.Size = new System.Drawing.Size(643, 387);
             this.dgvReportYearlySales.TabIndex = 14;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Sales Total";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // lblReportYearlySelect
             // 
@@ -997,15 +1100,22 @@
             this.tabPrediction.Text = "Prediction";
             this.tabPrediction.UseVisualStyleBackColor = true;
             // 
-            // lblPredTitle
+            // txtPredOutStock
             // 
-            this.lblPredTitle.AutoSize = true;
-            this.lblPredTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
-            this.lblPredTitle.Location = new System.Drawing.Point(437, 0);
-            this.lblPredTitle.Name = "lblPredTitle";
-            this.lblPredTitle.Size = new System.Drawing.Size(388, 63);
-            this.lblPredTitle.TabIndex = 4;
-            this.lblPredTitle.Text = "Item Prediction";
+            this.txtPredOutStock.Location = new System.Drawing.Point(448, 163);
+            this.txtPredOutStock.Name = "txtPredOutStock";
+            this.txtPredOutStock.ReadOnly = true;
+            this.txtPredOutStock.Size = new System.Drawing.Size(506, 38);
+            this.txtPredOutStock.TabIndex = 11;
+            // 
+            // lblPredOutStock
+            // 
+            this.lblPredOutStock.AutoSize = true;
+            this.lblPredOutStock.Location = new System.Drawing.Point(227, 166);
+            this.lblPredOutStock.Name = "lblPredOutStock";
+            this.lblPredOutStock.Size = new System.Drawing.Size(215, 31);
+            this.lblPredOutStock.TabIndex = 10;
+            this.lblPredOutStock.Text = "Out of Stock On:";
             // 
             // cmbPredSelect
             // 
@@ -1026,125 +1136,15 @@
             this.lblPredSelect.TabIndex = 8;
             this.lblPredSelect.Text = "Select Product:";
             // 
-            // lblPredOutStock
+            // lblPredTitle
             // 
-            this.lblPredOutStock.AutoSize = true;
-            this.lblPredOutStock.Location = new System.Drawing.Point(227, 166);
-            this.lblPredOutStock.Name = "lblPredOutStock";
-            this.lblPredOutStock.Size = new System.Drawing.Size(215, 31);
-            this.lblPredOutStock.TabIndex = 10;
-            this.lblPredOutStock.Text = "Out of Stock On:";
-            // 
-            // txtPredOutStock
-            // 
-            this.txtPredOutStock.Location = new System.Drawing.Point(448, 163);
-            this.txtPredOutStock.Name = "txtPredOutStock";
-            this.txtPredOutStock.ReadOnly = true;
-            this.txtPredOutStock.Size = new System.Drawing.Size(506, 38);
-            this.txtPredOutStock.TabIndex = 11;
-            // 
-            // btnHomePredict
-            // 
-            this.btnHomePredict.Location = new System.Drawing.Point(491, 70);
-            this.btnHomePredict.Name = "btnHomePredict";
-            this.btnHomePredict.Size = new System.Drawing.Size(143, 58);
-            this.btnHomePredict.TabIndex = 3;
-            this.btnHomePredict.Text = "Prediction";
-            this.btnHomePredict.UseVisualStyleBackColor = true;
-            this.btnHomePredict.Click += new System.EventHandler(this.btnHomePredict_Click);
-            // 
-            // dtpReportsMonthlySelect
-            // 
-            this.dtpReportsMonthlySelect.Location = new System.Drawing.Point(436, 96);
-            this.dtpReportsMonthlySelect.Name = "dtpReportsMonthlySelect";
-            this.dtpReportsMonthlySelect.Size = new System.Drawing.Size(452, 38);
-            this.dtpReportsMonthlySelect.TabIndex = 11;
-            this.dtpReportsMonthlySelect.ValueChanged += new System.EventHandler(this.dtpReportsMonthlySelect_ValueChanged);
-            // 
-            // dtmReportsYearlyDate
-            // 
-            this.dtmReportsYearlyDate.Location = new System.Drawing.Point(436, 96);
-            this.dtmReportsYearlyDate.Name = "dtmReportsYearlyDate";
-            this.dtmReportsYearlyDate.Size = new System.Drawing.Size(452, 38);
-            this.dtmReportsYearlyDate.TabIndex = 15;
-            this.dtmReportsYearlyDate.ValueChanged += new System.EventHandler(this.dtmReportsYearlyDate_ValueChanged);
-            // 
-            // colName
-            // 
-            this.colName.HeaderText = "Product Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Width = 300;
-            // 
-            // colQuantity
-            // 
-            this.colQuantity.HeaderText = "Quantity";
-            this.colQuantity.Name = "colQuantity";
-            this.colQuantity.ReadOnly = true;
-            this.colQuantity.Width = 150;
-            // 
-            // colSellPrice
-            // 
-            this.colSellPrice.HeaderText = "Sales Total";
-            this.colSellPrice.Name = "colSellPrice";
-            this.colSellPrice.ReadOnly = true;
-            this.colSellPrice.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Product Name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Quantity";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Sales Total";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // colSalesKey
-            // 
-            this.colSalesKey.HeaderText = "Key";
-            this.colSalesKey.Name = "colSalesKey";
-            this.colSalesKey.ReadOnly = true;
-            this.colSalesKey.Width = 150;
-            // 
-            // colSalesName
-            // 
-            this.colSalesName.HeaderText = "Product Name";
-            this.colSalesName.Name = "colSalesName";
-            this.colSalesName.ReadOnly = true;
-            this.colSalesName.Width = 350;
-            // 
-            // colSalesQuantity
-            // 
-            this.colSalesQuantity.HeaderText = "Quantity";
-            this.colSalesQuantity.Name = "colSalesQuantity";
-            this.colSalesQuantity.ReadOnly = true;
-            this.colSalesQuantity.Width = 150;
-            // 
-            // colSalesSell
-            // 
-            this.colSalesSell.HeaderText = "Sale Price";
-            this.colSalesSell.Name = "colSalesSell";
-            this.colSalesSell.ReadOnly = true;
-            this.colSalesSell.Width = 150;
-            // 
-            // colSalesTotal
-            // 
-            this.colSalesTotal.HeaderText = "Total";
-            this.colSalesTotal.Name = "colSalesTotal";
-            this.colSalesTotal.ReadOnly = true;
-            this.colSalesTotal.Width = 150;
+            this.lblPredTitle.AutoSize = true;
+            this.lblPredTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
+            this.lblPredTitle.Location = new System.Drawing.Point(437, 0);
+            this.lblPredTitle.Name = "lblPredTitle";
+            this.lblPredTitle.Size = new System.Drawing.Size(388, 63);
+            this.lblPredTitle.TabIndex = 4;
+            this.lblPredTitle.Text = "Item Prediction";
             // 
             // frmPeopleHealthPharmacy
             // 
@@ -1156,6 +1156,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmPeopleHealthPharmacy";
             this.Text = "People Health Pharmacy Inc.";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPeopleHealthPharmacy_FormClosing);
             this.Load += new System.EventHandler(this.frmPeopleHealthPharmacy_Load);
             this.tabMenu.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);

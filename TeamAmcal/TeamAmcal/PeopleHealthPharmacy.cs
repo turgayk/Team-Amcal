@@ -22,9 +22,7 @@ namespace TeamAmcal
 
         private void frmPeopleHealthPharmacy_Load(object sender, EventArgs e)
         {
-            dbmDataManager = new SuperUltraMegaDatabaseManager();
-
-            dbmDataManager.CreateCSV();
+            dbmDataManager = new SuperUltraMegaDatabaseManager();            
 
             dbmDataManager.ReadData();
             updateList();
@@ -41,6 +39,11 @@ namespace TeamAmcal
             cmbPredSelect.DisplayMember = "Name";
             cmbPredSelect.ValueMember = "Key";
         } // end frmPeopleHealthPharmacy_Load
+
+        private void frmPeopleHealthPharmacy_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dbmDataManager.CreateCSV();
+        } // end frmPeopleHealthPharmacy_FormClosing
 
         private void updateList()
         {
@@ -278,5 +281,7 @@ namespace TeamAmcal
                 dgvReportYearlySales.Rows.Add(strName, intQuantity, fltPrice);
             } // end foreach
         }
+
+        
     } // end frmPeopleHealthPharmacy
 } // end namespace
